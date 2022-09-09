@@ -3,13 +3,16 @@ import './CardsPedidos.css';
 
 const CardsPedidos = () => {
   return (
-    <div className="d-flex justify-content-evenly flex-wrap col">
+    <div className="d-flex justify-content-evenly flex-wrap col py-3">
       <div className="card col-3 rounded-0 m-1">
        <img src="https://picsum.photos/200/300?random=1" className="card-img-top border-0 rounded-0 border-0 rounded-0" alt="..." />
        <div className="card-body">
         <h5 className="card-title">Card title</h5>
         <p className="card-text">Descripción del producto.</p>
-         <a href="/" className="btn btn-warning rounded-0 rounded-0">Agregar al pedido</a>
+        <div className="d-flex justify-content-between align-items-center">
+         <button className="btn btn-warning rounded-0 rounded-0">✓</button>
+         <p className="fs-4 m-0">$123</p>
+         </div>
        </div>
       </div>
       <div className="card col-3 rounded-0 m-1">
@@ -17,7 +20,10 @@ const CardsPedidos = () => {
        <div className="card-body">
         <h5 className="card-title">Card title</h5>
         <p className="card-text">Descripción del producto.</p>
-         <a href="/" className="btn btn-warning rounded-0 rounded-0">Agregar al pedido</a>
+        <div className="d-flex justify-content-between align-items-center">
+         <button className="btn btn-warning rounded-0 rounded-0">✓</button>
+         <p className="fs-4 m-0">$123</p>
+         </div>
        </div>
       </div>
       <div className="card col-3 rounded-0 m-1">
@@ -25,7 +31,10 @@ const CardsPedidos = () => {
        <div className="card-body">
         <h5 className="card-title">Card title</h5>
         <p className="card-text">Descripción del producto.</p>
-         <a href="/" className="btn btn-warning rounded-0 rounded-0">Agregar al pedido</a>
+        <div className="d-flex justify-content-between align-items-center">
+         <button className="btn btn-warning rounded-0 rounded-0">✓</button>
+         <p className="fs-4 m-0">$123</p>
+         </div>
        </div>
       </div>
       <div className="card col-3 rounded-0 m-1">
@@ -33,7 +42,10 @@ const CardsPedidos = () => {
        <div className="card-body">
         <h5 className="card-title">Card title</h5>
         <p className="card-text">Descripción del producto.</p>
-         <a href="/" className="btn btn-warning rounded-0 rounded-0">Agregar al pedido</a>
+        <div className="d-flex justify-content-between align-items-center">
+         <button className="btn btn-warning rounded-0 rounded-0">✓</button>
+         <p className="fs-4 m-0">$123</p>
+         </div>
        </div>
       </div>
       <div className="card col-3 rounded-0 m-1">
@@ -41,7 +53,10 @@ const CardsPedidos = () => {
        <div className="card-body">
         <h5 className="card-title">Card title</h5>
         <p className="card-text">Descripción del producto.</p>
-         <a href="/" className="btn btn-warning rounded-0 rounded-0">Agregar al pedido</a>
+        <div className="d-flex justify-content-between align-items-center">
+         <button className="btn btn-warning rounded-0 rounded-0">✓</button>
+         <p className="fs-4 m-0">$123</p>
+         </div>
        </div>
       </div>
       <div className="card col-3 rounded-0 m-1">
@@ -49,7 +64,10 @@ const CardsPedidos = () => {
        <div className="card-body">
         <h5 className="card-title">Card title</h5>
         <p className="card-text">Descripción del producto.</p>
-         <a href="/" className="btn btn-warning rounded-0 rounded-0">Agregar al pedido</a>
+        <div className="d-flex justify-content-between align-items-center">
+         <button className="btn btn-warning rounded-0 rounded-0">✓</button>
+         <p className="fs-4 m-0">$123</p>
+         </div>
        </div>
       </div>
     </div>
