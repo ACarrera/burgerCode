@@ -5,7 +5,7 @@ const BotonenviarPedido = () => {
     <div className="d-flex justify-content-center">
 
 <button type="button" className="btn btn-dark m-2 border-0 rounded-0" data-bs-toggle="modal" data-bs-target="#exampleModal1">
-  Enviar pedido
+  Enviar ➜
 </button>
 
 
