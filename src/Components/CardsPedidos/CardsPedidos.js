@@ -10,7 +10,7 @@ const CardsPedidos = () => {
         <h5 className="card-title">Card title</h5>
         <p className="card-text">Descripción del producto.</p>
         <div className="d-flex justify-content-between align-items-center">
-         <button className="btn btn-warning rounded-0 rounded-0">✓</button>
+         <button className="boton-agregarproducto-carrito btn btn-warning rounded-0 rounded-0">✓</button>
          <p className="fs-4 m-0">$123</p>
          </div>
        </div>
