@@ -20,10 +20,12 @@ const Header = () => {
         </Navbar.Toggle>
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Link to="/" className='text-darkred pagina-text nav-link'>Home</Link>
-            {
+          {
               user ?
-                <Link to="/" onClick={SignOut} className='text-darkred pagina-text nav-link'>Cerrar Sesión</Link>
+            <>
+            <Link to="/" className='text-darkred pagina-text nav-link'>Home</Link>
+            <Link to="/" onClick={SignOut} className='text-darkred pagina-text nav-link'>Cerrar Sesión</Link>
+            </>
                 :
                 <Link to="/login" className='text-darkred pagina-text nav-link'>Ingresar</Link>
             }

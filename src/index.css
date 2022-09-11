@@ -23,7 +23,7 @@ code {
 
 @import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Combo&family=Oswald:wght@200&family=Permanent+Marker&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Combo&family=Oswald:wght@200;400&family=Permanent+Marker&family=Source+Sans+Pro:wght@200&display=swap');
 .pagina-text{
   font-family: 'Oswald', sans-serif;
 }
@@ -32,7 +32,9 @@ code {
   font-family: 'Bebas Neue', cursive;
   font-size: 7rem;
 }
-
+.card-text{
+  font-family: 'Source Sans Pro', sans-serif;
+}
 
 .bg-yellow{
   background-color: var(--yellow-pantone);
@@ -70,3 +72,4 @@ code {
 .bg-white{
   background-color: white;
 }
+

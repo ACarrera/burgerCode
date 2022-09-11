@@ -4,10 +4,17 @@
     justify-content: space-evenly;
     align-items: center ;
     border-radius: 25px;
-    border: 2px solid white;
     margin: 4px;
     cursor: pointer;
     user-select: none;
     width: 100%;
-    
+    min-height: 80%;
+}
+.card-ingredientes{
+    background-color: gainsboro;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 18px;
+}
+.icons-home{
+    font-size: 100px;
 }

@@ -5,6 +5,7 @@ import LandingPage from './pages/LandingPage';
 import HomePage from './pages/HomePage';
 import LoginPage from './pages/Login';
 import PedidosPage from './pages/PedidosPage';
+import PrivateRoute from './routes/PrivateRoute';
 
 
 function App() {
