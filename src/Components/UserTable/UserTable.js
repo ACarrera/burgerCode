@@ -5,31 +5,31 @@ import { AiFillEdit, AiFillDelete } from "react-icons/ai";
 import { FcPlus } from "react-icons/fc";
 import axiosInstance from "../../config/axiosInstance";
 import useMediaQuery from "../../hooks/useMediaQuery";
-import ModalAgregar from "../ModalAgregar/ModalAgregar";
-import ModalEditar from "../ModalEditar/ModalEditar";
+import AddModal from "../AddModal/AddModal";
+import EditModal from "../EditModal/EditModal";
 import "./TablaUsuarios.css";
 
-const TablaUsuarios = () => {
+const UserTable = () => {
   const [showAdd, setShowAdd] = useState(false);
   const [showEdit, setShowEdit] = useState(false);
   const [selected, setSelected] = useState(null);
-  const [usuarios, setUsuarios] = useState([]);
+  const [users, setUsers] = useState([]);
   const handleCloseAdd = () => setShowAdd(false);
   const handleShowAdd = () => setShowAdd(true);
   const handleCloseEdit = () => setShowEdit(false);
   const handleShowEdit = () => setShowEdit(true);
-  const getUsuarios = async () => {
+  const getUsers = async () => {
     try {
-      const response = await axiosInstance.get("/usuarios");
-      setUsuarios(response.data);
+      const response = await axiosInstance.get("/users");
+      setUsers(response.data);
     } catch (error) {
       alert("error al traer los usuarios");
     }
   };
   const handleDelete = async (email) => {
     try {
-      await axiosInstance.delete("/usuarios/" + email);
-      getUsuarios();
+      await axiosInstance.delete("/users/" + email);
+      getUsers();
     } catch (error) {
       alert("Error al eliminar");
     }
@@ -39,7 +39,7 @@ const TablaUsuarios = () => {
     handleShowEdit();
   };
   useEffect(() => {
-    getUsuarios();
+    getUsers();
   }, []);
 
   return (
@@ -65,24 +65,24 @@ const TablaUsuarios = () => {
             </tr>
           </thead>
           <tbody>
-            {usuarios.map((usuario, index) => (
+            {users.map((user, index) => (
               <tr key={index}>
-                <td>{usuario.email}</td>
-                <td>{usuario.nombre}</td>
-                <td>{usuario.apellido}</td>
-                <td>{usuario.direccion}</td>
-                <td>{usuario.telefono}</td>
+                <td>{user.email}</td>
+                <td>{user.name}</td>
+                <td>{user.lastname}</td>
+                <td>{user.address}</td>
+                <td>{user.phone}</td>
                 <td className="text-center">
                   <Button
                     variant="warning"
-                    onClick={() => handleEdit(usuario.email)}
+                    onClick={() => handleEdit(user.email)}
                     className="me-2"
                   >
                     <AiFillEdit className="border-text" />
                   </Button>
                   <Button
                     variant="danger"
-                    onClick={() => handleDelete(usuario.email)}
+                    onClick={() => handleDelete(user.email)}
                   >
                     <AiFillDelete />
                   </Button>
@@ -92,19 +92,19 @@ const TablaUsuarios = () => {
           </tbody>
         </Table>
       )}
-      <ModalAgregar
+      <AddModal
         handleCloseAdd={handleCloseAdd}
         showAdd={showAdd}
-        getUsuarios={getUsuarios}
+        getUsers={getUsers}
       />
-      <ModalEditar
+      <EditModal
         handleCloseEdit={handleCloseEdit}
         showEdit={showEdit}
-        getUsuarios={getUsuarios}
+        getUsers={getUsers}
         selected={selected}
       />
     </>
   );
 };
 
-export default TablaUsuarios;
+export default UserTable;
