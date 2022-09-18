@@ -2,13 +2,13 @@ import { useState } from "react";
 import { Form, Button } from "react-bootstrap";
 import axiosInstance from "../../config/axiosInstance";
 
-const FormularioAgregar = ({ getUsuarios, handleCloseAdd }) => {
+const AddForm = ({ getUsers, handleCloseAdd }) => {
   const [values, setValues] = useState({
     email: "",
-    nombre: "",
-    apellido: "",
-    direccion: "",
-    telefono: 0,
+    name: "",
+    lastname: "",
+    address: "",
+    phone: 0,
   });
   const handleChange = (e) => {
     setValues({
@@ -20,8 +20,8 @@ const FormularioAgregar = ({ getUsuarios, handleCloseAdd }) => {
   const handleSubmit = async (e) => {
     try {
       e.preventDefault();
-      await axiosInstance.post("/usuarios", values);
-      getUsuarios();
+      await axiosInstance.post("/users", values);
+      getUsers();
     } catch (error) {
       alert("Error al cargar nuevo usuario");
     }
@@ -44,7 +44,7 @@ const FormularioAgregar = ({ getUsuarios, handleCloseAdd }) => {
           type="text"
           name="nombre"
           onChange={handleChange}
-          value={values.nombre}
+          value={values.name}
         />
       </Form.Group>
       <Form.Group className="mb-3">
@@ -53,7 +53,7 @@ const FormularioAgregar = ({ getUsuarios, handleCloseAdd }) => {
           type="text"
           name="apellido"
           onChange={handleChange}
-          value={values.apellido}
+          value={values.lastname}
         />
       </Form.Group>
       <Form.Group className="mb-3">
@@ -62,7 +62,7 @@ const FormularioAgregar = ({ getUsuarios, handleCloseAdd }) => {
           type="text"
           name="direccion"
           onChange={handleChange}
-          value={values.direccion}
+          value={values.address}
         />
       </Form.Group>
 
@@ -72,7 +72,7 @@ const FormularioAgregar = ({ getUsuarios, handleCloseAdd }) => {
           type="number"
           name="telefono"
           onChange={handleChange}
-          value={values.telefono}
+          value={values.phone}
         />
       </Form.Group>
       <Button variant="primary" type="submit" onClick={handleCloseAdd}>
@@ -82,4 +82,4 @@ const FormularioAgregar = ({ getUsuarios, handleCloseAdd }) => {
   );
 };
 
-export default FormularioAgregar;
+export default AddForm;
