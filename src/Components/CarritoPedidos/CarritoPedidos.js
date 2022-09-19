@@ -6,7 +6,7 @@ import './CarritoPedidos.css';
 
 const CarritoPedidos = () => {
   return (
-      <div className="d-wrap w-25 me-1 pe-3 borde bg-light">
+      <div className="carrito-pedidos d-wrap me-1 pe-3 borde bg-light">
         <LogueoPedidos />
         <ul class="list-group list-group-flush d-flex text-center">
          <table>

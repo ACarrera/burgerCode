@@ -5,7 +5,7 @@ import './PedidosPage.css';
 
 const PedidosPage = () => {
   return (
-    <div className="d-flex d-sm-block">
+    <div className="paginadepedidosmoviles d-flex">
     <CardsPedidos />
     <CarritoPedidos />
     </div>

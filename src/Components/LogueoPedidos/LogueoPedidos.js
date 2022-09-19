@@ -4,7 +4,7 @@ import './LogueoPedidos.css';
 const LogueoPedidos = () => {
   return (
     <div className="col d-flex align-items-center pb-3 text-center">
-      <div className="card border-0 col-sm-12 col-md-12 d-flex">
+      <div className="logueo-pedidos card border-0 d-flex">
        <div className="nombre-de-usuario card-body bg-light fs-5 pb-2">
         <strong>Nombre de usuario</strong>
        </div>
