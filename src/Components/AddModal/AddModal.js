@@ -1,21 +1,18 @@
 import { useState } from "react";
 import { Button, Modal } from "react-bootstrap";
-import FormularioAgregar from "../FormularioAgregar/FormularioAgregar";
+import AddForm from "../AddForm/AddForm";
 
-const ModalAgregar = ({ showAdd, handleCloseAdd, getUsuarios }) => {
+const AddModal = ({ showAdd, handleCloseAdd, getUsers }) => {
   return (
     <Modal show={showAdd} onHide={handleCloseAdd} centered backdrop="static">
       <Modal.Header closeButton>
         <Modal.Title>Agregar usuario</Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <FormularioAgregar
-          getUsuarios={getUsuarios}
-          handleCloseAdd={handleCloseAdd}
-        />
+        <AddForm getUsers={getUsers} handleCloseAdd={handleCloseAdd} />
       </Modal.Body>
     </Modal>
   );
 };
 
-export default ModalAgregar;
+export default AddModal;

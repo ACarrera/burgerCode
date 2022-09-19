@@ -3,13 +3,13 @@ import { useState } from "react";
 import { Form, Button } from "react-bootstrap";
 import axiosInstance from "../../config/axiosInstance";
 
-const FormularioEditar = ({ getUsuarios, handleCloseEdit, selected }) => {
+const EditForm = ({ getUsers, handleCloseEdit, selected }) => {
   const [values, setValues] = useState({
     email: "",
-    nombre: "",
-    apellido: "",
-    direccion: "",
-    telefono: 0,
+    name: "",
+    lastname: "",
+    address: "",
+    phone: 0,
   });
   const handleChange = (e) => {
     setValues({
@@ -19,7 +19,7 @@ const FormularioEditar = ({ getUsuarios, handleCloseEdit, selected }) => {
   };
   const getUsuario = async () => {
     try {
-      const response = await axiosInstance.get("/usuarios/" + selected);
+      const response = await axiosInstance.get("/users/" + selected);
       setValues(response.data);
     } catch (error) {
       alert(error.message);
@@ -27,14 +27,14 @@ const FormularioEditar = ({ getUsuarios, handleCloseEdit, selected }) => {
   };
 
   useEffect(() => {
-    getUsuario();
+    getUser();
   }, []);
 
   const handleSubmit = async (e) => {
     try {
       e.preventDefault();
-      await axiosInstance.put("/usuarios/" + selected, values);
-      getUsuarios();
+      await axiosInstance.put("/users/" + selected, values);
+      getUsers();
     } catch (error) {
       alert("Error al cargar nuevo usuario");
     }
@@ -57,7 +57,7 @@ const FormularioEditar = ({ getUsuarios, handleCloseEdit, selected }) => {
           type="text"
           name="nombre"
           onChange={handleChange}
-          value={values.nombre}
+          value={values.name}
         />
       </Form.Group>
       <Form.Group className="mb-3">
@@ -66,7 +66,7 @@ const FormularioEditar = ({ getUsuarios, handleCloseEdit, selected }) => {
           type="text"
           name="apellido"
           onChange={handleChange}
-          value={values.apellido}
+          value={values.lastname}
         />
       </Form.Group>
       <Form.Group className="mb-3">
@@ -75,7 +75,7 @@ const FormularioEditar = ({ getUsuarios, handleCloseEdit, selected }) => {
           type="text"
           name="direccion"
           onChange={handleChange}
-          value={values.direccion}
+          value={values.address}
         />
       </Form.Group>
       <Form.Group className="mb-3">
@@ -84,7 +84,7 @@ const FormularioEditar = ({ getUsuarios, handleCloseEdit, selected }) => {
           type="number"
           name="telefono"
           onChange={handleChange}
-          value={values.telefono}
+          value={values.phone}
         />
       </Form.Group>
       <Button variant="primary" type="submit" onClick={handleCloseEdit}>
@@ -94,4 +94,4 @@ const FormularioEditar = ({ getUsuarios, handleCloseEdit, selected }) => {
   );
 };
 
-export default FormularioEditar;
+export default EditForm;

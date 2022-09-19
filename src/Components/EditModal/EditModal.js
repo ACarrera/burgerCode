@@ -1,7 +1,7 @@
 import { Modal } from "react-bootstrap";
-import FormularioEditar from "../FormularioEditar/FormularioEditar";
+import FormularioEditar from "../EditForm/EditForm";
 
-const ModalEditar = ({ showEdit, handleCloseEdit, getUsuarios, selected }) => {
+const EditModal = ({ showEdit, handleCloseEdit, getUsers, selected }) => {
   return (
     <Modal show={showEdit} onHide={handleCloseEdit} centered backdrop="static">
       <Modal.Header closeButton>
@@ -9,7 +9,7 @@ const ModalEditar = ({ showEdit, handleCloseEdit, getUsuarios, selected }) => {
       </Modal.Header>
       <Modal.Body>
         <FormularioEditar
-          getUsuarios={getUsuarios}
+          getUsers={getUsers}
           handleCloseEdit={handleCloseEdit}
           selected={selected}
         />
@@ -18,4 +18,4 @@ const ModalEditar = ({ showEdit, handleCloseEdit, getUsuarios, selected }) => {
   );
 };
 
-export default ModalEditar;
+export default EditModal;
