@@ -1,14 +1,18 @@
 import React from 'react';
+import './LogueoPedidos.css';
 
 const LogueoPedidos = () => {
   return (
-    <div className="col d-flex align-items-center pb-3">
-      <div className="card border-0">
-       <div className="card-body bg-light fs-5">
-        Nombre de usuario
+    <div className="col d-flex align-items-center pb-3 text-center">
+      <div className="card border-0 col-sm-12 col-md-12 d-flex">
+       <div className="nombre-de-usuario card-body bg-light fs-5 pb-2">
+        <strong>Nombre de usuario</strong>
+       </div>
+       <div className="d-flex justify-content-center">
+       <button type="button" className="btn btn-danger border-0 rounded-0 px-2 mx-0 col-4 col-md-5 p-1" data-bs-toggle="modal" data-bs-target="#exampleModal">Salir</button>
        </div>
     </div>
-       <button type="button" className="btn btn-danger border-0 rounded-0 px-2 h-25 m-1" data-bs-toggle="modal" data-bs-target="#exampleModal">Salir</button>
+       
 
 
        <div className="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

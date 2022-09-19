@@ -1,7 +1,8 @@
 import React from 'react';
 import BotonEnviarPedido from '../BotonEnviarPedido/BotonEnviarPedido';
 import LogueoPedidos from '../LogueoPedidos/LogueoPedidos';
-import TrashIcon from './assets/images/trashicon.svg'
+import TrashIcon from './assets/images/trashicon.svg';
+import './CarritoPedidos.css';
 
 const CarritoPedidos = () => {
   return (
@@ -9,7 +10,7 @@ const CarritoPedidos = () => {
         <LogueoPedidos />
         <ul class="list-group list-group-flush d-flex text-center">
          <table>
-          <tr className="border-bottom">
+          <tr className="productos-carrito border-bottom">
             <td>
               Producto
             </td>
@@ -20,7 +21,7 @@ const CarritoPedidos = () => {
               <img src={TrashIcon} alt=""/>
             </button>
           </tr>
-          <tr className="border-bottom">
+          <tr className="productos-carrito border-bottom">
             <td>
               Producto
             </td>
@@ -31,7 +32,7 @@ const CarritoPedidos = () => {
               <img src={TrashIcon} alt=""/>
             </button>
           </tr>
-          <tr className="border-bottom">
+          <tr className="productos-carrito border-bottom">
             <td>
               Producto
             </td>
@@ -42,7 +43,7 @@ const CarritoPedidos = () => {
               <img src={TrashIcon} alt=""/>
             </button>
           </tr>
-          <tr className="border-bottom">
+          <tr className="productos-carrito border-bottom">
             <td>
               Producto
             </td>
@@ -55,10 +56,10 @@ const CarritoPedidos = () => {
           </tr>
          </table>
         </ul>
-        <h5 className="text-center m-2 bg-warning">Total: $1234</h5>
-        <div className="m-3 text-center">
+        <h5 className="text-center m-3 bg-warning">Total: $1234</h5>
+        <div className="comentarios-pedidos m-3 m-md-0 text-center">
          <label for="exampleFormControlTextarea1" className="form-label">Comentarios</label>
-        <textarea className="form-control rounded-0" id="exampleFormControlTextarea1" rows="3" maxLength="100" placeholder="Dejanos alguna especificación"></textarea>
+        <textarea className="form-control rounded-0" id="exampleFormControlTextarea1" rows="4" maxLength="100" placeholder="Dejanos alguna especificación"></textarea>
         </div>
         <BotonEnviarPedido />
       </div>
