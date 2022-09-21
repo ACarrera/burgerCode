@@ -7,7 +7,7 @@ import axiosInstance from "../../config/axiosInstance";
 import useMediaQuery from "../../hooks/useMediaQuery";
 import AddModal from "../AddModal/AddModal";
 import EditModal from "../EditModal/EditModal";
-import "./TablaUsuarios.css";
+import "./UserTable.css";
 
 const UserTable = () => {
   const [showAdd, setShowAdd] = useState(false);
@@ -50,7 +50,7 @@ const UserTable = () => {
           <FcPlus />
         </button>
       </div>
-      {usuarios.length === 0 ? (
+      {users.length === 0 ? (
         <Spinner animation="border" role="status" />
       ) : (
         <Table responsive striped bordered hover>

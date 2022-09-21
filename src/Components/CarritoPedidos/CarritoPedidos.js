@@ -1,7 +1,7 @@
 import React from 'react';
-import BotonEnviarPedido from '../BotonEnviarPedido/BotonEnviarPedido';
+import ButtonRequest from '../ButtonRequest/ButtonRequest';
 import LogueoPedidos from '../LogueoPedidos/LogueoPedidos';
-import TrashIcon from './assets/images/trashicon.svg';
+// import TrashIcon from './assets/images/trashicon.svg';
 import './CarritoPedidos.css';
 
 const CarritoPedidos = () => {
@@ -18,7 +18,7 @@ const CarritoPedidos = () => {
               <strong>Precio</strong>
             </td>
             <button type="button" class="btn btn-light border-0 rounded-0 py-1 m-1">
-              <img src={TrashIcon} alt=""/>
+              {/* <img src={TrashIcon} alt=""/> */}
             </button>
           </tr>
           <tr className="productos-carrito border-bottom">
@@ -29,7 +29,7 @@ const CarritoPedidos = () => {
             <strong>Precio</strong>
             </td>
             <button type="button" class="btn btn-light border-0 rounded-0 py-1 m-1">
-              <img src={TrashIcon} alt=""/>
+              {/* <img src={TrashIcon} alt=""/> */}
             </button>
           </tr>
           <tr className="productos-carrito border-bottom">
@@ -40,7 +40,7 @@ const CarritoPedidos = () => {
             <strong>Precio</strong>
             </td>
             <button type="button" class="btn btn-light border-0 rounded-0 py-1 m-1">
-              <img src={TrashIcon} alt=""/>
+              {/* <img src={TrashIcon} alt=""/> */}
             </button>
           </tr>
           <tr className="productos-carrito border-bottom">
@@ -51,7 +51,7 @@ const CarritoPedidos = () => {
             <strong>Precio</strong>
             </td>
             <button type="button" class="btn btn-light border-0 rounded-0 py-1 m-1">
-              <img src={TrashIcon} alt=""/>
+              {/* <img src={TrashIcon} alt=""/> */}
             </button>
           </tr>
          </table>
@@ -61,7 +61,7 @@ const CarritoPedidos = () => {
          <label for="exampleFormControlTextarea1" className="form-label">Comentarios</label>
         <textarea className="form-control rounded-0" id="exampleFormControlTextarea1" rows="4" maxLength="100" placeholder="Dejanos alguna especificación"></textarea>
         </div>
-        <BotonEnviarPedido />
+        <ButtonRequest />
       </div>
   );
 };
