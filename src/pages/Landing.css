@@ -1,13 +1,156 @@
-.titulo-landing{
-    font-size: 90px;
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Combo&family=Oswald:wght@200;400&family=Paytone+One&family=Permanent+Marker&family=Rampart+One&family=Source+Sans+Pro:wght@200&display=swap');
+.app-landing{
+ background-color: var(--dark-red);
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ color: white;
+ height: 44vw;
+ padding: 20% 10% 20% 10%;
 }
-.hamburguesa{
+.app-wrapper-info{
+    padding-right: 10%;
+}
+.h1-landing{
+    color: white;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    font-size: 110px;
+    line-height: 60%;
+    font-family: 'Rampart One';
     text-decoration: underline;
-    font-size: 90px;
 }
-.boton-ingresar{
-    background-color: var(--sunglow);
+.h3-landing{
+    color: white;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    font-size: 78px;
+    padding-top: 0;
+    font-family: 'Paytone One', sans-serif;
 }
-.landing{
-    display: flex;
+.h3-icon{
+    font-size: 70px;
+    line-height: 80%;
+
+}
+.h4-landing{
+    font-weight: bold;
+    font-size: 40px;
+    line-height: 500%;
+}
+.p-landing{
+    margin-top: -15%;
+}
+
+.app-wrapper-img img{
+    width: calc(100% - 20px);
+    height: calc(115% - 20px);
+    margin: 10px;
+    border-radius: 24px 0;
+
+}
+.bordes-img{
+    margin: 5px auto;
+    background-image: linear-gradient(#FFC917, #FFC917),
+                    linear-gradient(#FFC917, #FFC917),
+                    linear-gradient(#FFC917, #FFC917),
+                    linear-gradient(#FFC917,#FFC917);           
+    background-repeat: no-repeat;
+    background-size: 70px 38%, 70% 10px, 70px 50%, 70% 10px, calc(75% - 20px) calc(75% - 20px);
+    background-position: left bottom, left bottom, right top, right top, 4px 4px;
+}
+
+.custom-button {
+    background-color:var(--sunglow);
+      color: var(--color-black);
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      line-height: 28px;
+      font-size: 16px;
+      padding: 0.5rem 1.5rem;
+      border-radius: 1px;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      margin-top: 6%;
+      border-radius: 60px;
+}
+
+@media screen and (max-width:768px) and (min-width:480px){
+    .app-landing{
+        background-color: white;
+        display:block;
+        padding: 4rem;
+    }
+    .h1-landing{
+        color: var(--dark-red);
+        font-size: 100px;
+    }
+    .h3-landing,
+    .h3-icon{
+        color: var(--dark-red);
+        font-size: 70px;
+    }
+    .h4-landing{
+        color: var(--dark-red);
+        font-size: 28px;
+    }
+    .p-landing
+    {
+        color: var(--dark-red);
+        font-size: 25px;
+        margin-top: -15%;
+    }
+    .app-wrapper-img img{
+        height: 85%;
+        width: 85%;
+        margin-top: 5%;
+    }
+    .bordes-img{
+        background-image: linear-gradient(white, white),
+                    linear-gradient(white, white),
+                    linear-gradient(white, white),
+                    linear-gradient(white,white);
+    }
+    .custom-button{
+        font-size: 20px;
+        line-height: 20px;
+    }
+}
+@media screen and (max-width:480px){
+    .app-landing{
+        background-color: white;
+        display: block;
+        padding: 4rem;
+    }
+    .h1-landing,
+    .h3-landing,
+    .h3-icon{
+        color: var(--dark-red);
+        font-size: 30px;
+    }
+    .h4-landing{
+        color: var(--dark-red);
+        font-size: 18px;
+    }
+    .p-landing
+    {
+        color: var(--dark-red);
+        font-size: 15px;
+        margin-top: -30%;
+    }
+    .app-wrapper-img img{
+        height: 95%;
+        width: 95%;
+    }
+    .bordes-img{
+        background-image: linear-gradient(white, white),
+                    linear-gradient(white, white),
+                    linear-gradient(white, white),
+                    linear-gradient(white,white);
+    }
+    .custom-button{
+        font-size: 10px;
+        line-height: 10px;
+    }
 }

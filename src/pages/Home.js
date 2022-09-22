@@ -10,7 +10,7 @@ import Footer from "../Components/Footer/Footer";
 const HomePage = () => {
     return (  
     <>
-      <CustomCarousel/>
+      <CustomCarousel className="col-lg-12 col-md-6 col-sm-3"/>
       <div className="mt-5 text-center pagina-text">
       <h4 className="text-center pagina-text mt-6">DE LOS MEJORES INGREDIENTES</h4>
       <span className="premium"><GiWheat className="bg-white text-sunglow"/>Nacen nuestras</span> <span className="text-sunglow burgers">Hamburguesas <GiWheat className="bg-sunglow text-white"/></span>

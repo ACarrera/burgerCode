@@ -1,5 +1,6 @@
 import { Button, Carousel } from "react-bootstrap";
 import styled from "styled-components";
+import '../CustomCarousel/CustomCarousel.css'
 
 
 const MyImg = styled.img `
@@ -9,13 +10,13 @@ object-position: center;
 `
 
 
-const CustomCarousel = ({images}) => {
+const CustomCarousel = ({}) => {
 
     return ( 
     <Carousel>
       <Carousel.Item>
         <MyImg
-          className="d-block w-100 "
+          className="d-block w-100 img-carousel"
           src="https://images.unsplash.com/photo-1582295523904-8ab53717447c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
           alt="Hambu restaurante"
         />
@@ -27,7 +28,7 @@ const CustomCarousel = ({images}) => {
       </Carousel.Item>
       <Carousel.Item>
         <MyImg
-          className="d-block w-100 "
+          className="d-block w-100 img-carousel "
           src="https://images.unsplash.com/photo-1583744514765-d815be1606cd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
           alt="hambu con papas"
         />
@@ -39,7 +40,7 @@ const CustomCarousel = ({images}) => {
       </Carousel.Item>
       <Carousel.Item>
         <MyImg
-          className="d-block w-100 "
+          className="d-block w-100 img-carousel "
           src="https://images.unsplash.com/photo-1571116213508-2a5017ab1324?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1332&q=80"
           alt="hambu con aros"
         />
