@@ -1,7 +1,7 @@
 .Cards-home{
     display: flex;
-    flex: 1 1;
-    justify-content: space-evenly;
+    flex: 1;
+    justify-content: space-between;
     align-items: center ;
     border-radius: 25px;
     margin: 4px;
@@ -16,4 +16,16 @@
 }
 .icons-home{
     font-size: 100px;
+    background-color: transparent;
+    color: var(--sunglow);
+}
+
+.contenedor-cartasHome {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+.contenedor-cartasHome > * {
+    margin: 5px;
 }
