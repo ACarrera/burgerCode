@@ -1,3 +1,6 @@
+.home-container::-webkit-scrollbar{
+        display: none;
+    }
 .burgers{
     text-decoration: underline;
     font-weight: bold;

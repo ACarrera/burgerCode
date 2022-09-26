@@ -17,7 +17,7 @@ const EditForm = ({ getUsers, handleCloseEdit, selected }) => {
       [e.target.name]: e.target.value,
     });
   };
-  const getUsuario = async () => {
+  const getUser = async () => {
     try {
       const response = await axiosInstance.get("/users/" + selected);
       setValues(response.data);
