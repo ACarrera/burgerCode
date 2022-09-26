@@ -1,0 +1,31 @@
+.Cards-home{
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+    align-items: center ;
+    border-radius: 25px;
+    margin: 4px;
+    cursor: pointer;
+    user-select: none;
+    width: 100%;
+}
+.card-ingredientes{
+    background-color: gainsboro;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 18px;
+}
+.icons-home{
+    font-size: 100px;
+    background-color: transparent;
+    color: var(--sunglow);
+}
+
+.contenedor-cartasHome {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+.contenedor-cartasHome > * {
+    margin: 5px;
+}

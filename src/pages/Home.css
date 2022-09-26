@@ -1,0 +1,12 @@
+.home-container::-webkit-scrollbar{
+        display: none;
+    }
+.burgers{
+    text-decoration: underline;
+    font-weight: bold;
+    font-size: 45px;
+}
+.premium{
+    font-weight: bold;
+    font-size: 45px;
+}

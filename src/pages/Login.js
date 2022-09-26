@@ -5,6 +5,7 @@ import { Form, Button } from "react-bootstrap";
 import "./Login.css";
 // import axiosInstance from "../config/axiosInstance";
 import RegisterModal from "../Components/RegisterModal/RegisterModal";
+import Footer from "../Components/Footer/Footer";
 
 function LoginForm() {
   const [showRegister, setShowRegister] = useState(false);

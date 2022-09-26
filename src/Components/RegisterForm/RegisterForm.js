@@ -1,8 +1,9 @@
+import { useEffect } from "react";
 import { useState } from "react";
 import { Form, Button } from "react-bootstrap";
 import axiosInstance from "../../config/axiosInstance";
 
-const RegisterForm = ({ getUsers, handleCloseRegister }) => {
+const RegisterForm = ({ getUsers, handleCloseRegister, }) => {
     const [values, setValues] = useState({
       email: "",
       nombre: "",
@@ -27,6 +28,12 @@ const RegisterForm = ({ getUsers, handleCloseRegister }) => {
       }
     };
   
+    useEffect(() => {
+      handleSubmit();
+    }, []);
+  
+
+
     return (
       <>
       <Form onSubmit={handleSubmit}>

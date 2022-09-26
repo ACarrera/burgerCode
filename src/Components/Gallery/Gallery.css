@@ -1,0 +1,138 @@
+.app-gallery{
+    display: flex;
+    flex-direction: row;
+
+    background: var(#fff);
+    padding: 4rem 0 2rem 6rem;
+
+}
+.hambu-gallery{
+    font-size: 150px;
+    padding-left: 32px;
+    position: relative; 
+    background-color: transparent;
+    color: var(--sunglow);
+    margin: 0;
+}
+
+.app-gallery-content{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+
+    min-width: 500px;
+    padding-left: 2rem;
+}
+.app-gallery-content h1{
+    font-size: 130px; 
+    line-height: 75%;   
+}
+
+.app-gallery-images{
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    max-width: 50%;
+    position: relative;
+}
+.app-gallery-images-container{
+    display: flex;
+    flex-direction: row;
+    width: max-content;
+    overflow-x: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
+}
+.app-gallery-images-container::-webkit-scrollbar{
+    display: none;
+}
+
+.app-gallery-images-card{
+    position: relative;
+    min-width: 301px;
+    height: 447px;
+    margin-right: 2rem;
+}
+
+.app-gallery-images-card img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 1;
+    transition: 0.5s ease;
+}
+
+.app-gallery-images-card:hover img{
+    opacity: 0.35;
+}
+
+.app-gallery-images-card:hover .gallery-image-icons{
+    opacity: 1;
+}
+
+.app-gallery-images-arrow{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 0 1rem;
+    position: absolute;
+    bottom: 5%;
+}
+
+.gallery-arrow-icons{
+    color: var(--dark-red);
+    font-size: 2rem;
+    cursor: pointer;
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+.gallery-arrow-icons:hover {
+    color: black;
+    
+}
+
+@media screen and (min-width:2000px){
+    .app-gallery-content{
+        min-width: 1000px;
+        padding-right: 4rem;
+    }
+    .app-gallery-images-card{
+        min-width: 400px;
+        height: 550px;
+    }
+}
+
+@media screen and (max-width:1150px){
+    .app-gallery{
+        flex-direction: column;
+    }
+    .app-gallery-images{
+        max-width: 100%;
+        margin: 5rem 0;
+    }
+}
+
+@media screen and (max-width:850px){
+    .app-gallery{
+        padding: 4rem 0 4rem 4rem;
+    }
+}
+
+@media screen and (max-width:650px){
+    .app-gallery{
+        padding: 4rem 0 4rem 2rem;
+    } 
+    .app-gallery-content{
+        min-width: 100%;
+    }
+    .app-gallery-images-card{
+        min-width: 240px;
+        height: 320px;
+    }
+}
