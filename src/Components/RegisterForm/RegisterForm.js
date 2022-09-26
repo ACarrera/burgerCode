@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Form, Button } from "react-bootstrap";
 import axiosInstance from "../../config/axiosInstance";
 
-const FormularioRegistro = ({ getUsuarios, handleCloseRegistro }) => {
+const RegisterForm = ({ getUsers, handleCloseRegister }) => {
     const [values, setValues] = useState({
       email: "",
       nombre: "",
@@ -21,7 +21,7 @@ const FormularioRegistro = ({ getUsuarios, handleCloseRegistro }) => {
       try {
         e.preventDefault();
         await axiosInstance.post("/usuarios", values);
-        getUsuarios();
+        getUsers();
       } catch (error) {
         alert("Error al cargar nuevo usuario");
       }
@@ -78,7 +78,7 @@ const FormularioRegistro = ({ getUsuarios, handleCloseRegistro }) => {
                         onChange={handleChange}
                         value={values.password} />
                 </Form.Group>
-                <Button variant="primary" type="submit" onClick={handleCloseRegistro}>
+                <Button variant="primary" type="submit" onClick={handleCloseRegister}>
                     Agregar
                 </Button>
             </Form>
@@ -86,4 +86,4 @@ const FormularioRegistro = ({ getUsuarios, handleCloseRegistro }) => {
     );
   };
 
-export default FormularioRegistro
+export default RegisterForm

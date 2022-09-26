@@ -8,7 +8,7 @@ const LandingPage = () => {
     <p className="text-darkred hamburguesa">HAMBURGUESA</p>
     <p>Ingredientes Especiales</p>
     <p>salsas, panes, verduras y mucho mas</p>
-    <button classNAme="text-white bg-sunglow"> INGRESAR</button>
+    <button className="text-white bg-sunglow"> INGRESAR</button>
     </div>
     <div >
     <img
