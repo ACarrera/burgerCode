@@ -7,7 +7,11 @@ const CardsCarta = () => {
     return ( 
     <div className="contenedor-cartas">
       {carta.map(element => {
-        return <CardCarta img={element.img} titulo = {element.titulo} descripcion = {element.descripcion} />
+        console.log(element)
+        return <CardCarta 
+          img={element.img} titulo = {element.titulo} descripcion = {element.descripcion}
+        />
+        
       })}
     </div>
 
