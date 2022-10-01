@@ -1,10 +1,12 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import UserProvider from './context/UserContext';
 import Header from "./Components/Header/Header";
 import Landing from "./pages/Landing";
 import Home from "./pages/Home";
-import Login from "./pages/Login";
+import LoginForm from "./pages/LoginPage";
 import Request from "./pages/Request";
 import Admin from "./pages/Admin";
+import UserTable from "./Components/UserTable/UserTable";
 
 function App() {
   return (
@@ -13,9 +15,10 @@ function App() {
       <Routes>
         <Route path="/" element={<Landing />} />
         <Route path="/home" element={<Home />} />
-        <Route path="/login" element={<Login />} />
+        <Route path="/login" element={<LoginForm />} />
         <Route path="/request" element={<Request />} />
         <Route path="/admin" element={<Admin />} />
+        <Route path="/UserTable" element={<UserTable />} />
       </Routes>
     </Router>
   );

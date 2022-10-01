@@ -1,25 +1,48 @@
-import { useState } from "react"
+import { useEffect } from "react";
+import { useState } from "react";
 
 
-const useForm = (initialState, submit)=>{
-  const [values,setValues] = useState(initialState);
+const useForm = (initialValues, submit,validations) =>{
+
+  const [values, setValues] = useState(initialValues);
+  const [errors, setErrors] = useState({});
+  const [submitting, setSubmitting] = useState(false)
+
+  useEffect(()=>{
+    if(submitting){
+      if(Object.keys(errors).length===0){
+        submit()
+      }
+      setSubmitting(false);
+      setTimeout(()=>{
+        setErrors({})
+      },1500)
+    }
+  },[errors])
 
   const handleChange = (e)=>{
     setValues({
       ...values,
-      [e.target.name] : e.target.value
+      [e.target.name]:e.target.value
     })
   }
 
-  const handleSubmit = ()=>{
-    submit()
+  const handleSubmit = async (e)=>{
+    e.preventDefault()
+    if(validations){
+      setErrors(validations(values));
+    }else{
+      setErrors({})
+    }
+    setSubmitting(true);
   }
 
-  return {
+  return{
     handleChange,
     handleSubmit,
     values,
-    setValues
+    errors
   }
 }
+
 export default useForm
