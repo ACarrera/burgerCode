@@ -1,5 +1,5 @@
 const { Router } = require('express');
-const { addMenu, getMenus, autocomplete } = require('../Components/TablaMenu/tablamenu.js');
+const { addMenu, getMenus, autocomplete } = require('../Components/MenuTable/menutable');
 const router = Router();
 
 router.post('/', addMenu);

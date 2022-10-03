@@ -1,5 +1,5 @@
 import React from "react";
-const menu = require("../ModalAgregar/Menu");
+const menu = require("../AddModal/Menu");
 import {
     Table,
     Button,
@@ -13,13 +13,13 @@ import {
 class App extends React.Component {
     state = {
         data: data,
-            modalActualizar: false,
-            modalInsertar: false,
+            refreshModal: false,
+            insertModal: false,
             form: {
                 id: "",
                 Nombre: "",
-                Estado: "",
-                Precio: "",
+                Estado: true("Disponible") || false("No disponible"),
+                Precio: Number,
                 Detalles: "",
                 Categoria: "",
             },
@@ -57,62 +57,62 @@ class App extends React.Component {
                 res.status(error.code || 500).json({message:error.message})
             }
         }
-        mostrarModalActualizar = (dato) => {
+        viewRefreshModal = (dato) => {
             this.setState({
             form: dato,
-            modalActualizar: true,
+            refreshModal: true,
         });
         };
-        cerrarModalActualizar = () => {
-            this.setState({ modalActualizar: false });
+        closeRefreshModal = () => {
+            this.setState({ refreshModal: false });
         };
-        mostrarModalInsertar = () => {
+        viewInsertModal = () => {
             this.setState({
-                modalInsertar: true,
+                insertModal: true,
             });
         };
-        cerrarModalInsertar = () => {
-            this.setState({ modalInsertar: false });
+        closeInsertModal = () => {
+            this.setState({ insertModal: false });
         };
-        editar = (dato) => {
-            var contador = 0;
-            var arreglo = this.state.data;
-            arreglo.map((registro) => {
+        edit = (dato) => {
+            var counter = 0;
+            var array = this.state.data;
+            array.map((registro) => {
             if (dato.id == registro.id) {
-                arreglo[contador].name = dato.name;
-                arreglo[contador].status = dato.status;
-                arreglo[contador].price = dato.price;
-                arreglo[contador].detail = dato.detail;
-                arreglo[contador].category = dato.category;
+                array[counter].name = dato.name;
+                array[counter].status = dato.status;
+                array[counter].price = dato.price;
+                array[counter].detail = dato.detail;
+                array[counter].category = dato.category;
             }
-            contador++;
+            counter++;
             });
-            this.setState({ data: arreglo, modalActualizar: false });
+            this.setState({ data: array, refreshModal: false });
         };
-        eliminar = (dato) => {
-            var opcion = window.confirm("Estás Seguro que deseas Eliminar el elemento "+dato.id);
-            if (opcion == true) {
-            var contador = 0;
-            var arreglo = this.state.data;
-            arreglo.map((registro) => {
+        delete = (dato) => {
+            var option = window.confirm("Estás Seguro que deseas Eliminar el elemento "+dato.id);
+            if (option == true) {
+            var counter = 0;
+            var array = this.state.data;
+            array.map((registro) => {
                 if (dato.id == registro.id) {
-                arreglo.splice(contador, 1);
+                array.splice(counter, 1);
                 }
-                contador++;
+                counter++;
             });
-            this.setState({ data: arreglo, modalActualizar: false });
+            this.setState({ data: array, refreshModal: false });
             }
         };
-        insertar= ()=>{
-            var valorNuevo= {...this.state.form};
-            valorNuevo.id=this.state.data.length+1;
-            var lista= this.state.data;
-            lista.push(valorNuevo);
-            this.setState({ modalInsertar: false, data: lista });
+        insert= ()=>{
+            var newValue= {...this.state.form};
+            newValue.id=this.state.data.length+1;
+            var list= this.state.data;
+            list.push(newValue);
+            this.setState({ insertModal: false, data: list });
         }
     }
 return(
-        <>
+        <menuTable>
             <Container>
             <br />
             <Button color="success" onClick={()=>this.addMenu()}>Crear</Button>
@@ -145,7 +145,7 @@ return(
                         >
                         Editar
                         </Button>{" "}
-                        <Button color="danger" onClick={()=> this.eliminar(dato)}>Eliminar</Button>
+                        <Button color="danger" onClick={()=> this.delete(dato)}>Eliminar</Button>
                     </td>
                     </tr>
                 ))}
@@ -189,7 +189,7 @@ return(
                 <input
                     className="form-control"
                     name="status"
-                    type="text"
+                    type="check-box"
                     onChange={this.handleChange}
                     value={this.state.form.status}
                 />
@@ -238,13 +238,13 @@ return(
             <ModalFooter>
                 <Button
                 color="primary"
-                onClick={() => this.editar(this.state.form)}
+                onClick={() => this.edit(this.state.form)}
                 >
                 Editar
                 </Button>
                 <Button
                 color="danger"
-                onClick={() => this.cerrarModalActualizar()}
+                onClick={() => this.closeRefreshModal()}
                 >
                 Cancelar
                 </Button>
@@ -332,19 +332,19 @@ return(
             <ModalFooter>
                 <Button
                 color="primary"
-                onClick={() => this.insertar()}
+                onClick={() => this.insert()}
                 >
                 Insertar
                 </Button>
                 <Button
                 className="btn btn-danger"
-                onClick={() => this.cerrarModalInsertar()}
+                onClick={() => this.closeInsertModal()}
                 >
                 Cancelar
                 </Button>
             </ModalFooter>
             </Modal>
-        </>
+        </menuTable>
         );
     
     export default App;
