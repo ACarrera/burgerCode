@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Request from "./pages/Request";
 import Admin from "./pages/Admin";
+import UserTable from "./Components/UserTable/UserTable";
 import Menu from "./pages/menu";
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/request" element={<Request />} />
         <Route path="/admin" element={<Admin />} />
+        <Route path="/UserTable" element={<UserTable />} />
         <Route path="/menu" element={<Menu />} />
       </Routes>
     </Router>
