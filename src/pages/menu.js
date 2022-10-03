@@ -1,6 +1,6 @@
-import menuTable from "./components/Menutable/MenuTable";
+import MenuTable from "./Components/MenuTable/MenuTable";
 const Menu = () => {
-    return <menuTable></menuTable>;
+    return <MenuTable></MenuTable>;
 };
 
 export default Menu;

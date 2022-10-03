@@ -10,6 +10,7 @@ import {
     FormGroup,
     ModalFooter,
     } from "reactstrap";
+import App from "../../App";
 class App extends React.Component {
     state = {
         data: data,
@@ -112,7 +113,7 @@ class App extends React.Component {
         }
     }
 return(
-        <menuTable>
+        <MenuTable>
             <Container>
             <br />
             <Button color="success" onClick={()=>this.addMenu()}>Crear</Button>
@@ -344,7 +345,7 @@ return(
                 </Button>
             </ModalFooter>
             </Modal>
-        </menuTable>
+        </MenuTable>
         );
     
     export default App;
