@@ -6,7 +6,7 @@ import Login from "./pages/Login";
 import Request from "./pages/Request";
 import Admin from "./pages/Admin";
 import UserTable from "./Components/UserTable/UserTable";
-import Menu from "./pages/menu";
+import Menu from "./pages/Menu";
 
 function App() {
   return (
