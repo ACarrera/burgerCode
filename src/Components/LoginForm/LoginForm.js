@@ -1,23 +1,29 @@
+import { useEffect } from 'react';
 import { useContext } from 'react';
 import { FloatingLabel, Form, Button, Alert } from 'react-bootstrap';
-import {BiUserPin} from 'react-icons/bi'
+import { useNavigate } from 'react-router-dom';
 import axiosInstance from '../../config/axiosInstance';
 import { LOGIN_INITIAL_VALUES } from '../../constants';
 import { UserContext } from '../../context/UserContext';
 import { validationLogin } from '../../helpers/validations';
 import useForm from '../../hooks/useForm';
-import './LoginForm.css'
+// import './LoginForm.css'
 
 const LoginForm = () => {
-  const {login} = useContext(UserContext);
-  
+  const {login, authenticated} = useContext(UserContext);
+  const navigate = useNavigate();
   const {values, handleChange, handleSubmit, errors} = useForm(LOGIN_INITIAL_VALUES,login, validationLogin);
+
+  useEffect(()=>{
+    if(authenticated){
+      navigate('/home');
+    }
+  },[authenticated])
   
   return ( 
     <>
-    <div className="login-portada">
+    <div className="container pt-5 login-portada">
       <div className="login-portada-text">
-        <BiUserPin className="login-icon" />
         <form onSubmit={handleSubmit}>
           <FloatingLabel
             controlId="floatingInput"
@@ -43,9 +49,9 @@ const LoginForm = () => {
               required
             />
           </FloatingLabel>
-          <Button className="primary-button" type="submit"> Ingresar</Button>
+          <Button className="primary-button pt-2" type="submit"> Ingresar</Button>
           {
-            Object.keys(errors).length!=0?
+            Object.keys(errors).length!==0?
               Object.values(errors).map(error=> <Alert variant='danger'>{error}</Alert>)
               :
               null
@@ -54,6 +60,7 @@ const LoginForm = () => {
         </form>
       </div>
     </div>
+    <div>Aqui va la imagen. no olvidar de usar el col</div>
   </>
   );
 }

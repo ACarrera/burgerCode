@@ -1,5 +1,5 @@
-/* .login-portada{
-    background-image: url('./../../assets/img/login-background.avif');
+.login-portada{
+    /* background-image: url('./../../assets/img/login-background.avif'); */
     background-position: center;
     height: 100vh;
     background-size: cover;
@@ -20,4 +20,4 @@
   }
   .login-input{
     width: 50vw !important;
-  } */
+  }
