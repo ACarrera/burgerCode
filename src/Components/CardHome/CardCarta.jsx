@@ -4,7 +4,7 @@ import {Card} from "react-bootstrap"
 
 const CardCarta = ({img,titulo,descripcion}) => {
   return (
-    <Card >
+    <Card className='card border-0'>
       <Card.Img  className="imagenes-carta" variant="top" src={img} />
       <Card.Body>
         <Card.Title>{titulo}</Card.Title>
