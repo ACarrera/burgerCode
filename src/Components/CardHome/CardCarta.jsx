@@ -11,6 +11,7 @@ const CardCarta = ({img,titulo,descripcion}) => {
         <Card.Text className='burger-cards'>
           {descripcion}
         </Card.Text>
+        <button type="button" className="custom-button card-text">Agregar al carrito</button>
       </Card.Body>
     </Card>
   )
