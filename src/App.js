@@ -7,7 +7,7 @@ import LoginPage from "./pages/LoginPage";
 import Request from "./pages/Request";
 import Admin from "./pages/Admin";
 import UserTable from "./Components/UserTable/UserTable";
-import Menu from "./pages/Menu";
+import menu from "./pages/menu";
 
 function App() {
   return (
@@ -21,7 +21,7 @@ function App() {
         <Route path="/request" element={<Request />} />
         <Route path="/admin" element={<Admin />} />
         <Route path="/UserTable" element={<UserTable />} />
-        <Route path="/menu" element={<Menu />} />
+        <Route path="/menu" element={<menu />} />
       </Routes>
       </UserProvider>
     </Router>

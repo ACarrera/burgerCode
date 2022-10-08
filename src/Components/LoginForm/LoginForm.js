@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { useState } from 'react';
 import { useContext } from 'react';
 import { FloatingLabel, Form, Button, Alert } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
@@ -7,12 +8,29 @@ import { LOGIN_INITIAL_VALUES } from '../../constants';
 import { UserContext } from '../../context/UserContext';
 import { validationLogin } from '../../helpers/validations';
 import useForm from '../../hooks/useForm';
-// import './LoginForm.css'
+import useMediaQuery from '../../hooks/useMediaQuery';
+import RegisterModal from '../RegisterModal/RegisterModal';
+import './LoginForm.css'
 
 const LoginForm = () => {
+  const {width} = useMediaQuery();
+
   const {login, authenticated} = useContext(UserContext);
   const navigate = useNavigate();
   const {values, handleChange, handleSubmit, errors} = useForm(LOGIN_INITIAL_VALUES,login, validationLogin);
+
+  const [showAdd, setShowAdd] = useState(false);
+  const [users, setUsers] = useState([]);
+  const handleCloseAdd = () => setShowAdd(false);
+  const handleShowAdd = () => setShowAdd(true);
+  const getUsers = async () => {
+    try {
+      const response = await axiosInstance.get("/users");
+      setUsers(response.data);
+    } catch (error) {
+      alert("error al traer los usuarios");
+    }
+  };
 
   useEffect(()=>{
     if(authenticated){
@@ -22,8 +40,8 @@ const LoginForm = () => {
   
   return ( 
     <>
-    <div className="container pt-5 login-portada">
-      <div className="login-portada-text">
+    <div className="container pt-5 login-portada col d-flex justify-content-around align-items-center">
+      <div className="login-portada-text col-6">
         <form onSubmit={handleSubmit}>
           <FloatingLabel
             controlId="floatingInput"
@@ -33,7 +51,7 @@ const LoginForm = () => {
             <Form.Control
               type="email"
               placeholder="nombre@ejemplo.com"
-              className="login-input w-100"
+              className="w-100"
               onChange={handleChange}
               name='email'
               required
@@ -43,13 +61,12 @@ const LoginForm = () => {
             <Form.Control
               type="password"
               placeholder="Contraseña"
-              className="login-input"
               onChange={handleChange}
               name='password'
               required
             />
           </FloatingLabel>
-          <Button className="primary-button pt-2" type="submit"> Ingresar</Button>
+          <Button className="mt-2 btn-color" type="submit">Ingresar</Button>
           {
             Object.keys(errors).length!==0?
               Object.values(errors).map(error=> <Alert variant='danger'>{error}</Alert>)
@@ -57,10 +74,23 @@ const LoginForm = () => {
               null
 
           }
+        <Button className="mt-2 ms-2 btn-color" type="submit">Registrarse
+        <RegisterModal
+          handleCloseAdd={handleCloseAdd}
+          showAdd={showAdd}
+          getUsers={getUsers}
+        />
+        </Button>
         </form>
       </div>
+      {width>992?
+      <div className='container col-6 d-flex burger-img justify-content-end'> 
+      <img src='https://images.unsplash.com/photo-1550547660-d9450f859349?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8aGFtYnVyZ3Vlc2F8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60'></img>
+      </div>
+      :
+      <div></div>
+    }
     </div>
-    <div>Aqui va la imagen. no olvidar de usar el col</div>
   </>
   );
 }

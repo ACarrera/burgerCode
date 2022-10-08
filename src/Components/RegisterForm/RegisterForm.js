@@ -6,10 +6,10 @@ import axiosInstance from "../../config/axiosInstance";
 const RegisterForm = ({ getUsers, handleCloseRegister, }) => {
     const [values, setValues] = useState({
       email: "",
-      nombre: "",
-      apellido: "",
-      direccion: "",
-      telefono: 0,
+      name: "",
+      lastname: "",
+      adress: "",
+      phone: 0,
     });
     const handleChange = (e) => {
       setValues({
