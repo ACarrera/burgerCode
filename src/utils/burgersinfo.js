@@ -7,7 +7,7 @@ import {images} from '../constants/images';
 
 export const carta = [
     {
-        img: "https://images.unsplash.com/photo-1555658094-ca794654362c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mjh8fGhhbWJ1cmd1ZXNhcyUyMGNhc2VyYXN8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
+        img: images.burgermenu0,
         alt: 'Blue BurgerCode',
         titulo: 'Blue burgercode',
         descripcion: 'Burger de carne vacuna, queso azul, tomate, cebolla y pepino.'

@@ -6,16 +6,19 @@ import burgermenu2 from '../assets/burgermenu2.jpg';
 import burgermenu3 from '../assets/burgermenu3.jpg';
 import burgermenu4 from '../assets/burgermenu4.jpg';
 import burgermenu5 from '../assets/burgermenu5.jpg';
+import burgermenu0 from '../assets/burgermenu0.avif';
 
 export const images = {
   burger1: burger1,
   burger2: burger2,
   burger3: burger3,
+  burgermenu0: burgermenu0,
   burgermenu1: burgermenu1,
   burgermenu2: burgermenu2,
   burgermenu3: burgermenu3,
   burgermenu4: burgermenu4,
   burgermenu5: burgermenu5,
+  
 };
 
 //  default images
