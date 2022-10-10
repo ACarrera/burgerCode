@@ -14,7 +14,7 @@ const Header = () => {
   return (
     <Navbar className='bg-yellow' expand="lg">
       <Container>
-        <Navbar.Brand href="#home" className='logo-text navbar-height'><GiHamburger className='bg-yellow text-darkred logo-height' />  BURGERCODE</Navbar.Brand>
+        <Navbar.Brand href="#home" className=''><GiHamburger className='bg-yellow text-darkred logo-height' />  BURGERCODE</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" className='border border-light bg-yellow text-darkred'>
           <FaHamburger className='bg-darkred logo-toggle' />
         </Navbar.Toggle>

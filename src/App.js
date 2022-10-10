@@ -5,6 +5,7 @@ import Landing from "./pages/Landing";
 import Home from "./pages/Home";
 import LoginPage from "./pages/LoginPage";
 import Request from "./pages/Request";
+import PrivateRoute from "./routes/PrivateRoute";
 import Admin from "./pages/Admin";
 import UserTable from "./Components/UserTable/UserTable";
 import menu from "./pages/menu";
@@ -16,7 +17,14 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Landing />} />
-        <Route path="/home" element={<Home />} />
+        <Route
+            path="/home"
+            element={
+              <PrivateRoute>
+                <Home />
+              </PrivateRoute>
+            }
+          />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/request" element={<Request />} />
         <Route path="/admin" element={<Admin />} />
