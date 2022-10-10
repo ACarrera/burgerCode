@@ -19,7 +19,7 @@ const LoginForm = () => {
   const navigate = useNavigate();
   const {values, handleChange, handleSubmit, errors} = useForm(LOGIN_INITIAL_VALUES,login, validationLogin);
 
-  const [coins, setUsers] = useState(null);
+  const [users, setUsers] = useState(null);
   const [show, setShow] = useState(false);
   const handleShow = () => setShow(true);
 
@@ -83,8 +83,8 @@ const LoginForm = () => {
         </form>
       </div>
       {width>992?
-      <div className='container col-6 d-flex burger-img justify-content-end'> 
-      <img src='https://images.unsplash.com/photo-1550547660-d9450f859349?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8aGFtYnVyZ3Vlc2F8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60'></img>
+      <div className='container col-6 d-flex justify-content-end'> 
+      <img className='wrapper-img' src='https://images.unsplash.com/photo-1550547660-d9450f859349?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8aGFtYnVyZ3Vlc2F8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60'></img>
       </div>
       :
       <div></div>
