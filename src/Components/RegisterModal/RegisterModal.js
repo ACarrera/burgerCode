@@ -1,12 +1,14 @@
 import { Button, FloatingLabel, Form, Modal } from "react-bootstrap";
 import axiosInstance from "../../config/axiosInstance";
+import validationRegister from '../../helpers/validations';
 import { ADD_USER_VALUES } from "../../constants";
 import useForm from "../../hooks/useForm";
 
 const RegisterModal = ({show, setShow, getUsers}) => {
   const handleClose = () => setShow(false);
   
-  const UserRegister = async()=>{
+
+  const validationRegister = async()=>{
     try {
       await axiosInstance.post('/users',values);
       getUsers()
@@ -14,7 +16,7 @@ const RegisterModal = ({show, setShow, getUsers}) => {
       alert('Error al agregar usuario')
     }
   }
-  const {handleChange, handleSubmit, values} = useForm(ADD_USER_VALUES,UserRegister);
+  const {handleChange, handleSubmit, values} = useForm(ADD_USER_VALUES,validationRegister);
 
 
   return (
