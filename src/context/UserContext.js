@@ -10,7 +10,7 @@ const UserProvider = ({children})=>{
 
   const login = async(values)=>{
     try {
-      const response = await axiosInstance.post('/users/login',values);
+      const response = await axiosInstance.post('/users/login',values);  //'/users/auth'
       const data = response.data;
       console.log(data.token);
       setUser(data.user)
@@ -25,7 +25,7 @@ const UserProvider = ({children})=>{
       setUser(null)
       setToken(null)
       setAuthenticated(false);
-      alert(`Error en la conexión. Motivo: ` + error.response.data.message);
+      alert(`Error en la conexión: ` + error.response.data.message);
     }
   }
 
@@ -48,7 +48,7 @@ const UserProvider = ({children})=>{
       if(localStorage.getItem('token')){
         localStorage.removeItem('token');
       }
-      alert('Error. Motivo: Falla en la autenticación');
+      alert('Error: Falla en la autenticación');
     }
   }
 

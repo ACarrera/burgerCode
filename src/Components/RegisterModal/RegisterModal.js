@@ -61,6 +61,18 @@ const RegisterModal = ({show, setShow, getUsers}) => {
               required
             />
           </FloatingLabel>
+          <FloatingLabel
+            controlId="floatingInput"
+            label="Contraseña"
+            className="mb-3 w-100"
+          >
+            <Form.Control
+              type="password"
+              onChange={handleChange}
+              name='password'
+              required
+            />
+          </FloatingLabel>
         </Modal.Body>
           <Button variant="primary" type="submit" className="m-3"onClick={handleClose}>
             Registarse
