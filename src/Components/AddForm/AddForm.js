@@ -6,7 +6,7 @@ const AddForm = ({ getUsers, handleCloseAdd }) => {
   const [values, setValues] = useState({
     email: "",
     name: "",
-    lastname: "",
+    lastName: "",
     address: "",
     phone: 0,
   });
@@ -60,7 +60,7 @@ const AddForm = ({ getUsers, handleCloseAdd }) => {
         <Form.Label>Dirección</Form.Label>
         <Form.Control
           type="text"
-          name="direccion"
+          name="address"
           onChange={handleChange}
           value={values.address}
         />
@@ -70,7 +70,7 @@ const AddForm = ({ getUsers, handleCloseAdd }) => {
         <Form.Label>Telefono</Form.Label>
         <Form.Control
           type="number"
-          name="telefono"
+          name="phone"
           onChange={handleChange}
           value={values.phone}
         />
