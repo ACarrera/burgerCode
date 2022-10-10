@@ -19,8 +19,20 @@ const LoginForm = () => {
   const navigate = useNavigate();
   const {values, handleChange, handleSubmit, errors} = useForm(LOGIN_INITIAL_VALUES,login, validationLogin);
 
+  const [coins, setUsers] = useState(null);
   const [show, setShow] = useState(false);
   const handleShow = () => setShow(true);
+
+  const getUsers = async()=>{
+    try {
+      const response = await axiosInstance.get('/users');
+      console.log(response.data);
+      setUsers(response.data.users)
+    } catch (error) {
+      alert('Error al traer los usuarios');
+    }
+  }
+
 
 
   useEffect(()=>{
@@ -67,7 +79,7 @@ const LoginForm = () => {
           }
         <Button className="mt-2 btn-color" type="submit" onClick={handleShow}>Registrarse
         </Button>
-        <RegisterModal show={show} setShow={setShow}/>
+        <RegisterModal show={show} setShow={setShow} getUsers={getUsers}/>
         </form>
       </div>
       {width>992?
