@@ -9,7 +9,7 @@ import { UserContext } from '../../context/UserContext';
 import { validationLogin } from '../../helpers/validations';
 import useForm from '../../hooks/useForm';
 import useMediaQuery from '../../hooks/useMediaQuery';
-import RegisterModal from '../RegisterModal/RegisterModal';
+import RegisterModal from '../RegisterModal/RegisterModal'
 import './LoginForm.css'
 
 const LoginForm = () => {
@@ -19,18 +19,9 @@ const LoginForm = () => {
   const navigate = useNavigate();
   const {values, handleChange, handleSubmit, errors} = useForm(LOGIN_INITIAL_VALUES,login, validationLogin);
 
-  const [showAdd, setShowAdd] = useState(false);
-  const [users, setUsers] = useState([]);
-  const handleCloseAdd = () => setShowAdd(false);
-  const handleShowAdd = () => setShowAdd(true);
-  const getUsers = async () => {
-    try {
-      const response = await axiosInstance.get("/users");
-      setUsers(response.data);
-    } catch (error) {
-      alert("error al traer los usuarios");
-    }
-  };
+  const [show, setShow] = useState(false);
+  const handleShow = () => setShow(true);
+
 
   useEffect(()=>{
     if(authenticated){
@@ -66,7 +57,7 @@ const LoginForm = () => {
               required
             />
           </FloatingLabel>
-          <Button className="mt-2 btn-color" type="submit">Ingresar</Button>
+          <Button className="mt-2 me-2 btn-color" type="submit">Ingresar</Button>
           {
             Object.keys(errors).length!==0?
               Object.values(errors).map(error=> <Alert variant='danger'>{error}</Alert>)
@@ -74,13 +65,9 @@ const LoginForm = () => {
               null
 
           }
-        <Button className="mt-2 ms-2 btn-color" type="submit">Registrarse
-        <RegisterModal
-          handleCloseAdd={handleCloseAdd}
-          showAdd={showAdd}
-          getUsers={getUsers}
-        />
+        <Button className="mt-2 btn-color" type="submit" onClick={handleShow}>Registrarse
         </Button>
+        <RegisterModal show={show} setShow={setShow}/>
         </form>
       </div>
       {width>992?
