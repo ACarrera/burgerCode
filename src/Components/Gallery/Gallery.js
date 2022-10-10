@@ -2,6 +2,7 @@ import React from 'react';
 import {BsArrowLeftShort, BsArrowRightShort} from 'react-icons/bs';
 import {FaHamburger} from 'react-icons/fa'
 import {images} from '../../constants/images';
+import Carousel from 'react-bootstrap/Carousel';
 
 import './Gallery.css';
 
@@ -39,8 +40,8 @@ import './Gallery.css';
               ))}
           </div>
           <div className='app-gallery-images-arrow'>
-              <BsArrowLeftShort className='gallery-arrow-icons' onClick={()=> scroll('left')} / >
-              <BsArrowRightShort className='gallery-arrow-icons' onClick={()=> scroll('right')} / >
+              <BsArrowLeftShort className='gallery-arrow-icons' onClick={()=> scroll('left')}  />
+              <BsArrowRightShort className='gallery-arrow-icons' onClick={()=> scroll('right')} />
           </div>
       </div>
     </div>
