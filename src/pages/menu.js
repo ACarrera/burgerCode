@@ -11,14 +11,15 @@ import {
     ModalBody,
     FormGroup,
     ModalFooter,
+    Input,
     } from "reactstrap";
     const menus = [
-        { id: 1, name: "Burger elite", status: "Disponible", price: 800, details: "Hambuerguesa Doble con cheddar y bacon y con papas y gaseosa", category: "Hamburguesa Premiun" },
-        { id: 2, name: "Burger elite", status: "Disponible", price: 800, details: "Hambuerguesa Doble con cheddar y bacon y con papas y gaseosa", category: "Hamburguesa Premiun" },
-        { id: 3, name: "Burger elite", status: "Disponible", price: 800, details: "Hambuerguesa Doble con cheddar y bacon y con papas y gaseosa", category: "Hamburguesa Premiun" },
-        { id: 4, name: "Burger elite", status: "Disponible", price: 800, details: "Hambuerguesa Doble con cheddar y bacon y con papas y gaseosa", category: "Hamburguesa Premiun" },
-        { id: 5, name: "Burger elite", status: "Disponible", price: 800, details: "Hambuerguesa Doble con cheddar y bacon y con papas y gaseosa", category: "Hamburguesa Premiun" },
-        { id: 6, name: "Burger elite", status: "Disponible", price: 800, details: "Hambuerguesa Doble con cheddar y bacon y con papas y gaseosa", category: "Hamburguesa Premiun" },
+        { id: 1, name: "Burger elite", status: "Disponible", price: 800, details: "Hambuerguesa Doble con cheddar y bacon y con papas y gaseosa", category: "Hamburgesa Premiun" },
+        { id: 2, name: "Burger elite", status: "Disponible", price: 800, details: "Hambuerguesa Doble con cheddar y bacon y con papas y gaseosa", category: "Hamburgesa Premiun" },
+        { id: 3, name: "Burger elite", status: "Disponible", price: 800, details: "Hambuerguesa Doble con cheddar y bacon y con papas y gaseosa", category: "Hamburgesa Premiun" },
+        { id: 4, name: "Burger elite", status: "Disponible", price: 800, details: "Hambuerguesa Doble con cheddar y bacon y con papas y gaseosa", category: "Hamburgesa Premiun" },
+        { id: 5, name: "Burger elite", status: "Disponible", price: 800, details: "Hambuerguesa Doble con cheddar y bacon y con papas y gaseosa", category: "Hamburgesa Premiun" },
+        { id: 6, name: "Burger elite", status: "Disponible", price: 800, details: "Hambuerguesa Doble con cheddar y bacon y con papas y gaseosa", category: "Hamburgesa Premiun"},
         ];
 class App extends React.Component {
     state = {
@@ -102,15 +103,16 @@ class App extends React.Component {
             <Button color="success" onClick={()=>this.viewInsertModal()}>Crear</Button>
             <br />
             <br />
-            <Table>
+            <Table hover size="sm" responsive>
                 <thead>
                 <tr>
                     <th>Id</th>
                     <th>Nombre</th>
                     <th>Estado</th>
-                    <th>precio</th>
-                    <th>detalles</th>
-                    <th>categoria</th>
+                    <th>Precio</th>
+                    <th>Detalles</th>
+                    <th>Categoria</th>
+                    <th>Acciones</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -129,6 +131,8 @@ class App extends React.Component {
                         >
                         Editar
                         </Button>{" "}
+                        </td>
+                    <td>
                         <Button color="danger" onClick={()=> this.delete(dato)}>Eliminar</Button>
                     </td>
                     </tr>
@@ -197,11 +201,11 @@ class App extends React.Component {
                     Detalles: 
                 </label>
                 <input
-                    className="form-control"
-                    name="detail"
+                    className="form-control details"
+                    name="details"
                     type="text"
                     onChange={this.handleChange}
-                    value={this.state.form.detail}
+                    value={this.state.form.details}
                 />
                 </FormGroup>
 
@@ -209,13 +213,30 @@ class App extends React.Component {
                 <label>
                     Categoria: 
                 </label>
-                <input
+                <Input
                     className="form-control"
                     name="category"
-                    type="text"
+                    type="select"
                     onChange={this.handleChange}
                     value={this.state.form.category}
-                />
+                    >
+                        <option>
+                            "Hambuerguesa Premiun"
+                        </option>
+                        <option>
+                            "Hambuerguesa Deluxe"
+                        </option>
+                        <option>
+                            "Agregados Premiun"
+                        </option>
+                        <option>
+                            "Hambuerguesa Comun"
+                        </option>
+                        <option>
+                            "Agregados Comunes"
+                        </option>
+                    
+                </Input>
                 </FormGroup>
 
             </ModalBody>
@@ -293,8 +314,8 @@ class App extends React.Component {
                     Detalles: 
                 </label>
                 <input
-                    className="form-control"
-                    name="detail"
+                    className="form-control details" 
+                    name="details"
                     type="text"
                     onChange={this.handleChange}
                 />
@@ -304,12 +325,28 @@ class App extends React.Component {
                 <label>
                     Categoria: 
                 </label>
-                <input
+                <Input
                     className="form-control"
                     name="category"
-                    type="text"
+                    type="select"
                     onChange={this.handleChange}
-                />
+                    >
+                    <option>
+                    "Hambuerguesa Premiun"
+                </option>
+                <option>
+                    "Hambuerguesa Deluxe"
+                </option>
+                <option>
+                    "Agregados Premiun"
+                </option>
+                <option>
+                    "Hambuerguesa Comun"
+                </option>
+                <option>
+                    "Agregados Comunes"
+                </option>
+                </Input>
                 </FormGroup>
 
             </ModalBody>
