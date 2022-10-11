@@ -43,14 +43,16 @@ const LoginForm = () => {
   
   return ( 
     <>
-    <div className="container pt-5 login-portada col d-flex justify-content-around align-items-center">
+    <div className='container mt-3'>
+    <h4 className='container d-flex justify-content-center'>Para ordenar tu burger primero inicia sesión.</h4>
+    <div className="container mt-3 login-portada col d-flex justify-content-around align-items-center">
       <div className="login-portada-text col-6">
         <form onSubmit={handleSubmit}>
           <FloatingLabel
             controlId="floatingInput"
             label="Dirección de correo electrónico"
             className="mb-3 w-100"
-          >
+            >
             <Form.Control
               type="email"
               placeholder="nombre@ejemplo.com"
@@ -58,7 +60,7 @@ const LoginForm = () => {
               onChange={handleChange}
               name='email'
               required
-            />
+              />
           </FloatingLabel>
           <FloatingLabel controlId="floatingPassword" label="Contraseña">
             <Form.Control
@@ -72,10 +74,10 @@ const LoginForm = () => {
           <Button className="mt-2 me-2 btn-color" type="submit">Ingresar</Button>
           {
             Object.keys(errors).length!==0?
-              Object.values(errors).map(error=> <Alert variant='danger'>{error}</Alert>)
-              :
-              null
-
+            Object.values(errors).map(error=> <Alert variant='danger'>{error}</Alert>)
+            :
+            null
+            
           }
         <Button className="mt-2 btn-color" type="submit" onClick={handleShow}>Registrarse
         </Button>
@@ -89,6 +91,7 @@ const LoginForm = () => {
       :
       <div></div>
     }
+    </div>
     </div>
   </>
   );

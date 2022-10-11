@@ -8,7 +8,7 @@ const LandingPage = () => (
             <h1 className="app-landing-h1 card-text h1-landing">burger</h1>
             <h4 className="card-text h4-landing" style={{margin: '2rem 0'}}>INGREDIENTES ESPECIALES</h4>
             <p className="card-text p-landing">Carne de calidad, verduras frescas y pan casero recién salidos del horno.</p>
-            <button type="button" className="custom-button card-text">Quiero mi Burger</button>
+            {/* <button type="button" className="custom-button card-text">Quiero mi Burger</button> */}
         </div>
         <div className='bordes-img'>
             <div className="app-wrapper-img">
