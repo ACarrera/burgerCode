@@ -1,6 +1,8 @@
 import CustomCarousel from "../Components/Gallery/Gallery";
 import {GiWheat,} from "react-icons/gi";
-import './Home.css'
+import {useContext} from "react";
+import {UserContext} from '../context/UserContext';
+import './Home.css';
 import CardsHome from "../Components/CardHome/CardsHome";
 import CardsCarta from "../Components/CardHome/CardsCarta";
 import Footer from "../Components/Footer/Footer";
@@ -8,8 +10,11 @@ import Footer from "../Components/Footer/Footer";
 
 
 const HomePage = () => {
+  const {logout} = useContext(UserContext);
+
     return (  
     <>
+    <button className="btn" onClick={logout}> Cerrar sesión</button>
       <div className="home-container">
         <CustomCarousel/>
         <div className="mt-5 text-center pagina-text">
