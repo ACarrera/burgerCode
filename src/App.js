@@ -25,8 +25,15 @@ function App() {
               </PrivateRoute>
             }
           />
+          <Route
+            path="/request"
+            element={
+              <PrivateRoute>
+                <Request />
+              </PrivateRoute>
+            }
+          />
         <Route path="/login" element={<LoginPage />} />
-        <Route path="/request" element={<Request />} />
         <Route path="/admin" element={<Admin />} />
         <Route path="/UserTable" element={<UserTable />} />
         <Route path="/menu" element={<menu />} />
