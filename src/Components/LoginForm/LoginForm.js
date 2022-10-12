@@ -44,7 +44,8 @@ const LoginForm = () => {
   return ( 
     <>
     <div className='container mt-3'>
-    <h4 className='container d-flex justify-content-center text-color'>Para ordenar tu burger primero inicia sesión.</h4>
+      <a href='https://burgercode.netlify.app' className=' mt-2 btn btn-color'>Página principal</a>
+    <h4 className='mt-1 d-flex justify-content-start text-color'>Para ordenar tu burger primero inicia sesión.</h4>
     <div className="container mt-3 login-portada col d-flex justify-content-around align-items-center">
       <div className="login-portada-text col-6">
         <form onSubmit={handleSubmit}>
