@@ -8,7 +8,7 @@ import Request from "./pages/Request";
 import PrivateRoute from "./routes/PrivateRoute";
 import Admin from "./pages/Admin";
 import UserTable from "./Components/UserTable/UserTable";
-import menu from "./pages/menu";
+import Menu from "./pages/Menu";
 
 function App() {
   return (
@@ -29,7 +29,7 @@ function App() {
         <Route path="/request" element={<Request />} />
         <Route path="/admin" element={<Admin />} />
         <Route path="/UserTable" element={<UserTable />} />
-        <Route path="/menu" element={<menu />} />
+        <Route path="/Menu" element={<Menu />} />
       </Routes>
       </UserProvider>
     </Router>

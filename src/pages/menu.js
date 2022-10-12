@@ -2,6 +2,7 @@ import React from "react";
 import "./Menu.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Footer from "../Components/Footer/Footer";
+import axiosInstance from "../config/axiosInstance";
 import {
     Table,
     Button,
@@ -23,7 +24,7 @@ import {
         ];
 class App extends React.Component {
     state = {
-        data: menus,
+        data: axiosInstance.get("/menu"),
         refreshModal: false,
         insertModal: false,
         form: {
