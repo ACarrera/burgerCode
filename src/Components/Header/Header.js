@@ -19,7 +19,7 @@ const Header = () => {
           <FaHamburger className='bg-darkred logo-toggle' />
         </Navbar.Toggle>
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="d-flex text-right">
+        <Nav className="d-flex text-right">
           {
               user?
             <>
