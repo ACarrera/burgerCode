@@ -1,6 +1,7 @@
-import React from "react";
-import "./AdmPedidos.css"; //no se esta conectando
+import {useState,useEffect} from "react";
+import "./AdmPedidos.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import axios from "axios";
 import {
   Table,
   Button,
@@ -12,14 +13,15 @@ import {
   ModalFooter,
 } from "reactstrap";
 
-// los pedidos que van entrando se van cargando aqui
+
+
 const data = [
-  { id: 1, pedido: "hambu xxl", direccion: "Av. Aconquija 289" , familia: "Martinez"},
-  { id: 2, pedido: "hambu xxl", direccion: "Av. Aconquija 289" , familia: "Perez"},
-  { id: 3, pedido: "hambu xxl", direccion: "Av. Aconquija 289" , familia: "Gomez"},
-  { id: 4, pedido: "hambu xxl", direccion: "Av. Aconquija 289" , familia: "Parra"},
-  { id: 5, pedido: "hambu xxl", direccion: "Av. Aconquija 289" , familia: "Aguero"},
-  { id: 6, pedido: "hambu xxl", direccion: "Av. Aconquija 289" , familia: "Lopez"},
+  { id: 1, name: "hambu xxl", description: " doble con papas", price:"$1200" },
+  { id: 2, name: "hambu xxl", description: "doble con bacon ", price:"$1200" },
+  { id: 3, name: "hambu xxl", description: "doble con papas ", price:"$1200" },
+  { id: 4, name: "hambu xxl", description: "doble con bacon ", price:"$1200" },
+  { id: 5, name: "hambu xxl", description: "oble con papas ", price:"$1200"},
+  { id: 6, name: "hambu xxl", description: "doble con bacon", price:"$1200" },
 ];
 
 class App extends React.Component {
@@ -29,9 +31,9 @@ class App extends React.Component {
     modalInsertar: false,
     form: {
       id: "",
-      pedido: "",
-      direccion: "",
-      familia: "",
+      name: "",
+      description: "",
+      price: "",
     },
   };
 
@@ -56,14 +58,14 @@ class App extends React.Component {
     this.setState({ modalInsertar: false });
   };
 
-  //por el momento estaria la funcion de editar pero se cambiara por la funcion de aceptar el pedido.
   editar = (dato) => {
     var contador = 0;
     var arreglo = this.state.data;
     arreglo.map((registro) => {
       if (dato.id == registro.id) {
-        arreglo[contador].personaje = dato.personaje;
-        arreglo[contador].anime = dato.anime;
+        arreglo[contador].name = dato.name;
+        arreglo[contador].description = dato.description;
+        arreglo[contador].price = dato.price;
       }
       contador++;
     });
@@ -71,7 +73,7 @@ class App extends React.Component {
   };
 
   eliminar = (dato) => {
-    var opcion = window.confirm("Estás Seguro que deseas Eliminar el elemento "+dato.id);
+    var opcion = window.confirm("Estás Seguro que deseas Eliminar el Pedido "+dato.id);
     if (opcion == true) {
       var contador = 0;
       var arreglo = this.state.data;
@@ -85,7 +87,6 @@ class App extends React.Component {
     }
   };
 
-  // esta opcion no va a esatar ya que los pedidos seran pasados desde la pagina de /public/pedidos
   insertar= ()=>{
     var valorNuevo= {...this.state.form};
     valorNuevo.id=this.state.data.length+1;
@@ -103,8 +104,22 @@ class App extends React.Component {
     });
   };
 
-  // estos datos vendrian de la pagina pedidos.
   render() {
+    
+  //   const [pedidos, setPedidos] = useState([]);
+
+  //   const getPedidos = async () => {
+  //     try {
+  //       const info = await axios.get("https://rickandmortyapi.com/api");
+  //       console.log(info.data);
+  //     } catch (error) {
+  //       console.log(error);
+  //     }
+  //   };
+  // useEffect(() => {
+  //   getPedidos();
+  // }, []);
+
 
     return (
       <>
@@ -117,9 +132,10 @@ class App extends React.Component {
             <thead>
               <tr>
                 <th>ID</th>
-                <th>Pedido</th>
-                <th>Direccion</th>
-                <th>Familia</th>
+                <th>Nombre</th>
+                <th>Description</th>
+                <th>Precio</th>
+                <th>Acción</th>
               </tr>
             </thead>
 
@@ -127,8 +143,9 @@ class App extends React.Component {
               {this.state.data.map((dato) => (
                 <tr key={dato.id}>
                   <td>{dato.id}</td>
-                  <td>{dato.personaje}</td>
-                  <td>{dato.anime}</td>
+                  <td>{dato.name}</td>
+                  <td>{dato.description}</td>
+                  <td>{dato.price}</td>
                   <td>
                     <Button
                       color="primary"
@@ -143,8 +160,8 @@ class App extends React.Component {
             </tbody>
           </Table>
         </Container>
-        
-        <Modal isOpen={this.state.modalActualizar}> 
+
+        <Modal isOpen={this.state.modalActualizar}>
           <ModalHeader>
            <div><h3>Editar Registro</h3></div>
           </ModalHeader>
@@ -165,40 +182,39 @@ class App extends React.Component {
             
             <FormGroup>
               <label>
-                Pedido: 
+                Nombre: 
               </label>
               <input
                 className="form-control"
-                name="pedido"
+                name="name"
                 type="text"
                 onChange={this.handleChange}
-                value={this.state.form.personaje}
+                value={this.state.form.name}
               />
             </FormGroup>
             
             <FormGroup>
               <label>
-                Direccion: 
+                Descripcion: 
               </label>
               <input
                 className="form-control"
-                name="direccion"
+                name="description"
                 type="text"
                 onChange={this.handleChange}
-                value={this.state.form.anime}
+                value={this.state.form.description}
               />
             </FormGroup>
-
             <FormGroup>
               <label>
-                Familia: 
+                Precio: 
               </label>
               <input
                 className="form-control"
-                name="familia"
+                name="price"
                 type="text"
                 onChange={this.handleChange}
-                value={this.state.form.anime}
+                value={this.state.form.price}
               />
             </FormGroup>
           </ModalBody>
@@ -223,7 +239,7 @@ class App extends React.Component {
 
         <Modal isOpen={this.state.modalInsertar}>
           <ModalHeader>
-           <div><h3>Insertar Pedido</h3></div>
+           <div><h3>Insertar nombre</h3></div>
           </ModalHeader>
 
           <ModalBody>
@@ -242,11 +258,11 @@ class App extends React.Component {
             
             <FormGroup>
               <label>
-                Pedido: 
+                Nombre: 
               </label>
               <input
                 className="form-control"
-                name="pedido"
+                name="name"
                 type="text"
                 onChange={this.handleChange}
               />
@@ -254,23 +270,22 @@ class App extends React.Component {
             
             <FormGroup>
               <label>
-                Direccion: 
+                Descripcion: 
               </label>
               <input
                 className="form-control"
-                name="direccion"
+                name="desccription"
                 type="text"
                 onChange={this.handleChange}
               />
             </FormGroup>
-
             <FormGroup>
               <label>
-                Familia: 
+                Precio: 
               </label>
               <input
                 className="form-control"
-                name="familia"
+                name="price"
                 type="text"
                 onChange={this.handleChange}
               />

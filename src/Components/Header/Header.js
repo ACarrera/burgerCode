@@ -3,8 +3,7 @@ import { Navbar, Container, Nav } from 'react-bootstrap';
 import { GiHamburger, } from 'react-icons/gi';
 import { Link } from 'react-router-dom';
 import { FaHamburger } from 'react-icons/fa';
-
-
+  
 
 const Header = () => {
   const user = localStorage.getItem('user');
