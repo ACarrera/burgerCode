@@ -5,11 +5,16 @@
     border-radius: 24px;
   }
   .btn-color{
-    background-color: #FFE100;
-    color: black;
-    border: #FFE100;
+    background-color: #FFE100 !important;
+    color: black !important;
+    border: #FFE100 !important;
   }
 
   .btn-color:hover{
-    background-color: #8C0000;
+    background-color: #8C0000 !important;
   }
+.text-color{
+  color: #8C0000;
+  font-family: sans-serif;
+
+}

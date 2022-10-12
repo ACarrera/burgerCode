@@ -44,7 +44,7 @@ const LoginForm = () => {
   return ( 
     <>
     <div className='container mt-3'>
-    <h4 className='container d-flex justify-content-center'>Para ordenar tu burger primero inicia sesión.</h4>
+    <h4 className='container d-flex justify-content-center text-color'>Para ordenar tu burger primero inicia sesión.</h4>
     <div className="container mt-3 login-portada col d-flex justify-content-around align-items-center">
       <div className="login-portada-text col-6">
         <form onSubmit={handleSubmit}>
