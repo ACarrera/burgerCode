@@ -1,8 +1,9 @@
 import React from 'react'
 import './CardsCarta.css';
-import {Card} from "react-bootstrap"
+import {Card} from "react-bootstrap";
 
 const CardCarta = ({img,titulo,descripcion}) => {
+  
   return (
     <Card className='card border-0'>
       <Card.Img  className="imagenes-carta" variant="top" src={img} />
@@ -11,7 +12,9 @@ const CardCarta = ({img,titulo,descripcion}) => {
         <Card.Text className='burger-cards'>
           {descripcion}
         </Card.Text>
-        <button type="button" className="custom-button card-text">Agregar al carrito</button>
+        <a href="/request">
+        <button type="button" className="custom-button card-text">HACÉ TU PEDIDO</button>
+        </a>
       </Card.Body>
     </Card>
   )

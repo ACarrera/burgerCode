@@ -10,11 +10,11 @@ import Footer from "../Components/Footer/Footer";
 
 
 const HomePage = () => {
-  const {logout} = useContext(UserContext);
+  // const {logout} = useContext(UserContext);
 
     return (  
     <>
-    <button className="btn" onClick={logout}> Cerrar sesión</button>
+    {/* <button className="btn" onClick={logout}> Cerrar sesión</button> */}
       <div className="home-container">
         <CustomCarousel/>
         <div className="mt-5 text-center pagina-text">
