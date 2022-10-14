@@ -17,15 +17,8 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Landing />} />
-        <Route
-            path="/home"
-            element={
-              <PrivateRoute>
-                <Home />
-              </PrivateRoute>
-            }
-          />
         <Route path="/login" element={<LoginPage />} />
+        <Route path="/home"element={<PrivateRoute><Home /></PrivateRoute>}/>
         <Route path="/request" element={<Request />} />
         <Route path="/admin" element={<Admin />} />
         <Route path="/UserTable" element={<UserTable />} />

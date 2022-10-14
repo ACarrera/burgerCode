@@ -26,6 +26,7 @@ const Header = () => {
           <FaHamburger className="bg-darkred logo-toggle" />
         </Navbar.Toggle>
         <Navbar.Collapse id="basic-navbar-nav">
+<<<<<<< HEAD
           <Nav className="d-flex text-right">
             {user ? (
               <>
@@ -56,6 +57,18 @@ const Header = () => {
                 Quiero mi burger
               </Link>
             )}
+=======
+        <Nav className="d-flex text-right">
+          {
+              user?
+            <>
+            <Link to="/" className='text-darkred pagina-text nav-link'>Home</Link>
+            <Link to="/" onClick={logout} className='text-darkred pagina-text nav-link'>Cerrar Sesión</Link>
+            </>
+                :
+                <Link to="/login" className='text-darkred pagina-text nav-link'>Quiero mi burger</Link>
+            }
+>>>>>>> a8f385c6ddf40340f8cc7303ec6a95742d078c92
           </Nav>
         </Navbar.Collapse>
       </Container>
