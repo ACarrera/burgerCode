@@ -8,6 +8,7 @@ import Footer from "../Components/Footer/Footer";
 
 
 const HomePage = () => {
+
     return (  
     <>
       <div className="home-container">
