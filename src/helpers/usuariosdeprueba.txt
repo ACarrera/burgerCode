@@ -1,0 +1,7 @@
+//prueba@gmail.com
+//123ASD123
+tiene rol USER
+
+angel@gmail.com
+hola123ASD
+rol admin
