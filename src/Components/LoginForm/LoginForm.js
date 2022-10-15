@@ -17,11 +17,7 @@ const LoginForm = () => {
 
   const { login, authenticated } = useContext(UserContext);
   const navigate = useNavigate();
-  const { values, handleChange, handleSubmit, errors } = useForm(
-    LOGIN_INITIAL_VALUES,
-    login,
-    validationLogin
-  );
+  const { values, handleChange, handleSubmit, errors } = useForm(LOGIN_INITIAL_VALUES, login, validationLogin);
 
   const [users, setUsers] = useState(null);
   const [show, setShow] = useState(false);
@@ -67,6 +63,8 @@ const LoginForm = () => {
                   onChange={handleChange}
                   name="email"
                   required
+                  minLength='2'
+                  maxLength='30'
                 />
               </FloatingLabel>
               <FloatingLabel controlId="floatingPassword" label="Contraseña">
@@ -76,6 +74,8 @@ const LoginForm = () => {
                   onChange={handleChange}
                   name="password"
                   required
+                  minLength='8'
+                  maxLength='30'
                 />
               </FloatingLabel>
               <Button className="mt-2 me-2 btn-color" type="submit">

@@ -1,5 +1,6 @@
 import './Landing.css';
 import {FaHamburger} from 'react-icons/fa'
+// import {Link} from 'react-router-dom';
 
 const LandingPage = () => ( 
     <div className="app-landing" id="landing">
@@ -8,7 +9,7 @@ const LandingPage = () => (
             <h1 className="app-landing-h1 card-text h1-landing">burger</h1>
             <h4 className="card-text h4-landing" style={{margin: '2rem 0'}}>INGREDIENTES ESPECIALES</h4>
             <p className="card-text p-landing">Carne de calidad, verduras frescas y pan casero recién salidos del horno.</p>
-            {/* <button type="button" className="custom-button card-text">Quiero mi Burger</button> */}
+            {/* <Link to='/login' className="custom-button card-text">Quiero mi Burger</Link> */}
         </div>
         <div className='bordes-img'>
             <div className="app-wrapper-img">
