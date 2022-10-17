@@ -8,7 +8,7 @@ const AddModal = ({ show, setShow, getUsers }) => {
 
   const addUser = async () => {
     try {
-      await axiosInstance.post("/users", values);
+      await axiosInstance.post("/users/alls", values);
       getUsers();
     } catch (error) {
       alert("Error al agregar el usuario");

@@ -12,7 +12,7 @@ const EditModal = ({ show, setShow, getUsers, selected }) => {
       const response = await axiosInstance.get("/users/" + selected);
       setValues(response.data.user);
     } catch (error) {
-      alert("Error al traer el usuario");
+      alert("Error al traer el usuario correspondiente");
     }
   };
   const editUser = async () => {

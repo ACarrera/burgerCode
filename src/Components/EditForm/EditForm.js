@@ -19,7 +19,7 @@ const EditForm = ({ getUsers, handleCloseEdit, selected }) => {
   };
   const getUser = async () => {
     try {
-      const response = await axiosInstance.get("/users/" + selected);
+      const response = await axiosInstance.get("/users/alls" + selected);
       setValues(response.data);
     } catch (error) {
       alert(error.message);
@@ -33,7 +33,7 @@ const EditForm = ({ getUsers, handleCloseEdit, selected }) => {
   const handleSubmit = async (e) => {
     try {
       e.preventDefault();
-      await axiosInstance.put("/users/" + selected, values);
+      await axiosInstance.put("/users/alls" + selected, values);
       getUsers();
     } catch (error) {
       alert("Error al cargar nuevo usuario");

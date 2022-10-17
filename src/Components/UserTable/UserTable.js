@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useState } from "react";
-import { Table, Button } from "react-bootstrap";
+import { Table, Button, Spinner } from "react-bootstrap";
 import axiosInstance from "../../config/axiosInstance";
 import AddModal from "../AddModal/AddModal";
 import EditModal from "../EditModal/EditModal";
@@ -16,7 +16,7 @@ const UserTable = () => {
 
   const getUsers = async () => {
     try {
-      const response = await axiosInstance.get("/users");
+      const response = await axiosInstance.get("/users/alls");
       setUsers(response.data.users);
     } catch (error) {
       alert("error al traer los usuarios");
@@ -24,7 +24,9 @@ const UserTable = () => {
   };
   const userDelete = async () => {
     try {
-      await axiosInstance.delete("/users/", { data: { id: selected } });
+      await axiosInstance.delete("/users/alls", {
+        data: { email: selected },
+      });
       getUsers();
     } catch (error) {
       alert("Error al eliminar");
@@ -46,10 +48,10 @@ const UserTable = () => {
           Eliminar usuario
         </Button>
       </div>
+
       <Table responsive striped bordered hover>
         <thead>
           <tr>
-            <th>Id</th>
             <th>Email</th>
             <th>Nombre</th>
             <th>Apellido</th>
@@ -58,26 +60,24 @@ const UserTable = () => {
           </tr>
         </thead>
         <tbody>
-          {users?.map((user) =>
-            user._id == selected ? (
+          {users.map((user) =>
+            user.email === selected ? (
               <tr
                 className="selected"
-                onClick={() => setSelected(user._id)}
-                key={user._id}
+                onClick={() => setSelected(user.email)}
+                key={user.email}
               >
-                <td>{user._id}</td>
                 <td>{user.email}</td>
                 <td>{user.name}</td>
-                <td>{user.lastname}</td>
+                <td>{user.lastName}</td>
                 <td>{user.address}</td>
                 <td>{user.phone}</td>
               </tr>
             ) : (
-              <tr onClick={() => setSelected(user._id)} key={user._id}>
-                <td>{user._id}</td>
+              <tr onClick={() => setSelected(user.email)} key={user.email}>
                 <td>{user.email}</td>
                 <td>{user.name}</td>
-                <td>{user.lastname}</td>
+                <td>{user.lastName}</td>
                 <td>{user.address}</td>
                 <td>{user.phone}</td>
               </tr>
@@ -85,6 +85,7 @@ const UserTable = () => {
           )}
         </tbody>
       </Table>
+
       <AddModal show={show} setShow={setShow} getUsers={getUsers} />
       <EditModal showEdit={showEdit} getUsers={getUsers} selected={selected} />
     </>

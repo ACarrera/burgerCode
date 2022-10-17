@@ -20,7 +20,7 @@ const AddForm = ({ getUsers, handleCloseAdd }) => {
   const handleSubmit = async (e) => {
     try {
       e.preventDefault();
-      await axiosInstance.post("/users", values);
+      await axiosInstance.post("/users/alls", values);
       getUsers();
     } catch (error) {
       alert("Error al cargar nuevo usuario");
@@ -53,7 +53,7 @@ const AddForm = ({ getUsers, handleCloseAdd }) => {
           type="text"
           name="apellido"
           onChange={handleChange}
-          value={values.lastname}
+          value={values.lastName}
         />
       </Form.Group>
       <Form.Group className="mb-3">
