@@ -10,6 +10,7 @@ import Admin from "./pages/Admin";
 import UserTable from "./Components/UserTable/UserTable";
 import menu from "./pages/menu";
 import { GiHamburger } from "react-icons/gi";
+import AdmPedidos from "./pages/AdmPedidos";
 
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
         <Route path="/admin" element={<Admin />} />
         <Route path="/UserTable" element={<UserTable />} />
         <Route path="/menu" element={<menu />} />
+        <Route path="/addorders" element={<AdmPedidos />} />
       </Routes>
       </UserProvider>
     </Router>
