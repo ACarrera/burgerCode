@@ -5,9 +5,10 @@ import axiosInstance from "../../config/axiosInstance";
 
 const EditForm = ({ getUsers, handleCloseEdit, selected }) => {
   const [values, setValues] = useState({
+    id: "",
     email: "",
     name: "",
-    lastname: "",
+    lastName: "",
     address: "",
     phone: 0,
   });
@@ -66,7 +67,7 @@ const EditForm = ({ getUsers, handleCloseEdit, selected }) => {
           type="text"
           name="apellido"
           onChange={handleChange}
-          value={values.lastname}
+          value={values.lastName}
         />
       </Form.Group>
       <Form.Group className="mb-3">

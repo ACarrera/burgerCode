@@ -29,15 +29,9 @@ function App() {
           />
           <Route path="/request" element={<Request />} />
           <Route path="/admin" element={<Admin />} />
-          <Route
-            path="/UserTable"
-            element={
-              <PrivateRoute>
-                <UserTable />
-              </PrivateRoute>
-            }
-          />
+          <Route path="/UserTable" element={<UserTable />} />
           <Route path="/menu" element={<menu />} />
+          <Route path="/addorders" element={<AdmPedidos />} />
         </Routes>
       </UserProvider>
     </Router>

@@ -1,1 +1,70 @@
-
+:root {
+  --yellow-pantone: #ffe100;
+  --sunglow: rgb(255, 201, 23);
+  --red: rgb(240, 0, 0);
+  --dark-red: rgb(140, 0, 0);
+  --rich-black-fogra-39: rgb(5, 5, 5);
+}
+html {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-color: var(--rich-black-fogra-39);
+  font-size: 20px;
+}
+.buttonContainer {
+  background-color: var(--rich-black-fogra-39);
+}
+.abmTable {
+  width: 100%;
+  height: auto;
+}
+.tableHead {
+  background: rgb(255, 201, 23);
+  background: linear-gradient(
+    0deg,
+    rgba(255, 201, 23, 0.9615196420365021) 10%,
+    rgba(255, 225, 0, 1) 50%,
+    rgba(255, 201, 23, 0.9363095580028886) 90%
+  );
+  color: rgb(33, 33, 33);
+  text-shadow: 1px 1px 1px rgb(141, 141, 141);
+  font-size: 1.2rem;
+}
+.tableBody {
+  background-color: rgb(33, 33, 33);
+  color: whitesmoke;
+}
+.tableBody > tr > td {
+  border: 1px solid rgb(141, 141, 141);
+}
+.tableBody > tr > td {
+  padding: 1rem;
+}
+.addUser,
+.editUser {
+  background-color: var(--yellow-pantone);
+  border-radius: 15px;
+  border: 1px solid var(--sunglow);
+  color: rgb(33, 33, 33);
+}
+.addUser:hover,
+.editUser:hover {
+  background-color: var(--dark-red);
+  border-radius: 15px;
+  border: 1px solid rgb(113, 1, 1);
+  color: whitesmoke;
+}
+.deleteUser {
+  background-color: var(--dark-red);
+  border-radius: 15px;
+  border: 1px solid rgb(113, 1, 1);
+  color: whitesmoke;
+}
+.deleteUser:hover {
+  background-color: var(--yellow-pantone);
+  border-radius: 15px;
+  border: 1px solid var(--sunglow);
+  color: var(--dark-red);
+}

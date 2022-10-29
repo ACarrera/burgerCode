@@ -9,15 +9,15 @@ const EditModal = ({ show, setShow, getUsers, selected }) => {
 
   const getUser = async () => {
     try {
-      const response = await axiosInstance.get("/users/" + selected);
+      const response = await axiosInstance.get("/users/alls/" + selected);
       setValues(response.data.user);
     } catch (error) {
-      alert("Error al traer el usuario correspondiente");
+      alert("Error al traer usuarios");
     }
   };
   const editUser = async () => {
     try {
-      await axiosInstance.put("/users/" + selected, { update: values });
+      await axiosInstance.put("/users/alls" + selected, { update: values });
       getUsers();
     } catch (error) {
       alert("Error al editar el usuario");

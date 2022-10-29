@@ -8,7 +8,7 @@ const AddModal = ({ show, setShow, getUsers }) => {
 
   const addUser = async () => {
     try {
-      await axiosInstance.post("/users/alls", values);
+      await axiosInstance.post("/users/", values);
       getUsers();
     } catch (error) {
       alert("Error al agregar el usuario");
@@ -37,6 +37,20 @@ const AddModal = ({ show, setShow, getUsers }) => {
               className=""
               onChange={handleChange}
               name="email"
+              required
+            />
+          </FloatingLabel>
+          <FloatingLabel
+            controlId="floatingInput"
+            label="Contraseña"
+            className="mb-3 w-100"
+          >
+            <Form.Control
+              type="password"
+              placeholder="Contraseña"
+              className=""
+              onChange={handleChange}
+              name="pass"
               required
             />
           </FloatingLabel>
