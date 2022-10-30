@@ -4,13 +4,18 @@ import '../AddModalOrders/AddModalOrders.css'
 
 const AddModalOrders = () => {
   
+	const deleteRequest = async (_id) => {
+		await axios.delete(`http://localhost:4000/users/deleteRequest/${_id}`)
+		alert('Menú entregado')
+		window.location.href ='/addorders'
+	}
   
-  const [productos, setProductos] = useState([]);
+  const [request, setRequest] = useState([]);
 
   const addOrder = async () => {
       try {
-        const info = await axios.get("https://rickandmortyapi.com/api/character");
-        setProductos((info.data.results))
+        const info = await axios.get("http://localhost:4000/users/getRequest");
+        setRequest((info.data))
       } catch (error) {
         console.log(error);
       }
@@ -21,34 +26,30 @@ const AddModalOrders = () => {
  
 
   return (
-    <>
+    <div className="m-2">
     <table class="demo">
 	<caption>ORDENES</caption>
 	<thead>
 	<tr>
-		<th><div >ID:</div></th>
-		<th>NOMBRE:</th>
-		<th>DESCRIPCION:</th>
-		<th>PRECIO:</th>
-		<th>BOTON</th>
-    	<th>BOTON</th>
+		<th>NOMBRE</th>
+		<th>DESCRIPCION</th>
+		<th>PRECIO</th>
+    	<th></th>
 	</tr>
 	</thead>
 	<tbody>
-	{productos.map( productos=>
+	{request.map(request=>
 	<tr>
-		 <td> {productos.id} </td>
-		 <td> {productos.name} </td>
-		 <td> {productos.specie} </td>
-		 <td> hola </td>
-		 <td><input class="btn btn-success"type=" button" value="Aceptar"/></td>
-     	<td><input class="btn btn-danger btn-xs"type=" button" key={productos.id} value="Borrar"/></td>
+		 <td> {request.menu} </td>
+		 <td> {request.description}</td>
+		 <td>{request.price}</td>
+     <td><input class="btn btn-danger btn-xs w-50 text-center" onClick={deleteRequest} type=" button" key={request._id} value="Entregado"/></td>
 	</tr>
 	)}
 	
 	</tbody>
 </table>
-  </>
+  </div>
 );
 }
 
