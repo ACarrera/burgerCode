@@ -1,9 +1,22 @@
-import React from "react";
+import { useState, useEffect } from "react";
 import BotonEnviarPedido from "../ButtonRequest/ButtonRequest";
 import LogueoPedidos from "../LogueoPedidos/LogueoPedidos";
 import TrashIcon from "./assets/images/trashicon.svg";
 
 const RequestCart = () => {
+  const [request, setRequest] = useState([]);
+
+  const addOrder = async () => {
+      try {
+        const info = await axios.get("http://localhost:4000/users/getRequest");
+        setRequest((info.data))
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    useEffect(() => {
+     addOrder()
+    }, []);
   return (
     <div className="d-wrap w-25 me-1 pe-3 borde bg-light">
       <LogueoPedidos />
