@@ -43,7 +43,7 @@ const AddModalOrders = () => {
 		 <td> {request.menu} </td>
 		 <td> {request.description}</td>
 		 <td>{request.price}</td>
-     <td><input class="btn btn-danger btn-xs w-50 text-center" onClick={deleteRequest} type=" button" key={request._id} value="Entregado"/></td>
+     <td><input class="btn btn-danger btn-xs w-50 text-center" onClick={(_id) => deleteRequest(request._id)} type=" button" key={request._id} value="Entregado"/></td>
 	</tr>
 	)}
 	

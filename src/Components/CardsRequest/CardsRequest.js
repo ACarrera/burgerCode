@@ -1,7 +1,7 @@
 import './CardsRequest.css';
 
 const CardsRequest = ({menu = []}) => {
-  
+
 
   return (
     <div className="requests d-flex justify-content-evenly flex-wrap col py-3">
