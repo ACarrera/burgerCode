@@ -11,3 +11,11 @@ export const ADD_USER_VALUES = {
   address: "",
   phone: 0,
 };
+
+export const EDIT_USER_VALUES = {
+  email: "",
+  name: "",
+  lastName: "",
+  address: "",
+  phone: 0,
+};

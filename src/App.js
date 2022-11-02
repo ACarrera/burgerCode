@@ -7,6 +7,7 @@ import LoginPage from "./pages/LoginPage";
 import Request from "./pages/Request";
 import PrivateRoute from "./routes/PrivateRoute";
 import Admin from "./pages/Admin";
+import AdmPedidos from "./pages/AdmPedidos";
 import UserTable from "./Components/UserTable/UserTable";
 import menu from "./pages/menu";
 import { GiHamburger } from "react-icons/gi";

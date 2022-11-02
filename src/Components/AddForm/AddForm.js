@@ -20,7 +20,7 @@ const AddForm = ({ getUsers, handleCloseAdd }) => {
   const handleSubmit = async (e) => {
     try {
       e.preventDefault();
-      await axiosInstance.post("/users/alls", values);
+      await axiosInstance.post("/users/allusers", values);
       getUsers();
     } catch (error) {
       alert("Error al cargar nuevo usuario");
