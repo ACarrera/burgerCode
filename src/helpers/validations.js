@@ -21,6 +21,28 @@ export const validationLogin = values => {
 
 export const validationRegister = values => {
     let errors = {};
+    if (!values.email) {
+        errors.email = 'El email es obligatorio';
+    } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)) {
+        errors.email = 'El email no es valido';
+    } else if (values.email.length > 30) {
+        errors.email = 'El email no debe poseer mas de 30 caracteres';
+    }
+
+    if (!values.address) {
+        errors.address = 'La direccion es obligatoria';
+    } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,25}$/i.test(values.address)) {
+        errors.address = 'La direccion no es valida';
+    } else if (values.address.length > 30) {
+        errors.address = 'La direccion no debe poseer mas de 25 caracteres';
+    }
+    if (!values.phone) {
+        errors.phone = 'La direccion es obligatoria';
+    } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,25}$/i.test(values.phone)) {
+        errors.phone = 'La direccion no es valida';
+    } else if (values.email.phone > 30) {
+        errors.phone = 'La direccion no debe poseer mas de 25 caracteres';
+    }
 
     if (!values.name) {
         errors.name = 'El nombre es obligatorio';
@@ -38,13 +60,6 @@ export const validationRegister = values => {
         errors.lastname = 'El apellido no debe poseer mas de 25 caracteres';
     }
 
-    if (!values.email) {
-        errors.email = 'El email es obligatorio';
-    } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)) {
-        errors.email = 'El email no es valido';
-    } else if (values.email.length > 30) {
-        errors.email = 'El email no debe poseer mas de 30 caracteres';
-    }
 
     if (!values.password) {
         errors.password = 'La contraseña es obligatoria';
@@ -53,6 +68,7 @@ export const validationRegister = values => {
     } else if (values.password > 30) {
         errors.password = 'La contraseña no debe tener mas de 30 caracteres';
     }
+
     if (!values.password2) {
         errors.password2 = 'La contraseña es obligatoria';
     } else if (values.password2.length < 8) {
