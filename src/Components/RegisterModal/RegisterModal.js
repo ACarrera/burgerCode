@@ -9,14 +9,14 @@ const RegisterModal = ({show, setShow, getUsers}) => {
   const handleClose = () => setShow(false);
   
 
-  // const validationRegister = async()=>{
-  //   try {
-  //     await axiosInstance.post('/users',values);
-  //     getUsers()
-  //   } catch (error) {
-  //     alert('Error al agregar usuario')
-  //   }
-  // }
+  const validationRegister = async()=>{
+    try {
+      await axiosInstance.post('/users',values);
+      getUsers()
+    } catch (error) {
+      alert('Error al agregar usuario')
+    }
+  }
   const {handleChange, handleSubmit, values, errors} = useForm(ADD_USER_VALUES,validationRegister);
 
 
@@ -28,7 +28,21 @@ const RegisterModal = ({show, setShow, getUsers}) => {
           <form onSubmit={handleSubmit}>
         <Modal.Body>
           <FloatingLabel
-            controlId="floatingInput"
+            controlId="floatingInput3"
+            label="Email"
+            className="mb-3 w-100"
+          >
+            <Form.Control
+              type="email"
+              onChange={handleChange}
+              name='email'
+              required
+              minLength='2'
+              maxLength='30'
+            />
+          </FloatingLabel>
+          <FloatingLabel
+            controlId="floatingInput1"
             label="Nombre"
             className="mb-3 w-100"
           >
@@ -42,7 +56,7 @@ const RegisterModal = ({show, setShow, getUsers}) => {
             />
           </FloatingLabel>
           <FloatingLabel
-            controlId="floatingInput"
+            controlId="floatingInput2"
             label="Apellido"
             className="mb-3"
           >
@@ -57,21 +71,37 @@ const RegisterModal = ({show, setShow, getUsers}) => {
             />
           </FloatingLabel>
           <FloatingLabel
-            controlId="floatingInput"
-            label="Email"
-            className="mb-3 w-100"
+            controlId="floatingInput2"
+            label="Direccion"
+            className="mb-3"
           >
             <Form.Control
-              type="email"
+              type="text"
+              className=""
               onChange={handleChange}
-              name='email'
+              name='address'
               required
               minLength='2'
-              maxLength='30'
+              maxLength='25'
             />
           </FloatingLabel>
           <FloatingLabel
-            controlId="floatingInput"
+            controlId="floatingInput2"
+            label="Telefono"
+            className="mb-3"
+          >
+            <Form.Control
+              type="number"
+              className=""
+              onChange={handleChange}
+              name='phone'
+              required
+              minLength='7'
+              maxLength='11'
+            />
+          </FloatingLabel>
+          <FloatingLabel
+            controlId="floatingInput4"
             label="Contraseña"
             className="mb-3 w-100"
           >
@@ -85,7 +115,7 @@ const RegisterModal = ({show, setShow, getUsers}) => {
             />
           </FloatingLabel>
           <FloatingLabel
-            controlId="floatingInput"
+            controlId="floatingInput5"
             label="Confirmar contraseña"
             className="mb-3 w-100"
           >
