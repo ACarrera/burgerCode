@@ -9,7 +9,7 @@ const Request = () => {
 
   const getProductos = async () => {
     try {
-      const info = await axios.get("http://localhost:8000/traerproductos");
+      const info = await axios.get("http://localhost:4000/users/getMenus");
       setMenu(info.data);
     } catch (error) {
       console.log(error);

@@ -2,6 +2,11 @@ import React from 'react';
 import './LogueoPedidos.css';
 
 const LogueoPedidos = () => {
+
+  const signOff = () =>{
+    window.location.href = '/';
+  }
+
   return (
     <div className="logueo col d-flex align-items-center justify-content-center pb-3 text-center">
       <div className="logueo-pedidos card border-0 d-flex">
@@ -23,7 +28,7 @@ const LogueoPedidos = () => {
       </div>
       <div className="modal-footer">
         <a href="/">
-        <button type="button" className="btn btn-danger rounded-0 border-0"><strong>Sí</strong></button>
+        <button type="button" className="btn btn-danger rounded-0 border-0" onClick={signOff}><strong>Sí</strong></button>
         </a>
         <button type="button" className="btn btn-warning rounded-0 border-0" data-bs-dismiss="modal"><strong>Volver</strong></button>
       </div>
