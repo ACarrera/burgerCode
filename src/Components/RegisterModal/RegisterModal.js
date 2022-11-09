@@ -29,7 +29,21 @@ const RegisterModal = ({ show, setShow, getUsers }) => {
       <form onSubmit={handleSubmit}>
         <Modal.Body>
           <FloatingLabel
-            controlId="floatingInput"
+            controlId="floatingInput3"
+            label="Email"
+            className="mb-3 w-100"
+          >
+            <Form.Control
+              type="email"
+              onChange={handleChange}
+              name="email"
+              required
+              minLength="2"
+              maxLength="30"
+            />
+          </FloatingLabel>
+          <FloatingLabel
+            controlId="floatingInput1"
             label="Nombre"
             className="mb-3 w-100"
           >
@@ -43,7 +57,7 @@ const RegisterModal = ({ show, setShow, getUsers }) => {
             />
           </FloatingLabel>
           <FloatingLabel
-            controlId="floatingInput"
+            controlId="floatingInput2"
             label="Apellido"
             className="mb-3"
           >
@@ -58,12 +72,13 @@ const RegisterModal = ({ show, setShow, getUsers }) => {
             />
           </FloatingLabel>
           <FloatingLabel
-            controlId="floatingInput"
-            label="Email"
-            className="mb-3 w-100"
+            controlId="floatingInput2"
+            label="Direccion"
+            className="mb-3"
           >
             <Form.Control
-              type="email"
+              type="text"
+              className=""
               onChange={handleChange}
               name="email"
               required
@@ -72,7 +87,7 @@ const RegisterModal = ({ show, setShow, getUsers }) => {
             />
           </FloatingLabel>
           <FloatingLabel
-            controlId="floatingInput"
+            controlId="floatingInput4"
             label="Contraseña"
             className="mb-3 w-100"
           >
@@ -86,7 +101,7 @@ const RegisterModal = ({ show, setShow, getUsers }) => {
             />
           </FloatingLabel>
           <FloatingLabel
-            controlId="floatingInput"
+            controlId="floatingInput5"
             label="Confirmar contraseña"
             className="mb-3 w-100"
           >

@@ -1,5 +1,5 @@
 import CardsRequest from '../Components/CardsRequest/CardsRequest';
-import Requests from '../Components/Requests/Requests';
+// import Requests from '../Components/Requests/Requests';
 import './Request.css';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
@@ -22,7 +22,7 @@ const Request = () => {
   return (
     <div className="paginadepedidosmoviles d-flex">
     <CardsRequest menu={menu} />
-    <Requests />
+    {/* <Requests /> */}
     </div>
   );
 };

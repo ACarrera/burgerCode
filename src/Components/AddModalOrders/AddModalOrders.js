@@ -26,24 +26,26 @@ const AddModalOrders = () => {
  
 
   return (
-    <div className="m-2">
-    <table class="demo">
-	<caption>ORDENES</caption>
+    <div className="m-3 h-100">
+			<h2 className="text-center mb-4">Pedidos</h2>
+    <table className="demo">
 	<thead>
 	<tr>
 		<th>NOMBRE</th>
 		<th>DESCRIPCION</th>
 		<th>PRECIO</th>
-    	<th></th>
+		<th>ESPECIFICACIONES</th>
+
 	</tr>
 	</thead>
 	<tbody>
 	{request.map(request=>
 	<tr>
-		 <td> {request.menu} </td>
-		 <td> {request.description}</td>
+		 <td>{request.menu} </td>
+		 <td>{request.description}</td>
 		 <td>{request.price}</td>
-     <td><input class="btn btn-danger btn-xs w-50 text-center" onClick={(_id) => deleteRequest(request._id)} type=" button" key={request._id} value="Entregado"/></td>
+		 {request.specification}
+     <td><button className="btn btn-success text-center d-flex justify-content-center p-2 m-1" onClick={(_id) => deleteRequest(request._id)} type=" button" key={request._id}>✓</button></td>
 	</tr>
 	)}
 	
