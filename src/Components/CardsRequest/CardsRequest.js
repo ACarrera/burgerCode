@@ -2,6 +2,7 @@
 import './CardsRequest.css';
 import { useForm } from 'react-hook-form';
 import { useState } from 'react';
+import ModalRequest from '../ModalRequest/ModalRequest';
 
 const CardsRequest = ({menu = []}) => {
 
@@ -37,35 +38,11 @@ const CardsRequest = ({menu = []}) => {
         <h5 className="card-title">{menu.menu}</h5>
         <p className="card-text">{menu.description}</p>
         <div className="d-flex justify-content-between align-menus-center">
-         <button type="button" className="boton-agregarproducto-carrito btn btn-warning rounded-0 rounded-0" data-bs-toggle="modal" data-bs-target="#exampleModal">✓</button>
+         <ModalRequest _id={menu._id} />
          <p className="fs-4 m-0">${menu.price}</p>
          </div>
        </div>
       </div>
-
-      <div className="modal fade" id="exampleModal" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div className="modal-dialog">
-    <div className="modal-content">
-      <div className="modal-body fs-5">
-        Revisá tu pedido antes de enviar:
-        <form onSubmit={handleSubmit(sendRequest)}>
-    <label className="form-label m-0 fs-6">Menu</label>
-    <input type="text" className="form-control p-1 m-0"  {...register("menu", { required: true })} required aria-describedby="emailHelp" value={menu.menu}/>
-    <label className="form-label m-0 fs-6">Descripción</label>
-    <input type="text" className="form-control p-1" value={menu.description} {...register("description", { required: true })} required />
-    <label className="form-label m-0 fs-6">Precio</label>
-    <input type="number" className="form-control p-1" value={menu.price} {...register("price", { required: true })} required />
-    <label className="form-label m-0 fs-6">¿Alguna especificación?</label>
-    <input type="text" className="form-control p-1" {...register("specification", { required: true })} required defaultValue="Ninguna especificación"/>
-    <div className="p-0 mt-1 d-flex justify-content-end">
-    <button type="button" className="btn btn-danger me-1"data-bs-dismiss="modal">Volver</button>
-    <button type="submit" className="btn btn-warning" data-bs-dismiss="modal">Enviar</button>
-    </div>
-</form>
-      </div>
-    </div>
-  </div>
-</div>
 </>
         )
       )

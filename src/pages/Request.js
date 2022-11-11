@@ -8,7 +8,7 @@ const Request = () => {
 
   const [menu, setMenu] = useState([]);
 
-  const getProductos = async () => {
+  const getMenus = async () => {
     try {
       const info = await axios.get("http://localhost:4000/users/getMenus");
       setMenu(info.data);
@@ -17,7 +17,7 @@ const Request = () => {
     }
   };
   useEffect(() => {
-    getProductos();
+    getMenus();
   }, []);
 
   return (
