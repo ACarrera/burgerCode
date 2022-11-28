@@ -11,7 +11,7 @@ const CardsRequest = ({menu = []}) => {
 
   const sendRequest = async(data) => {
     try {
-      await fetch('http://localhost:4000/users/addRequest',{
+      await fetch('https://burguercode-db.onrender.com/addRequest',{
         headers: {
           'Content-Type': 'application/json'
         },

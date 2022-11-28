@@ -8,7 +8,7 @@ const ModalRequest = (_id) => {
 
   const sendRequest = async(data) => {
     try {
-      await fetch('http://localhost:4000/users/addRequest',{
+      await fetch('https://burguercode-db.onrender.com/addRequest',{
         headers: {
           'Content-Type': 'application/json'
         },
@@ -28,7 +28,7 @@ const ModalRequest = (_id) => {
 
   const getMenus = async (_id) => {
     try {
-      const info = await axios.get(`http://localhost:4000/users/getOneMenu/${menuId._id}`);
+      const info = await axios.get(`https://burguercode-db.onrender.com/getOneMenu/${menuId._id}`);
       console.log(info.data);
     } catch (error) {
       console.log(error);
