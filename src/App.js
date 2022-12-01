@@ -5,12 +5,12 @@ import Landing from "./pages/Landing";
 import Home from "./pages/Home";
 import LoginPage from "./pages/LoginPage";
 import Request from "./pages/Request";
-import PrivateRoute from "./routes/PrivateRoute";
+// import PrivateRoute from "./routes/PrivateRoute";
 import Admin from "./pages/Admin";
 import AdmPedidos from "./pages/AdmPedidos";
 import UserTable from "./Components/UserTable/UserTable";
-import menu from "./pages/menu";
-import { GiHamburger } from "react-icons/gi";
+// import menu from "./pages/menu";
+// import { GiHamburger } from "react-icons/gi";
 
 function App() {
   return (
@@ -23,9 +23,9 @@ function App() {
           <Route
             path="/home"
             element={
-              <PrivateRoute>
+              // <PrivateRoute>
                 <Home />
-              </PrivateRoute>
+              /* </PrivateRoute> */
             }
           />
           <Route path="/request" element={<Request />} />
