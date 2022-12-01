@@ -10,7 +10,7 @@ const Request = () => {
 
   const getMenus = async () => {
     try {
-      const info = await axios.get("https://burguercode-db.onrender.com/getMenus");
+      const info = await axios.get("https://burguercode-db.onrender.com/getmenus");
       setMenu(info.data);
     } catch (error) {
       console.log(error);
