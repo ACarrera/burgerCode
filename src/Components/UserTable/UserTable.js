@@ -21,7 +21,7 @@ const UserTable = () => {
 
   const getUsers = async () => {
     try {
-      const response = await axiosInstance.get("/users/allusers");
+      const response = await axiosInstance.get("/allusers");
       setUsers(response.data.users);
     } catch (error) {
       alert("error al traer los usuarios");
@@ -33,7 +33,7 @@ const UserTable = () => {
   };
   const userDelete = async (id) => {
     try {
-      await axiosInstance.delete("/users/allusers/" + id);
+      await axiosInstance.delete("/allusers/" + id);
       getUsers();
     } catch (error) {
       alert("Error al eliminar");

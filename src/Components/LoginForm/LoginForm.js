@@ -17,7 +17,11 @@ const LoginForm = () => {
 
   const { login, authenticated } = useContext(UserContext);
   const navigate = useNavigate();
-  const { values, handleChange, handleSubmit, errors } = useForm(LOGIN_INITIAL_VALUES, login, validationLogin);
+  const { values, handleChange, handleSubmit, errors } = useForm(
+    LOGIN_INITIAL_VALUES,
+    login,
+    validationLogin
+  );
 
   const [users, setUsers] = useState(null);
   const [show, setShow] = useState(false);
@@ -25,7 +29,7 @@ const LoginForm = () => {
 
   const getUsers = async () => {
     try {
-      const response = await axiosInstance.get("/users");
+      const response = await axiosInstance.get("/auth");
       console.log(response.data);
       setUsers(response.data.users);
     } catch (error) {
@@ -45,9 +49,11 @@ const LoginForm = () => {
         <Link to="/" className=" mt-2 btn btn-color">
           Página principal
         </Link>
-        <div className="w-50"><h6 className="mt-1 d-flex justify-content-start text-color">
-          Para ordenar tu burger primero inicia sesión o regístrate.
-        </h6></div>
+        <div className="w-50">
+          <h6 className="mt-1 d-flex justify-content-start text-color">
+            Para ordenar tu burger primero inicia sesión o regístrate.
+          </h6>
+        </div>
         <div className="container mt-1 login-portada col d-flex justify-content-around align-items-center">
           <div className="login-portada-text col-6">
             <form onSubmit={handleSubmit}>
@@ -63,8 +69,8 @@ const LoginForm = () => {
                   onChange={handleChange}
                   name="email"
                   required
-                  minLength='2'
-                  maxLength='30'
+                  minLength="2"
+                  maxLength="30"
                 />
               </FloatingLabel>
               <FloatingLabel controlId="floatingPassword" label="Contraseña">
@@ -74,8 +80,8 @@ const LoginForm = () => {
                   onChange={handleChange}
                   name="password"
                   required
-                  minLength='8'
-                  maxLength='30'
+                  minLength="8"
+                  maxLength="30"
                 />
               </FloatingLabel>
               <Button className="mt-2 me-2 btn-color" type="submit">

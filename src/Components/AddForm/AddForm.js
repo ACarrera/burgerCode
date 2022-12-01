@@ -42,7 +42,7 @@ const AddForm = ({ getUsers, handleCloseAdd }) => {
         <Form.Label>Nombre</Form.Label>
         <Form.Control
           type="text"
-          name="nombre"
+          name="name"
           onChange={handleChange}
           value={values.name}
         />
@@ -51,7 +51,7 @@ const AddForm = ({ getUsers, handleCloseAdd }) => {
         <Form.Label>Apellido</Form.Label>
         <Form.Control
           type="text"
-          name="apellido"
+          name="lastName"
           onChange={handleChange}
           value={values.lastName}
         />

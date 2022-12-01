@@ -10,8 +10,9 @@ const UserProvider = ({ children }) => {
 
   const login = async (values) => {
     try {
-      const response = await axiosInstance.post("/users/login", values); //'/users/auth'
+      const response = await axiosInstance.post("/login", values); //'/users/auth'
       const data = response.data;
+
       setUser(data.user);
       setToken(data.token);
       setAuthenticated(true);
@@ -36,7 +37,7 @@ const UserProvider = ({ children }) => {
       delete axiosInstance.defaults.headers.common["authorization"];
     }
     try {
-      const response = await axiosInstance.get("/users/auth");
+      const response = await axiosInstance.get("/auth");
       const data = response.data;
       setUser(data.user);
       setAuthenticated(true);
