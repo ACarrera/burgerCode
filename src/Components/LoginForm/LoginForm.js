@@ -85,20 +85,9 @@ const LoginForm = () => {
                 ? Object.values(errors).map((error) => (
                     <Alert variant="danger">{error}</Alert>
                   ))
-                : null}
-              <Button
-                className="mt-2 btn-color"
-                type="submit"
-                onClick={handleShow}
-              >
-                Registrarse
-              </Button>
-              <RegisterModal
-                show={show}
-                setShow={setShow}
-                getUsers={getUsers}
-              />
+                  : null}
             </form>
+                  <RegisterModal />
           </div>
           {width > 992 ? (
             <div className="container col-6 d-flex justify-content-end">
@@ -109,7 +98,7 @@ const LoginForm = () => {
             </div>
           ) : (
             <div></div>
-          )}
+            )}
         </div>
       </div>
     </>

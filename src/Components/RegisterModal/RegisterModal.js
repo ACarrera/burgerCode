@@ -1,153 +1,93 @@
-import { Button, FloatingLabel, Form, Modal } from "react-bootstrap";
-import axiosInstance from "../../config/axiosInstance";
-import { validationRegister } from "../../helpers/validations";
-import { ADD_USER_VALUES } from "../../constants";
-import useForm from "../../hooks/useForm";
-import "../RegisterModal/RegisterModal.css";
+// import { useState } from 'react';
+// import axios from 'axios';
+import { useForm } from 'react-hook-form';
 
-const RegisterModal = ({ show, setShow, getUsers }) => {
-  const handleClose = () => setShow(false);
-
-  const validationRegister = async () => {
-    try {
-      await axiosInstance.post("/users", values);
-      getUsers();
-    } catch (error) {
-      alert("Error al agregar usuario");
-    }
-  };
-  const { handleChange, handleSubmit, values, errors } = useForm(
-    ADD_USER_VALUES,
-    validationRegister
-  );
-
+const RegisterModal = () => {
+  const { register, handleSubmit, formState: { errors } } = useForm();
+  // const [addUser, setAddUser] = useState()
+  const onSubmit = async (data) => {
+    // await axios.post('https://burguercode-db.onrender.com/adduser')
+    // .then((resp) => {
+    //   setAddUser(resp.data)
+    // })
+    console.log(data)
+    alert('El usuario ha sido creado exitosamente')
+    window.location.reload()
+  }
+  
   return (
-    <Modal show={show} onHide={handleClose}>
-      <Modal.Header closeButton>
-        <Modal.Title>Registrate</Modal.Title>
-      </Modal.Header>
-      <form onSubmit={handleSubmit}>
-        <Modal.Body>
-          <FloatingLabel
-            controlId="floatingInput3"
-            label="Email"
-            className="mb-3 w-100"
-          >
-            <Form.Control
-              type="email"
-              onChange={handleChange}
-              name="email"
-              required
-              minLength="2"
-              maxLength="30"
-            />
-          </FloatingLabel>
-          <FloatingLabel
-            controlId="floatingInput1"
-            label="Nombre"
-            className="mb-3 w-100"
-          >
-            <Form.Control
-              type="text"
-              onChange={handleChange}
-              name="name"
-              required
-              minLength="2"
-              maxLength="20"
-            />
-          </FloatingLabel>
-          <FloatingLabel
-            controlId="floatingInput2"
-            label="Apellido"
-            className="mb-3"
-          >
-            <Form.Control
-              type="text"
-              className=""
-              onChange={handleChange}
-              name="lastname"
-              required
-              minLength="2"
-              maxLength="25"
-            />
-          </FloatingLabel>
-          <FloatingLabel
-            controlId="floatingInput2"
-            label="Direccion"
-            className="mb-3"
-          >
-            <Form.Control
-              type="text"
-              className=""
-              onChange={handleChange}
-              name="email"
-              required
-              minLength="2"
-              maxLength="30"
-            />
-          </FloatingLabel>
-          <FloatingLabel
-            controlId="floatingInput4"
-            label="Contraseña"
-            className="mb-3 w-100"
-          >
-            <Form.Control
-              type="password"
-              onChange={handleChange}
-              name="password"
-              required
-              minLength="8"
-              maxLength="30"
-            />
-          </FloatingLabel>
-          <FloatingLabel
-            controlId="floatingInput5"
-            label="Confirmar contraseña"
-            className="mb-3 w-100"
-          >
-            <Form.Control
-              type="password"
-              onChange={handleChange}
-              name="password2"
-              required
-              minLength="8"
-              maxLength="30"
-            />
-          </FloatingLabel>
-        </Modal.Body>
-        <Button
-          variant="primary"
-          type="submit"
-          className="m-3 btn-color"
-          onClick={handleClose}
-        >
-          Registarse
-        </Button>
-      </form>
-    </Modal>
+    <div>
+<button type="button" className="btn btn-warning mt-2" data-bs-toggle="modal" data-bs-target="#exampleModal1">
+  Registrarse
+</button>
+
+<div className="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+  <div className="modal-dialog">
+    <div className="modal-content">
+      <div className="modal-header">
+        <h1 className="modal-title fs-5" id="exampleModalLabel1">Registrate</h1>
+        <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div className="modal-body">
+        <form onSubmit={handleSubmit(onSubmit)}>
+        <div className="mb-3">
+  <input type="email" className="form-control" placeholder="Email"
+   {...register("email", { required: true, maxLength: 35, minLength: 15, pattern: /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/})}
+   required
+   maxLenght="35"
+   minLenght="15"
+   />
+   {errors.email && <span>⚠️ Debe respetar el formato nombre@mail.com</span>}
+</div>
+<div className="mb-3">
+  <input type="text" className="form-control" placeholder="Nombre"
+   {...register("name", { required: true, maxLength: 35, minLength: 1})}
+   required
+   maxLenght="35"
+   minLenght="3"
+    />
+</div>
+<div className="mb-3">
+  <input type="text" className="form-control" placeholder="Apellido"
+   {...register("lastname", { required: true, maxLength: 35, minLength: 1})}
+   required
+   maxLenght="35"
+   minLenght="3"
+    />
+</div>
+<div className="mb-3">
+  <input type="text" className="form-control" placeholder="Dirección"
+   {...register("address", { required: true, maxLength: 50, minLength: 5})}
+   required
+   maxLenght="50"
+   minLenght="5"
+    />
+</div>
+<div className="mb-3">
+  <input type="number" className="form-control" placeholder="Número de teléfono"
+   {...register("phone", { required: true, maxLength: 20, minLength: 9})}
+   required
+   maxLenght="20"
+   minLenght="9"
+    />
+</div>
+<div className="mb-3">
+  <input type="password" className="form-control" placeholder="Contraseña"
+   {...register("password", { required: true, maxLength: 20, minLength: 8, pattern: /^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$/})}
+   required
+   maxLenght="20"
+   minLenght="8"
+    />
+    {errors.password && <span>⚠️ Debe tener al menos 1 dígito, 1 mayúscula y 1 minúscula</span>}
+</div>
+        <button type="submit" className="btn btn-primary">Registrarse</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+    </div>
   );
 };
 
 export default RegisterModal;
-
-// // import { useState } from "react";
-// import { Button , Modal } from "react-bootstrap";
-// import RegisterForm from "../RegisterForm/RegisterForm";
-
-// const RegisterModal = ({ showRegister, handleCloseRegister, getUsers }) => {
-// return (
-//     <Modal show={showRegister} onHide={handleCloseRegister} centered backdrop="static">
-//       <Modal.Header closeButton>
-//         <Modal.Title>Registrarse</Modal.Title>
-//       </Modal.Header>
-//       <Modal.Body>
-//         <RegisterForm
-//           getUsers={getUsers}
-//           handleCloseRegister={handleCloseRegister}
-//         />
-//       </Modal.Body>
-//     </Modal>
-//   );
-// };
-
-// export default RegisterModal;

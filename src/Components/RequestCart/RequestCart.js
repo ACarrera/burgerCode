@@ -8,7 +8,7 @@ const RequestCart = () => {
 
   const addOrder = async () => {
       try {
-        const info = await axios.get("http://localhost:4000/users/getRequest");
+        const info = await axios.get("https://burguercode-db.onrender.com/getRequest");
         setRequest((info.data))
       } catch (error) {
         console.log(error);
