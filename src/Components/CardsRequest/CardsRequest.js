@@ -6,27 +6,6 @@ import ModalRequest from '../ModalRequest/ModalRequest';
 
 const CardsRequest = ({menu = []}) => {
 
-  const { register, handleSubmit } = useForm();
-  const [request, setRequest] = useState()
-
-  const sendRequest = async(data) => {
-    try {
-      await fetch('https://burguercode-db.onrender.com/addRequest',{
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data),
-        method: 'POST',
-      })
-    .then(response => response.json())
-    .then(data => setRequest(data));
-    
-    alert(`¡Recibimos tu burguerOrder de ${data.menu}!`)
-    } catch (error) {
-      console.log(error)
-      }
-    }
-
   return (
     <div className="requests d-flex justify-content-evenly flex-wrap col py-3">
       {
@@ -38,7 +17,7 @@ const CardsRequest = ({menu = []}) => {
         <h5 className="card-title">{menu.menu}</h5>
         <p className="card-text">{menu.description}</p>
         <div className="d-flex justify-content-between align-menus-center">
-         <ModalRequest _id={menu._id} />
+         <ModalRequest id={menu._id} />
          <p className="fs-4 m-0">${menu.price}</p>
          </div>
        </div>

@@ -28,7 +28,7 @@ const ModalRequest = (_id) => {
 
   const getMenus = async (_id) => {
     try {
-      const info = await axios.get(`https://burguercode-db.onrender.com/getOneMenu/${menuId._id}`);
+      const info = await axios.get(`https://burguercode-db.onrender.com/getOneMenu/${_id}`);
       console.log(info.data);
     } catch (error) {
       console.log(error);
@@ -40,7 +40,7 @@ const ModalRequest = (_id) => {
 
   return (
 <>
-<button type="button" className="boton-agregarproducto-carrito btn btn-warning rounded-0 rounded-0" data-bs-toggle="modal" data-bs-target="#exampleModal" onClick={getMenus(_id)} >✓</button>
+<button type="button" className="boton-agregarproducto-carrito btn btn-warning rounded-0 rounded-0" data-bs-toggle="modal" data-bs-target="#exampleModal" onClick={console.log(_id)} >✓</button>
 
 <div className="modal fade" id="exampleModal" aria-labelledby="exampleModalLabel" aria-hidden="true">
 <div className="modal-dialog">
