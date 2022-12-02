@@ -1,10 +1,19 @@
-import React from 'react';
+import { useState } from 'react';
+import axios from 'axios';
 import { useForm } from 'react-hook-form';
 
 const RegisterModal = () => {
   const { register, handleSubmit, formState: { errors } } = useForm();
-
-  const onSubmit = data => console.log(data);
+const [addUser, setAddUser] = useState()
+  const onSubmit = async (data) => {
+await axios.post('https://burguercode-db.onrender.com/adduser', data)
+.then((resp) => {
+  setAddUser(resp.data)
+})
+    console.log(data)
+    alert('El usuario ha sido creado exitosamente')
+    window.location.reload()
+  }
   
   return (
     <div>
@@ -40,7 +49,7 @@ const RegisterModal = () => {
 </div>
 <div className="mb-3">
   <input type="text" className="form-control" placeholder="Apellido"
-   {...register("lastname", { required: true, maxLength: 35, minLength: 1})}
+   {...register("lastName", { required: true, maxLength: 35, minLength: 1})}
    required
    maxLenght="35"
    minLenght="3"
@@ -48,7 +57,7 @@ const RegisterModal = () => {
 </div>
 <div className="mb-3">
   <input type="text" className="form-control" placeholder="Dirección"
-   {...register("adress", { required: true, maxLength: 50, minLength: 5})}
+   {...register("address", { required: true, maxLength: 50, minLength: 5})}
    required
    maxLenght="50"
    minLenght="5"
