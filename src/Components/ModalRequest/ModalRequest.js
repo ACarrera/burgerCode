@@ -2,9 +2,24 @@ import { useForm } from 'react-hook-form';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
-const ModalRequest = (_id) => {
+const ModalRequest = () => {
   const { register, handleSubmit } = useForm();
   const [request, setRequest] = useState()
+  const [menuId, setMenuId] = useState([])
+
+  const _id = '6362c8b154ec3ca52dce63eb'
+  
+  const getMenus = async () => {
+  try {
+    const info = await axios.get(`https://burguercode-db.onrender.com/getOneMenu/${_id}`);
+    console.log(info.data);
+  } catch (error) {
+    console.log(error);
+  }
+  };
+  useEffect(() => {
+  getMenus();
+  }, []);
 
   const sendRequest = async(data) => {
     try {
@@ -24,19 +39,6 @@ const ModalRequest = (_id) => {
       }
     }
 
-    const [menuId, setMenuId] = useState([]);
-
-  const getMenus = async (_id) => {
-    try {
-      const info = await axios.get(`https://burguercode-db.onrender.com/getOneMenu/${_id}`);
-      console.log(info.data);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-  useEffect(() => {
-    getMenus();
-  }, []);
 
   return (
 <>

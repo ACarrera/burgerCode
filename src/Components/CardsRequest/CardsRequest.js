@@ -1,7 +1,4 @@
-// import axios from 'axios';
 import './CardsRequest.css';
-import { useForm } from 'react-hook-form';
-import { useState } from 'react';
 import ModalRequest from '../ModalRequest/ModalRequest';
 
 const CardsRequest = ({menu = []}) => {
@@ -17,7 +14,7 @@ const CardsRequest = ({menu = []}) => {
         <h5 className="card-title">{menu.menu}</h5>
         <p className="card-text">{menu.description}</p>
         <div className="d-flex justify-content-between align-menus-center">
-         <ModalRequest id={menu._id} />
+         <ModalRequest />
          <p className="fs-4 m-0">${menu.price}</p>
          </div>
        </div>
