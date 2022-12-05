@@ -1,8 +1,10 @@
 import './Landing.css';
 import {FaHamburger} from 'react-icons/fa'
+import Footer from '../Components/Footer/Footer';
 // import {Link} from 'react-router-dom';
 
 const LandingPage = () => ( 
+    <>
     <div className="app-landing" id="landing">
         <div className="app-wrapper-info">
             <h3 className="h3-landing card-text">la mejor <FaHamburger className="h3-icon"/></h3>
@@ -20,6 +22,8 @@ const LandingPage = () => (
             </div>
         </div>
     </div>
+        <Footer />
+        </>
 );
 
  

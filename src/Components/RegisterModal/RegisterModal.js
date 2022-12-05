@@ -80,7 +80,7 @@ await axios.post('https://burguercode-db.onrender.com/adduser', data)
     />
     {errors.password && <span>⚠️ Debe tener al menos 1 dígito, 1 mayúscula y 1 minúscula</span>}
 </div>
-        <button type="submit" className="btn btn-primary">Registrarse</button>
+        <button type="submit" className="btn btn-warning">Registrarse</button>
         </form>
       </div>
     </div>

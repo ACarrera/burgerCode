@@ -2,16 +2,14 @@ import { useForm } from 'react-hook-form';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
-const ModalRequest = () => {
+const ModalRequest = (props) => {
   const { register, handleSubmit } = useForm();
   const [request, setRequest] = useState()
   const [menuId, setMenuId] = useState([])
-
-  const _id = '6362c8b154ec3ca52dce63eb'
   
   const getMenus = async () => {
   try {
-    const info = await axios.get(`https://burguercode-db.onrender.com/getOneMenu/${_id}`);
+    const info = await axios.get(`https://burguercode-db.onrender.com/getOneMenu/${props._id}`);
     console.log(info.data);
   } catch (error) {
     console.log(error);
@@ -19,7 +17,7 @@ const ModalRequest = () => {
   };
   useEffect(() => {
   getMenus();
-  }, []);
+  });
 
   const sendRequest = async(data) => {
     try {
@@ -39,10 +37,9 @@ const ModalRequest = () => {
       }
     }
 
-
   return (
 <>
-<button type="button" className="boton-agregarproducto-carrito btn btn-warning rounded-0 rounded-0" data-bs-toggle="modal" data-bs-target="#exampleModal" onClick={console.log(_id)} >✓</button>
+<button type="button" className="boton-agregarproducto-carrito btn btn-warning rounded-0 rounded-0" data-bs-toggle="modal" data-bs-target="#exampleModal">✓</button>
 
 <div className="modal fade" id="exampleModal" aria-labelledby="exampleModalLabel" aria-hidden="true">
 <div className="modal-dialog">

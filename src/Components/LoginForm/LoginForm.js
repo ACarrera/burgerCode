@@ -41,15 +41,10 @@ const LoginForm = () => {
 
   return (
     <>
-      <div className="container mt-3">
-        <Link to="/" className=" mt-2 btn btn-color">
-          Página principal
-        </Link>
-        <div className="w-50"><h6 className="mt-1 d-flex justify-content-start text-color">
-          Para ordenar tu burger primero inicia sesión o regístrate.
-        </h6></div>
+      <div className="loginpage container mt-3">
         <div className="container mt-1 login-portada col d-flex justify-content-around align-items-center">
           <div className="login-portada-text col-6">
+            <h4 className="mb-4">Iniciá sesión o registrate</h4>
             <form onSubmit={handleSubmit}>
               <FloatingLabel
                 controlId="floatingInput"
@@ -92,7 +87,8 @@ const LoginForm = () => {
           {width > 992 ? (
             <div className="container col-6 d-flex justify-content-end">
               <img
-                className="wrapper-img"
+                className="wrapper-img m-2"
+                alt="burguer"
                 src="https://images.unsplash.com/photo-1550547660-d9450f859349?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8aGFtYnVyZ3Vlc2F8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
               ></img>
             </div>
