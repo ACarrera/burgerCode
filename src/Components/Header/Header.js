@@ -15,7 +15,7 @@ const Header = () => {
   return (
     <Navbar className="bg-yellow header-height" expand="lg">
       <Container>
-        <Navbar.Brand href="#home" className="">
+        <Navbar.Brand href="/" className="">
           <GiHamburger className="bg-yellow text-darkred logo-height" />{" "}
           BURGERCODE
         </Navbar.Brand>
