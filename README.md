@@ -8,7 +8,7 @@ Este repositorio contiene el código perteneciente al *proyecto final* del curso
 BurguerCode simula ser una página de un restaurante de hamburguesas. En ella pueden interactuar usuarios (registrarse, hacer pedidos) y administradores (gestionar pedidos, agregar, modificar y eliminar menús).
 ## Instalación ✅
 
-La instalación de este proyecto se realiza desde la carpeta raíz (burguerCode), ejecutando en la terminar npm:
+La instalación de este proyecto se realiza desde la carpeta raíz (burguerCode), ejecutando en la terminal los siguientes comandos:
 
 ```bash
   npm install
