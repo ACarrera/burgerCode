@@ -6,7 +6,7 @@ const ButtonAddMenu = () => {
   const { register, handleSubmit} = useForm()
   
   const [addMenu, setAddMenu] = useState()
-  const onSubmit = async (data) => {
+  const newMenu = async (data) => {
     await axios.post('https://burguercode-db.onrender.com/addmenu', data)
     .then((resp) => {
       setAddMenu(resp.data)
@@ -17,14 +17,18 @@ const ButtonAddMenu = () => {
       }
   return (
     <div>
-    <div className="d-flex justify-content-center">
+    <div className="d-flex justify-content-center align-items-center">
     <button
       type="button"
-      className="text-center btn btn-warning p-3 mb-4"
+      className="text-center btn btn-warning rounded-0 border-0"
       data-bs-toggle="modal"
       data-bs-target="#exampleModal"
     >
-      AGREGAR NUEVO MENU
+      <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" className="bi bi-plus-circle me-1" viewBox="0 0 16 16">
+  <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+  <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+</svg>
+      <b>AGREGAR</b>
     </button>
   </div>
   <div
@@ -35,23 +39,23 @@ const ButtonAddMenu = () => {
   aria-hidden="true"
 >
   <div className="modal-dialog">
-    <div className="modal-content bg-warning">
-      <div className="modal-header">
-        <h5>Nuevo menú</h5>
+    <div className="modal-content bg-warning border-0 rounded-0">
+      <div className="modal-header py-2">
+        <h5 className="mb-0">NUEVO MENÚ</h5>
         <button
           type="button"
-          className="btn-close"
+          className="btn-close p-3"
           data-bs-dismiss="modal"
           aria-label="Close"
         ></button>
       </div>
       <div className="modal-body">
-        <form onSubmit={handleSubmit(onSubmit)} id="form">
+        <form onSubmit={handleSubmit(newMenu)} id="form">
           <div className="mb-3">
             <input
               type="text"
               id="disabledTextInput"
-              className="form-control"
+              className="form-control border-0 rounded-0"
               maxLength="20"
               placeholder="Nombre"
               {...register("menu", { required: true })} required
@@ -61,7 +65,7 @@ const ButtonAddMenu = () => {
             <textarea
               type="text"
               id="disabledTextInput"
-              className="form-control"
+              className="form-control border-0 rounded-0"
               maxLength="150"
               placeholder="Descripcion"
               rows="3"
@@ -75,7 +79,7 @@ const ButtonAddMenu = () => {
           <input
               type="number"
               id="disabledTextInput"
-              className="form-control input-nombreproducto"
+              className="form-control border-0 rounded-0"
               maxLength="10"
               placeholder="Precio"
               {...register("price", { required: true })} required
@@ -83,9 +87,11 @@ const ButtonAddMenu = () => {
             </div>  
             </div>
           </div>
-          <div className="modal-footer">
-            <button type="submit" className="btn btn-success">
-              Crear menu
+          <div className="d-flex justify-content-end">
+            <button type="submit" className="btn btn-success border-0 rounded-0 px-5">
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+</svg>
             </button>
           </div>
         </form>
