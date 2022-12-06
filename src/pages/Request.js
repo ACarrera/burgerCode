@@ -6,12 +6,12 @@ import Footer from '../Components/Footer/Footer';
 
 const Request = () => {
 
-  const [menu, setMenu] = useState([]);
+  const [menus, setMenus] = useState([]);
 
   const getMenus = async () => {
     try {
       const info = await axios.get("https://burguercode-db.onrender.com/getmenus");
-      setMenu(info.data);
+      setMenus(info.data);
     } catch (error) {
       console.log(error);
     }
@@ -20,10 +20,15 @@ const Request = () => {
     getMenus();
   }, []);
 
+console.log(menus)
+
   return (
     <>
     <div className="request-movile d-flex">
-    <CardsRequest menu={menu} />
+      {
+      menus.map((menu, index) => (
+    <CardsRequest menu={menu} index={index} />
+    ))}
     </div>
     <Footer />
     </>

@@ -1,58 +1,65 @@
 import { useForm } from 'react-hook-form';
-import { useState, useEffect } from 'react';
-import axios from 'axios';
+// import { useState, useEffect } from 'react';
+// import axios from 'axios';
 
-const ModalRequest = (props) => {
+const ModalRequest = ({menu, id}) => {
   const { register, handleSubmit } = useForm();
-  const [request, setRequest] = useState()
-  const [menuId, setMenuId] = useState([])
-  
-  const getMenus = async () => {
-  try {
-    const info = await axios.get(`https://burguercode-db.onrender.com/getOneMenu/${props._id}`);
-    console.log(info.data);
-  } catch (error) {
-    console.log(error);
-  }
-  };
-  useEffect(() => {
-  getMenus();
-  });
+  // const [request, setRequest] = useState()
+  // const [menuId, setMenuId] = useState([])
 
-  const sendRequest = async(data) => {
-    try {
-      await fetch('https://burguercode-db.onrender.com/addRequest',{
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data),
-        method: 'POST',
-      })
-    .then(response => response.json())
-    .then(data => setRequest(data));
+
+  console.log(menu, "hola soy el menu")
+  const idMenu = `#menu${id}` 
+  console.log(idMenu, "idMenu")
+
+  const menuId = `menu${id}`
+  
+  // const getMenus = async () => {
+  // try {
+  //   const info = await axios.get(`https://burguercode-db.onrender.com/getOneMenu/${menu._id}`);
+  //   console.log(info.data);
+  // } catch (error) {
+  //   console.log(error);
+  // }
+  // };
+  // useEffect(() => {
+  // getMenus();
+  // });
+
+  // const sendRequest = async(data) => {
+  //   try {
+  //     await fetch('https://burguercode-db.onrender.com/addRequest',{
+  //       headers: {
+  //         'Content-Type': 'application/json'
+  //       },
+  //       body: JSON.stringify(data),
+  //       method: 'POST',
+  //     })
+  //   .then(response => response.json())
+  //   .then(data => setRequest(data));
     
-    alert(`¡Recibimos tu burguerOrder de ${data.menu}!`)
-    } catch (error) {
-      console.log(error)
-      }
-    }
+  //   alert(`¡Recibimos tu burguerOrder de ${data.menu}!`)
+  //   } catch (error) {
+  //     console.log(error)
+  //     }
+  //   }
 
   return (
 <>
-<button type="button" className="boton-agregarproducto-carrito btn btn-warning rounded-0 rounded-0" data-bs-toggle="modal" data-bs-target="#exampleModal">✓</button>
+<button type="button" className="boton-agregarproducto-carrito btn btn-warning rounded-0 rounded-0" data-bs-toggle="modal" data-bs-target={idMenu}>✓</button>
 
-<div className="modal fade" id="exampleModal" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div className="modal fade" id={menuId} aria-labelledby="exampleModalLabel" aria-hidden="true">
 <div className="modal-dialog">
 <div className="modal-content">
   <div className="modal-body fs-5">
     Revisá tu pedido antes de enviar:
-    <form onSubmit={handleSubmit(sendRequest)}>
+    <form>
 <label className="form-label m-0 fs-6">Menu</label>
-<input type="text" className="form-control p-1 m-0"  {...register("menu", { required: true })} required aria-describedby="emailHelp" value={menuId.menu}/>
+<input type="text" className="form-control p-1 m-0"  {...register("menu", { required: true })} required aria-describedby="emailHelp" value={menu}/>
 <label className="form-label m-0 fs-6">Descripción</label>
-<input type="text" className="form-control p-1" value={menuId.description} {...register("description", { required: true })} required />
+<input type="text" className="form-control p-1" value={menu.description} {...register("description", { required: true })} required />
 <label className="form-label m-0 fs-6">Precio</label>
-<input type="number" className="form-control p-1" value={menuId.price} {...register("price", { required: true })} required />
+<input type="number" className="form-control p-1" value={menu.price} {...register("price", { required: true })} required />
 <label className="form-label m-0 fs-6">¿Alguna especificación?</label>
 <input type="text" className="form-control p-1" {...register("specification", { required: true })} required defaultValue="Ninguna especificación"/>
 <div className="p-0 mt-1 d-flex justify-content-end">

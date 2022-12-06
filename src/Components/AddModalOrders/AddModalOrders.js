@@ -46,10 +46,11 @@ const AddModalOrders = () => {
 		 <td>{request.description}</td>
 		 <td>{request.price}</td>
 		 {request.specification}
-     <td><button className="btn btn-success text-center d-flex justify-content-center p-2 m-1" onClick={(_id) => deleteRequest(request._id)} type=" button" key={request._id}>✓</button></td>
+     <td>
+			<button className="btn btn-success text-center d-flex justify-content-center p-2 m-1" onClick={(_id) => deleteRequest(request._id)} type=" button" key={request._id}>✓</button>
+		 </td>
 	</tr>
 	)}
-	
 	</tbody>
 </table>
   </div>

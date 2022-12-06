@@ -37,7 +37,7 @@ await axios.post('https://burguercode-db.onrender.com/adduser', data)
    maxLenght="35"
    minLenght="15"
    />
-   {errors.email && <span>⚠️ Debe respetar el formato nombre@mail.com</span>}
+   {errors.email && <span className="mt-1">⚠️ Debe respetar el formato nombre@mail.com</span>}
 </div>
 <div className="mb-3">
   <input type="text" className="form-control" placeholder="Nombre"
@@ -70,6 +70,7 @@ await axios.post('https://burguercode-db.onrender.com/adduser', data)
    maxLenght="20"
    minLenght="9"
     />
+    {errors.phone && <span className="mt-1">⚠️ El número ingresado es demasiado corto. Ingréselo con código de área</span>}
 </div>
 <div className="mb-3">
   <input type="password" className="form-control" placeholder="Contraseña"
@@ -78,7 +79,7 @@ await axios.post('https://burguercode-db.onrender.com/adduser', data)
    maxLenght="20"
    minLenght="8"
     />
-    {errors.password && <span>⚠️ Debe tener al menos 1 dígito, 1 mayúscula y 1 minúscula</span>}
+    {errors.password && <span className="mt-1">⚠️ Debe tener al menos 1 dígito, 1 mayúscula y 1 minúscula</span>}
 </div>
         <button type="submit" className="btn btn-warning">Registrarse</button>
         </form>
