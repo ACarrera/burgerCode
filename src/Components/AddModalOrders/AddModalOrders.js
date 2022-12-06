@@ -5,7 +5,7 @@ import '../AddModalOrders/AddModalOrders.css'
 const AddModalOrders = () => {
   
 	const deleteRequest = async (_id) => {
-		await axios.delete(`https://burguercode-db.onrender.com/deleteRequest/${_id}`)
+		await axios.delete(`https://burguercode-db.onrender.com/deleterequest/${_id}`)
 		alert('Menú entregado')
 		window.location.href ='/addorders'
 	}
@@ -14,7 +14,7 @@ const AddModalOrders = () => {
 
   const addOrder = async () => {
       try {
-        const info = await axios.get("https://burguercode-db.onrender.com/getRequest");
+        const info = await axios.get("https://burguercode-db.onrender.com/getrequest");
         setRequest((info.data))
       } catch (error) {
         console.log(error);
@@ -35,6 +35,7 @@ const AddModalOrders = () => {
 		<th>DESCRIPCION</th>
 		<th>PRECIO</th>
 		<th>ESPECIFICACIONES</th>
+		<th></th>
 
 	</tr>
 	</thead>

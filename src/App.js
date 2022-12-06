@@ -7,9 +7,9 @@ import LoginPage from "./pages/LoginPage";
 import Request from "./pages/Request";
 // import PrivateRoute from "./routes/PrivateRoute";
 import Admin from "./pages/Admin";
-import AdmPedidos from "./pages/AdmPedidos";
+import AdminRequest from "./pages/AdminRequest";
 import UserTable from "./Components/UserTable/UserTable";
-// import menu from "./pages/menu";
+import Menu from "./pages/Menu";
 // import { GiHamburger } from "react-icons/gi";
 
 function App() {
@@ -20,19 +20,12 @@ function App() {
         <Routes>
           <Route path="/" element={<Landing />} />
           <Route path="/login" element={<LoginPage />} />
-          <Route
-            path="/home"
-            element={
-              // <PrivateRoute>
-                <Home />
-              /* </PrivateRoute> */
-            }
-          />
+          <Route path="/home" element={<Home />} />
           <Route path="/request" element={<Request />} />
           <Route path="/admin" element={<Admin />} />
           <Route path="/UserTable" element={<UserTable />} />
-          <Route path="/menu" element={<menu />} />
-          <Route path="/addorders" element={<AdmPedidos />} />
+          <Route path="/menu" element={<Menu />} />
+          <Route path="/addorders" element={<AdminRequest />} />
         </Routes>
       </UserProvider>
     </Router>

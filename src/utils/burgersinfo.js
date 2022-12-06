@@ -5,45 +5,6 @@ import { RiTeamLine, RiHomeSmileLine } from "react-icons/ri"
 import '../Components/CardHome/CardHome.css';
 import {images} from '../constants/images';
 
-export const carta = [
-    {
-        img: images.burgermenu0,
-        alt: 'Blue BurgerCode',
-        titulo: 'Blue burgercode',
-        descripcion: 'Burger de carne vacuna, queso azul, tomate, cebolla y pepino.'
-    },
-    {
-        img:  images.burgermenu1,
-        alt:"classiCode",
-        titulo: 'ClassiCode',
-        descripcion: 'Burger de carne vacuna, lechuga, tomate y queso cheddar.'
-    },
-    {
-        img:  images.burgermenu2,
-        alt:"classiCode",
-        titulo: 'BigCode',
-        descripcion: 'Burger de carne vacuna,cheddar, pepino y cebolla morada.'
-    },
-    {
-        img:  images.burgermenu3,
-        alt:"classiCode",
-        titulo: 'ChiliCode',
-        descripcion: 'Burger de carne vacuna,pimiento,cheddar y rucula.'  
-    },
-    {
-        img:  images.burgermenu4,
-        alt:"classiCode",
-        titulo: 'BaconCode',
-        descripcion: 'Burger de carne vacuna,cheddar,bacon.'  
-    },
-    {
-        img:  images.burgermenu5,
-        alt:"classiCode",
-        titulo: 'BigCode',
-        descripcion: 'Burger falafel,cheddar, palta y cebolla morada.'  
-    }
-]
-
 export const nuestrosDestacados = [
     {
         icon: <GiMasonJar className="icons-home" />,

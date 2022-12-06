@@ -22,7 +22,7 @@ const Request = () => {
 
   return (
     <>
-    <div className="paginadepedidosmoviles d-flex">
+    <div className="request-movile d-flex">
     <CardsRequest menu={menu} />
     </div>
     <Footer />
