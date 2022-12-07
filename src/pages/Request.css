@@ -1,4 +1,23 @@
-@media (max-width: 767.98px){
+.requests{
+  font-family: 'Bebas Neue', cursive;
+}
+
+.card-img-top{
+  text-decoration: underline;
+    font-weight: bold;
+    font-size: 45px;
+}
+
+@media (min-width: 768px) and (max-width: 991.98px){
+  .card-request{
+    width: 35% !important;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .card-request{
+    width: 40% !important;
+  }
   .request-movile{
     display: flex;
     flex-direction: column-reverse !important;

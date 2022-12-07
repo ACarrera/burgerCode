@@ -1,19 +1,20 @@
-
+.viewunique:hover{
+background-color: #ffe100;
+transition:all .3s ease-in-out
+}
 	.demo {
-		border:1px sólido #C0C0C0;
-		border-collapse:colapso;
+		border-collapse:collapse;
 		padding:5px;
         width: 100%;
 	}
 
 	.demo th {
-		border:1px sólido #C0C0C0;
 		padding:5px;
-		background:#F0F0F0;
-        width: 25%;
+		background:#f00000;
+    width: 25%;
+		color:white
 	}
 	.demo td {
-		border:1px sólido #C0C0C0;
 		padding:2px;
         width: 25%;
 	}

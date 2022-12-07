@@ -20,8 +20,6 @@ const Request = () => {
     getMenus();
   }, []);
 
-console.log(menus)
-
   return (
     <>
     <div className="request-movile d-flex">

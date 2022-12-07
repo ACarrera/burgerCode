@@ -1,10 +1,10 @@
-import AddModalOrders from "../Components/AddModalOrders/AddModalOrders"
+import TableOrders from "../Components/TableOrders/TableOrders"
 import Footer from "../Components/Footer/Footer";
 
 const AdminRequest = () => {
   return (
     <>
-    <AddModalOrders />
+    <TableOrders />
     <Footer />
     </>
   )
