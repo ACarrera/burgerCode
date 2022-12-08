@@ -1,23 +1,11 @@
 import { useForm } from 'react-hook-form';
-import { useState, useEffect } from 'react';
-import axios from 'axios';
+import { useState } from "react";
 
 const ModalRequest = ({menu, id}) => {
   const { register, handleSubmit } = useForm();
   const [request, setRequest] = useState()
   const idMenu = `#menu${id}` 
   const menuIdModal = `menu${id}`
-  
-  const getMenus = async () => {
-  try {
-    await axios.get(`https://burguercode-db.onrender.com/getOneMenu/${menu._id}`);
-  } catch (error) {
-    console.log(error);
-  }
-  };
-  useEffect(() => {
-  getMenus();
-  });
 
   const sendRequest = async(data) => {
     try {
