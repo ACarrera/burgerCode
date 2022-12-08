@@ -17,21 +17,18 @@ await axios.post('https://burguercode-db.onrender.com/adduser', data)
   
   return (
     <div>
-<button type="button" className="btn btn-warning mt-2" data-bs-toggle="modal" data-bs-target="#exampleModal1">
+<button type="button" className="btn btn-warning mt-2 rounded-0" data-bs-toggle="modal" data-bs-target="#exampleModal1">
   Registrarse
 </button>
 
 <div className="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel1" aria-hidden="true">
   <div className="modal-dialog">
-    <div className="modal-content">
-      <div className="modal-header">
-        <h1 className="modal-title fs-5" id="exampleModalLabel1">Registrate</h1>
-        <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
+    <div className="modal-content rounded-0 border-0">
       <div className="modal-body">
+        <h4 className="p-2">Registrate</h4>
         <form onSubmit={handleSubmit(onSubmit)}>
         <div className="mb-3">
-  <input type="email" className="form-control" placeholder="Email"
+  <input type="email" className="form-control rounded-0" placeholder="Email"
    {...register("email", { required: true, maxLength: 35, minLength: 15, pattern: /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/})}
    required
    maxLenght="35"
@@ -40,7 +37,7 @@ await axios.post('https://burguercode-db.onrender.com/adduser', data)
    {errors.email && <span className="mt-1">⚠️ Debe respetar el formato nombre@mail.com</span>}
 </div>
 <div className="mb-3">
-  <input type="text" className="form-control" placeholder="Nombre"
+  <input type="text" className="form-control rounded-0" placeholder="Nombre"
    {...register("name", { required: true, maxLength: 35, minLength: 1})}
    required
    maxLenght="35"
@@ -48,7 +45,7 @@ await axios.post('https://burguercode-db.onrender.com/adduser', data)
     />
 </div>
 <div className="mb-3">
-  <input type="text" className="form-control" placeholder="Apellido"
+  <input type="text" className="form-control rounded-0" placeholder="Apellido"
    {...register("lastName", { required: true, maxLength: 35, minLength: 1})}
    required
    maxLenght="35"
@@ -56,7 +53,7 @@ await axios.post('https://burguercode-db.onrender.com/adduser', data)
     />
 </div>
 <div className="mb-3">
-  <input type="text" className="form-control" placeholder="Dirección"
+  <input type="text" className="form-control rounded-0" placeholder="Dirección"
    {...register("address", { required: true, maxLength: 50, minLength: 5})}
    required
    maxLenght="50"
@@ -64,7 +61,7 @@ await axios.post('https://burguercode-db.onrender.com/adduser', data)
     />
 </div>
 <div className="mb-3">
-  <input type="number" className="form-control" placeholder="Número de teléfono"
+  <input type="number" className="form-control rounded-0" placeholder="Número de teléfono"
    {...register("phone", { required: true, maxLength: 20, minLength: 9})}
    required
    maxLenght="20"
@@ -73,7 +70,7 @@ await axios.post('https://burguercode-db.onrender.com/adduser', data)
     {errors.phone && <span className="mt-1">⚠️ El número ingresado es demasiado corto. Ingréselo con código de área</span>}
 </div>
 <div className="mb-3">
-  <input type="password" className="form-control" placeholder="Contraseña"
+  <input type="password" className="form-control rounded-0" placeholder="Contraseña"
    {...register("password", { required: true, maxLength: 20, minLength: 8, pattern: /^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$/})}
    required
    maxLenght="20"
@@ -81,7 +78,10 @@ await axios.post('https://burguercode-db.onrender.com/adduser', data)
     />
     {errors.password && <span className="mt-1">⚠️ Debe tener al menos 1 dígito, 1 mayúscula y 1 minúscula</span>}
 </div>
-        <button type="submit" className="btn btn-warning">Registrarse</button>
+<div className="d-flex justify-content-end">
+<button type="button" className="btn btn-danger me-1 rounded-0 border-0"data-bs-dismiss="modal">Volver</button>
+        <button type="submit" className="btn btn-warning rounded-0">Registrarse</button>
+        </div>
         </form>
       </div>
     </div>

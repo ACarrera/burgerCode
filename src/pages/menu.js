@@ -21,8 +21,8 @@ const Menu = () => {
         getMenus()
     }, []);
 	return (
-		<div>
-			<h4 className="text-center my-2">Menús</h4>
+		<>
+			<h2 className="text-center mt-2 mb-0 title-tableadmin">Menús</h2>
 			<ButtonAddMenu />
       <div className="m-3 h-100">
       <table className="demo">
@@ -34,7 +34,7 @@ const Menu = () => {
       </ table>
       </div>
 			<Footer />
-		</div>
+		</>
 	);
 };
 
