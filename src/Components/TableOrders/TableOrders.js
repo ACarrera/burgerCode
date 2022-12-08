@@ -27,7 +27,7 @@ const TableOrders = () => {
 
   return (
     <div className="m-3 h-100">
-			<h2 className="text-center mb-4">Pedidos</h2>
+			<h2 className="text-center mb-2 title-tableadmin">Pedidos</h2>
     <table className="demo">
 	<thead>
 	<tr>

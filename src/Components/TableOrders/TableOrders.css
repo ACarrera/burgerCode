@@ -1,3 +1,7 @@
+.title-tableadmin{
+	font-family: 'Bebas Neue', cursive;
+}
+
 .viewunique:hover{
 background-color: #ffe100;
 transition:all .3s ease-in-out

@@ -41,10 +41,10 @@ const LoginForm = () => {
 
   return (
     <>
-      <div className="loginpage container mt-3">
+      <div className="loginpage container pt-3">
         <div className="container mt-1 login-portada col d-flex justify-content-around align-items-center">
           <div className="login-portada-text col-6">
-            <h4 className="mb-4">Iniciá sesión o registrate</h4>
+            <h4 className="mb-4 text-light">INICIÁ SESIÓN O REGISTRATE</h4>
             <form onSubmit={handleSubmit}>
               <FloatingLabel
                 controlId="floatingInput"
@@ -54,7 +54,7 @@ const LoginForm = () => {
                 <Form.Control
                   type="email"
                   placeholder="nombre@ejemplo.com"
-                  className="w-100"
+                  className="w-100 rounded-0"
                   onChange={handleChange}
                   name="email"
                   required
@@ -71,9 +71,10 @@ const LoginForm = () => {
                   required
                   minLength='8'
                   maxLength='30'
+                  className="rounded-0"
                 />
               </FloatingLabel>
-              <Button className="mt-2 me-2 btn-color" type="submit">
+              <Button className="mt-2 me-2 btn-warning rounded-0" type="submit">
                 Ingresar
               </Button>
               {Object.keys(errors).length !== 0
