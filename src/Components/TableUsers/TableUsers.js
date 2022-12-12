@@ -27,10 +27,10 @@ const TableUsers = () => {
 
 		const aux = usersFilter.sort((a,b) =>{
     
-			if (a.lastName > b.lastName) {
+			if (a.lastname > b.lastname) {
 			return 1;
 		}
-		if (a.lastName < b.lastName) {
+		if (a.lastname < b.lastname) {
 			return -1;
 		}
 		return 0 })
@@ -41,6 +41,7 @@ const TableUsers = () => {
 		useEffect(() => {
 			setUsersOrganized(aux)
 		}, [aux])
+
   return (
     <div className="m-3 h-100">
 			<h2 className="text-center mb-2 title-tableadmin">Usuarios</h2>
@@ -58,7 +59,7 @@ const TableUsers = () => {
 	<tbody>
 	{usersOrganized.map(user=>
 	<tr className="viewunique">
-		 <td><b>{user.lastName} {user.name}</b></td>
+		 <td><b>{user.lastname} {user.name}</b></td>
 		 <td>{user.email}</td>
 		 <td><i>{user.address}</i></td>
 		 <td>{user.phone}</td>

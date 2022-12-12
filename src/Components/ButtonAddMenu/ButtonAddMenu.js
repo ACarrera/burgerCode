@@ -4,7 +4,7 @@ import axios from 'axios';
 import './ButtonAddMenu.css'
 
 const ButtonAddMenu = () => {
-  const { register, handleSubmit} = useForm()
+  const { register, handleSubmit } = useForm()
   
   const [addMenu, setAddMenu] = useState()
   const newMenu = async (data) => {
@@ -16,6 +16,7 @@ const ButtonAddMenu = () => {
         alert('Menu creado exitosamente')
         window.location.reload()
       }
+
   return (
     <div className="modal-admin">
     <div className="d-flex justify-content-center align-items-center title-tableadmin">
@@ -48,9 +49,9 @@ const ButtonAddMenu = () => {
               type="text"
               id="disabledTextInput"
               className="form-control border-0 rounded-0"
-              maxLength="20"
+              maxLength="15"
               placeholder="Nombre"
-              {...register("menu", { required: true })} required
+              {...register("menu", { required: true, maxLength: 15})} required
             />
           </div>
           <div className="mb-3">
@@ -58,10 +59,10 @@ const ButtonAddMenu = () => {
               type="text"
               id="disabledTextInput"
               className="form-control border-0 rounded-0"
-              maxLength="150"
+              maxLength="65"
               placeholder="Descripcion"
               rows="3"
-              {...register("description", { required: true })} required
+              {...register("description", { required: true, maxLenght:65 })} required
             />
           </div>
           <div className="mb-3">
@@ -72,9 +73,9 @@ const ButtonAddMenu = () => {
               type="number"
               id="disabledTextInput"
               className="form-control border-0 rounded-0"
-              maxLength="10"
+              max="9999"
               placeholder="Precio"
-              {...register("price", { required: true })} required
+              {...register("price", { required: true, min: 1, max: 9999 })} required
             />
             </div>  
             </div>
