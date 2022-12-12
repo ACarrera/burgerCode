@@ -8,8 +8,8 @@ import Request from "./pages/Request";
 // import PrivateRoute from "./routes/PrivateRoute";
 import Admin from "./pages/Admin";
 import AdminRequest from "./pages/AdminRequest";
-import UserTable from "./Components/UserTable/UserTable";
-import Menu from "./pages/Menu";
+import AdminMenu from "./pages/AdminMenu";
+import AdminUsers from "./pages/AdminUsers";
 // import { GiHamburger } from "react-icons/gi";
 
 function App() {
@@ -23,8 +23,8 @@ function App() {
           <Route path="/home" element={<Home />} />
           <Route path="/request" element={<Request />} />
           <Route path="/admin" element={<Admin />} />
-          <Route path="/UserTable" element={<UserTable />} />
-          <Route path="/menu" element={<Menu />} />
+          <Route path="/users" element={<AdminUsers />} />
+          <Route path="/menu" element={<AdminMenu />} />
           <Route path="/addorders" element={<AdminRequest />} />
         </Routes>
       </UserProvider>
