@@ -4,13 +4,8 @@ import './TableOrders.css'
 
 const TableOrders = () => {
   
-	const deleteRequest = async (_id) => {
-		await axios.delete(`https://burguercode-db.onrender.com/deleterequest/${_id}`)
-		alert('Menú entregado')
-		window.location.href ='/addorders'
-	}
-  
-  const [request, setRequest] = useState([]);
+	
+	const [request, setRequest] = useState([]);
 
   const addOrder = async () => {
       try {
@@ -24,6 +19,11 @@ const TableOrders = () => {
      addOrder()
     }, []);
  
+		const deleteRequest = async (_id) => {
+			await axios.delete(`https://burguercode-db.onrender.com/deleterequest/${_id}`)
+			alert('Menú entregado')
+			window.location.href ='/addorders'
+		}
 
   return (
     <div className="m-3 h-100">
@@ -33,7 +33,7 @@ const TableOrders = () => {
 	<tr>
 		<th>NOMBRE</th>
 		<th>DESCRIPCIÓN</th>
-		<th>PRECIO</th>
+		<th className="text-center">PRECIO</th>
 		<th>ESPECIFICACIONES</th>
 		<th></th>
 
@@ -44,7 +44,7 @@ const TableOrders = () => {
 	<tr className="viewunique">
 		 <td><b>{request.menu}</b></td>
 		 <td>{request.description}</td>
-		 <td>${request.price}</td>
+		 <td className="text-center">${request.price}</td>
 		 <td><b>{request.specification}</b></td>
      <td>
 			<button className="btn btn-success text-center d-flex justify-content-center p-2 m-1 rounded-0 border-0" onClick={(_id) => deleteRequest(request._id)} type="button" key={request._id}>
