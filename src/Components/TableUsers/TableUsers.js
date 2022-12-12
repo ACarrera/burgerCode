@@ -22,6 +22,25 @@ const TableUsers = () => {
     useEffect(() => {
      addUser()
     }, []);
+
+		const usersFilter = user.filter(user => user.role === 'USER')
+
+		const aux = usersFilter.sort((a,b) =>{
+    
+			if (a.lastName > b.lastName) {
+			return 1;
+		}
+		if (a.lastName < b.lastName) {
+			return -1;
+		}
+		return 0 })
+	
+		const [usersOrganized, setUsersOrganized] = useState([])
+
+	
+		useEffect(() => {
+			setUsersOrganized(aux)
+		}, [aux])
   return (
     <div className="m-3 h-100">
 			<h2 className="text-center mb-2 title-tableadmin">Usuarios</h2>
@@ -30,7 +49,6 @@ const TableUsers = () => {
 	<tr>
 		<th>NOMBRE</th>
 		<th>EMAIL</th>
-		<th>ROL</th>
 		<th>DIRECCIÓN</th>
 		<th>TELÉFONO</th>
 		<th></th>
@@ -38,12 +56,11 @@ const TableUsers = () => {
 	</tr>
 	</thead>
 	<tbody>
-	{user.map(user=>
+	{usersOrganized.map(user=>
 	<tr className="viewunique">
 		 <td><b>{user.lastName} {user.name}</b></td>
 		 <td>{user.email}</td>
-		 <td>{user.role}</td>
-		 <td>{user.address}</td>
+		 <td><i>{user.address}</i></td>
 		 <td>{user.phone}</td>
      <td>
 			<button className="btn btn-danger text-center d-flex justify-content-center p-2 m-1 rounded-0 border-0" onClick={(_id) => deleteUser(user._id)} type="button" key={user._id}>
