@@ -20,6 +20,24 @@ const AdminMenu = () => {
     useEffect(() => {
         getMenus()
     }, []);
+
+    const aux = menus.sort((a,b) =>{
+    
+			if (a.menu > b.menu) {
+			return 1;
+		}
+		if (a.menu < b.menu) {
+			return -1;
+		}
+		return 0 })
+	
+		const [menusOrganized, setMenusOrganized] = useState([])
+
+	
+		useEffect(() => {
+			setMenusOrganized(aux)
+		}, [aux])
+
 	return (
 		<>
 			<h2 className="text-center mt-2 mb-0 title-tableadmin">Menús</h2>
@@ -28,7 +46,7 @@ const AdminMenu = () => {
       <table className="demo">
 	<TopTableMenus />
 			{
-      menus.map((menu, index) => (
+      menusOrganized.map((menu, index) => (
 			<MenuTable menu={menu} index={index} />
 			))}
       </ table>

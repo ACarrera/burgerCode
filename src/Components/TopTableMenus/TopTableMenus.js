@@ -6,7 +6,7 @@ const TopTableMenus = () => {
 	<tr>
 		<th>NOMBRE</th>
 		<th>DESCRIPCION</th>
-		<th>PRECIO</th>
+		<th className="text-center">PRECIO</th>
 		<th></th>
 
 	</tr>

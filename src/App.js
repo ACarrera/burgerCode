@@ -22,10 +22,10 @@ function App() {
           <Route path="/login" element={<LoginPage />} />
           <Route path="/home" element={<Home />} />
           <Route path="/request" element={<Request />} />
-          <Route path="/admin" element={<Admin />} />
-          <Route path="/users" element={<AdminUsers />} />
-          <Route path="/menu" element={<AdminMenu />} />
-          <Route path="/addorders" element={<AdminRequest />} />
+          <Route path="/adminpage" element={<Admin />} />
+          <Route path="/adminusers" element={<AdminUsers />} />
+          <Route path="/adminmenus" element={<AdminMenu />} />
+          <Route path="/adminorders" element={<AdminRequest />} />
         </Routes>
       </UserProvider>
     </Router>
