@@ -6,10 +6,10 @@ import {images} from '../../constants/images';
 import './Gallery.css';
 
 
-  const galleryImages = [images.burger1, images.burger2, images.burger3];
 
+const galleryImages = [images.burger1, images.burger2, images.burger3];
 
- const Gallery =() => {
+const Gallery =() => {
     const scrollRef = React.useRef(null);
 
     const scroll =(direction) =>{
@@ -34,7 +34,7 @@ import './Gallery.css';
           <div className='app-gallery-images-container' ref={scrollRef}>
               {galleryImages.map((image, index)=>(
                   <div className='app-gallery-images-card flex-center' key={`gallery-image-${index +  1}`}>
-                      <img src={image} alt="gallery"/>
+                      <img src={image} alt="Galería Burguers"/>
                   </div>
               ))}
           </div>

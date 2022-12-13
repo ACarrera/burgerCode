@@ -89,7 +89,7 @@ const LoginForm = () => {
             <div className="container col-6 d-flex justify-content-end">
               <img
                 className="wrapper-img m-2"
-                alt="burguer"
+                alt="Burguer Login"
                 src="https://images.unsplash.com/photo-1550547660-d9450f859349?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8aGFtYnVyZ3Vlc2F8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
               ></img>
             </div>

@@ -15,7 +15,7 @@ const LandingPage = () => (
             <div className="app-wrapper-img">
                 <img
                 src="https://media.istockphoto.com/photos/tasty-grilled-home-made-burger-picture-id945053910?k=20&m=945053910&s=612x612&w=0&h=h4VALU-pvfvXEl7YVKUpxj49XG_l73JR3xwxMyVBTG4="
-                alt="img-landing">         
+                alt="BurguerCode Presentación">         
                 </img>
             </div>
         </div>

@@ -1,9 +1,5 @@
 import './CardHome.css';
 import { Card } from "react-bootstrap";
-import {GiMasonJar, GiFrenchFries, GiForkKnifeSpoon} from "react-icons/gi"
-import {TbBread, TbCheese} from "react-icons/tb";
-import{BiDrink} from "react-icons/bi";
-import{RiTeamLine, RiHomeSmileLine} from "react-icons/ri"
 
 const CardHome = ({icon, tituloIng, descripcionIng}) => {
     return ( 
