@@ -44,7 +44,7 @@ const TableUsers = () => {
 		}, [aux])
 
   return (
-    <div className="m-3 table-height">
+    <div className="table-height">
 			<h2 className="text-center mb-2 title-tableadmin">Usuarios</h2>
     <table className="demo">
 	<thead>

@@ -42,7 +42,7 @@ const AdminMenu = () => {
 		<>
 			<h2 className="text-center mt-2 mb-0 title-tableadmin">Menús</h2>
 			<ButtonAddMenu />
-      <div className="m-3 h-100">
+      <div className="h-100">
       <table className="demo">
 	<TopTableMenus />
 			{

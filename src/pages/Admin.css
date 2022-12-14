@@ -25,19 +25,11 @@
     transform: translate(-50%, -50%);
     font-family: 'Bebas Neue', cursive;
 }
-@media (min-width: 768px) and (max-width: 991.98px){
-  .responsive-text{
-    width: 30vh;
+@media screen and (min-device-width:480px) and (max-device-width:768px){
+  .d-flex{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
-}
-
-@media (max-width: 767.98px){
-  .effect-button{
-    display: block;
-    width: auto;
-    height: auto;
-  }
-  .responsive-text{
-    width: 40vh;
-  }
+  
 }
