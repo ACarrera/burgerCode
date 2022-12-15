@@ -5,6 +5,7 @@ import ButtonAddMenu from '../Components/ButtonAddMenu/ButtonAddMenu';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import TopTableMenus from '../Components/TopTableMenus/TopTableMenus';
+import './AdminMenu.css';
 
 const AdminMenu = () => {
 	const [menus, setMenus] = useState([]);

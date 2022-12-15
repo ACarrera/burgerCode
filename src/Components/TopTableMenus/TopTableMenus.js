@@ -5,8 +5,8 @@ const TopTableMenus = () => {
     <thead>
 	<tr>
 		<th>NOMBRE</th>
-		<th>DESCRIPCION</th>
-		<th className="text-center">PRECIO</th>
+		<th className="movile-css-menus">DESCRIPCION</th>
+		<th className="movile-css-menus text-center">PRECIO</th>
 		<th></th>
 
 	</tr>

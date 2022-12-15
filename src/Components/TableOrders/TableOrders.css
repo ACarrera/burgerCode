@@ -1,3 +1,7 @@
+.table{
+	height: 90vh;
+}
+
 .title-tableadmin{
 	font-family: 'Bebas Neue', cursive;
 }
@@ -25,4 +29,10 @@ transition:all .3s ease-in-out
     .btn {
         display: flex;
     }
+
+		@media (max-width: 767.98px) {
+			.movile-css-orders{
+				display: none !important;
+			}
+		}
 	
