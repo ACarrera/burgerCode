@@ -9,20 +9,25 @@ const ModalRequest = ({menu, id}) => {
 
   const sendRequest = async(data) => {
     try {
-      await fetch('https://burguercode-db.onrender.com/addRequest',{
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data),
-        method: 'POST',
-      })
-    .then(response => response.json())
-    .then(data => setRequest(data));
-
-  alert(`¡Recibimos tu burguerOrder de ${data.menu}!`)
-  } catch (error) {
-    console.log(error)
+      if (window.confirm('¿Estás seguro de realizar este pedido?')) {
+        await fetch('https://burguercode-db.onrender.com/addRequest',{
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(data),
+          method: 'POST',
+        })
+      .then(response => response.json())
+      .then(data => setRequest(data));
+  
+      window.location.reload()
+    
+    alert(`¡Recibimos tu burguerOrder de ${data.menu}!`) 
+      }
+    } catch (error) {
+      alert('No pudimos enviar tu pedido, intentá nuevamente')
     }
+
   }
 
   return (
@@ -45,7 +50,7 @@ const ModalRequest = ({menu, id}) => {
 <input type="text" className="form-control p-1 m-0 text-danger fs-5 rounded-0" {...register("specification", { required: true })} required defaultValue="Ninguna especificación"/>
 <div className="p-0 mt-3 d-flex justify-content-end">
 <button type="button" className="btn btn-danger me-1 rounded-0 border-0"data-bs-dismiss="modal">Volver</button>
-<button type="submit" className="btn btn-warning rounded-0 border-0" data-bs-dismiss="modal">Enviar</button>
+<button type="submit" className="btn btn-warning rounded-0 border-0">Enviar</button>
 </div>
 </form>
   </div>

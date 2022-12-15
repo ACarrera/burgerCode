@@ -1,6 +1,9 @@
+.background-request{
+  background-color: #8C0000;
+}
+
 .requests{
   font-family: 'Bebas Neue', cursive;
-  background-color: #8C0000;
 }
 
 .card-img-top{
@@ -16,10 +19,11 @@
 }
 
 @media (max-width: 767.98px) {
-  .card-request{
-    width: 40% !important;
+  .request{
+    width: 100vh !important;
   }
   .request-movile{
+    width: 100vh;
     display: flex;
     flex-direction: column-reverse !important;
   }

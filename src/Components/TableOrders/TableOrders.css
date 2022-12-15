@@ -20,7 +20,7 @@ transition:all .3s ease-in-out
 		padding:5px;
 		background:#f00000;
     width: 25%;
-		color:white
+		color:white;
 	}
 	.demo td {
 		padding:2px;
