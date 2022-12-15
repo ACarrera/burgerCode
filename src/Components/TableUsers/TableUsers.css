@@ -1,3 +1,14 @@
 .table-height{
   height: 80vh;
 }
+
+
+@media (min-width: 768px) and (max-width: 991.98px){
+}
+
+@media (max-width: 767.98px) {
+  .movile-users-css{
+    display: none !important;
+  }
+  
+}

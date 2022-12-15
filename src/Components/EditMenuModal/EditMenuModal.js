@@ -8,18 +8,17 @@ const EditMenuModal = ({ menu, id }) => {
 
   const idMenuEdit = `#menu${id}`;
   const menuIdModalEdit = `menu${id}`;
-  const _id = menu._id;
 
   const sendEdit = async (data) => {
     try {
+      console.log(data)
       await axios.put(
         "https://burguercode-db.onrender.com/editmenu",
-        _id,
         data
-      );
-      setEditMenu(data);
+        );
+        setEditMenu(data);
       alert(`Menú ${menu.menu} modificado exitosamente`);
-      window.location.href = "/menu";
+      window.location.href = "/adminmenus";
     } catch {
       alert("El producto no pudo modificarse, intente nuevamente");
     }
@@ -56,13 +55,17 @@ const EditMenuModal = ({ menu, id }) => {
             <div className="modal-body fs-5">
               <h3>Editar menú</h3>
               <form onSubmit={handleSubmit(sendEdit)}>
+                <div className="d-flex justify-content-end">
+              <label className="form-label m-0 fs-6 text-dark">ID:</label>
+                <input type="text" value={menu._id} {...register("_id", { required: true })} className="w-50 ps-2 text-start bg-success border-0 rounded-0 fs-6"/>
+                </div>
                 <label className="form-label m-0 fs-6">Menu</label>
                 <input
                   type="text"
                   className="form-control p-1 m-0 rounded-0 border-0"
                   required
                   aria-describedby="emailHelp"
-                  maxLenght="15"
+                  maxLength="15"
                   defaultValue={menu.menu}
                   {...register("menu", { required: true, maxLength: 15 })}
                 />
@@ -80,6 +83,7 @@ const EditMenuModal = ({ menu, id }) => {
                 <label className="form-label m-0 fs-6">Precio</label>
                 <input
                   type="number"
+                  min="1"
                   max="9999"
                   className="form-control p-1 rounded-0 border-0"
                   required

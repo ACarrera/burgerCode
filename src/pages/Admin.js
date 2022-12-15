@@ -1,8 +1,10 @@
 import { Link } from "react-router-dom";
 import Footer from "../Components/Footer/Footer";
 import "./Admin.css";
+import { useEffect } from "react";
 
 const Admin = () => {
+  
   return (
     <>
     <div className="d-flex">
