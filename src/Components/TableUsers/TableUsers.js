@@ -51,7 +51,7 @@ const TableUsers = () => {
     <table className="demo">
 	<thead>
 	<tr>
-		<th>NOMBRE</th>
+		<th className="ps-3">NOMBRE</th>
 		<th className="movile-users-css">EMAIL</th>
 		<th className="movile-users-css">DIRECCIÓN</th>
 		<th className="w-auto text-center">TELÉFONO</th>
@@ -62,7 +62,7 @@ const TableUsers = () => {
 	<tbody>
 	{usersOrganized.map(user=>
 	<tr className="viewunique">
-		 <td><b>{user.lastname} {user.name}</b></td>
+		 <td className="ps-3"><b>{user.lastname} {user.name}</b></td>
 		 <td className="movile-users-css">{user.email}</td>
 		 <td className="movile-users-css"><i>{user.address}</i></td>
 		 <td className="w-auto text-center">{user.phone}</td>

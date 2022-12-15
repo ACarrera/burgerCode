@@ -21,15 +21,15 @@ const Request = () => {
   }, []);
 
   return (
-    <>
-    <div className="request-movile d-flex">
+    <div className="background-request">
+    <div className="request-movile d-flex flex-wrap justify-content-around">
       {
       menus.map((menu, index) => (
     <CardsRequest menu={menu} index={index} />
     ))}
     </div>
     <Footer />
-    </>
+    </div>
   );
 };
 

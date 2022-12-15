@@ -40,10 +40,10 @@ const AdminMenu = () => {
 		}, [aux])
 
 	return (
-		<>
+		<div className="table-menu-height">
 			<h2 className="text-center mt-2 mb-0 title-tableadmin">Menús</h2>
 			<ButtonAddMenu />
-      <div className="h-100">
+      <div>
       <table className="demo">
 	<TopTableMenus />
 			{
@@ -53,7 +53,7 @@ const AdminMenu = () => {
       </ table>
       </div>
 			<Footer />
-		</>
+		</div>
 	);
 };
 

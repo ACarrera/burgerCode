@@ -1,6 +1,5 @@
 import axios from "axios";
 import EditMenuModal from "../EditMenuModal/EditMenuModal";
-import './MenuTable.css';
 
 const MenuTable = ({menu, index}) => {
     const deleteMenu = async (_id) => {
@@ -10,10 +9,10 @@ const MenuTable = ({menu, index}) => {
 	}
  
     return (
-			<div>
+			<>
 	<tbody>
 	<tr className="viewunique">
-		 <td><b>{menu.menu}</b></td>
+		 <td className="ps-3"><b>{menu.menu}</b></td>
 		 <td className="movile-css-menus">{menu.description}</td>
 		 <td className="movile-css-menus text-center">${menu.price}</td>
 		 {menu.specification}
@@ -29,7 +28,7 @@ const MenuTable = ({menu, index}) => {
 		 </td>
 	</tr>
 	</tbody>
-  </div>
+  </>
     );
 };
 

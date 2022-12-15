@@ -20,9 +20,11 @@ const TableOrders = () => {
     }, []);
  
 		const deleteRequest = async (_id) => {
-			await axios.delete(`https://burguercode-db.onrender.com/deleterequest/${_id}`)
-			alert('Menú entregado')
-			window.location.href ='/addorders'
+			if (window.confirm('¿Está seguro de la entrega de este pedido?')) {
+				await axios.delete(`https://burguercode-db.onrender.com/deleterequest/${_id}`)
+				alert('Menú entregado')
+				window.location.href ='/adminorders'	
+			}
 		}
 
   return (
@@ -31,7 +33,7 @@ const TableOrders = () => {
     <table className="demo">
 	<thead>
 	<tr>
-		<th>NOMBRE</th>
+		<th className="ps-3">NOMBRE</th>
 		<th className="movile-css-orders">DESCRIPCIÓN</th>
 		<th className="movile-css-orders text-center">PRECIO</th>
 		<th>ESPECIFICACIONES</th>
@@ -41,8 +43,8 @@ const TableOrders = () => {
 	</thead>
 	<tbody>
 	{request.map(request=>
-	<tr className="viewunique">
-		 <td><b>{request.menu}</b></td>
+	<tr className="viewunique border-0">
+		 <td className="ps-3"><b>{request.menu}</b></td>
 		 <td className="movile-css-orders">{request.description}</td>
 		 <td className="movile-css-orders text-center">${request.price}</td>
 		 <td><b>{request.specification}</b></td>

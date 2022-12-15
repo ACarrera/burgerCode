@@ -15,9 +15,13 @@ La instalación de este proyecto se realiza desde la carpeta raíz (burguerCode)
   npm run build
   npm start
 ```
-    
+## Deploy 💻
+Este repositorio está deployado en
+[NETLIFY](https://burgercode.netlify.app/)
+
 ## ¿Alguna duda o sugerencia? ❓
 Por dudas o sugerencias, contactarse a ancar1286@hotmail.com, nahueldlvega@gmail.com, tomibringas10@gmail.com, lunama.cecilia@gmail.com
+
 ## Autor@s 🖌️
 
 - [Ángel Carrera 👨‍💻](https://github.com/ACarrera)
