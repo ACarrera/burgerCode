@@ -3,9 +3,11 @@ import EditMenuModal from "../EditMenuModal/EditMenuModal";
 
 const MenuTable = ({menu, index}) => {
     const deleteMenu = async (_id) => {
-		await axios.delete(`https://burguercode-db.onrender.com/deletemenu/${_id}`)
-		alert('Menú eliminado')
-		window.location.href ='/adminmenus'
+if (window.confirm(`¿Estás seguro que querés eliminar ${menu.menu}?`)) {
+	await axios.delete(`https://burguercode-db.onrender.com/deletemenu/${_id}`)
+	alert('Menú eliminado')
+	window.location.href ='/adminmenus'
+}
 	}
  
     return (

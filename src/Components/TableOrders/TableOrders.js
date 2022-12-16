@@ -20,7 +20,7 @@ const TableOrders = () => {
     }, []);
  
 		const deleteRequest = async (_id) => {
-			if (window.confirm('¿Está seguro de la entrega de este pedido?')) {
+			if (window.confirm(`¿Está seguro de la entrega de este pedido?`)) {
 				await axios.delete(`https://burguercode-db.onrender.com/deleterequest/${_id}`)
 				alert('Menú entregado')
 				window.location.href ='/adminorders'	

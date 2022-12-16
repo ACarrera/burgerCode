@@ -10,8 +10,7 @@ const EditMenuModal = ({ menu, id }) => {
   const menuIdModalEdit = `menu${id}`;
 
   const sendEdit = async (data) => {
-    try {
-      console.log(data)
+    if (window.confirm(`¿Estás seguro de la modificación de ${menu.menu}?`)) {
       await axios.put(
         "https://burguercode-db.onrender.com/editmenu",
         data
@@ -19,8 +18,6 @@ const EditMenuModal = ({ menu, id }) => {
         setEditMenu(data);
       alert(`Menú ${menu.menu} modificado exitosamente`);
       window.location.href = "/adminmenus";
-    } catch {
-      alert("El producto no pudo modificarse, intente nuevamente");
     }
   };
 
