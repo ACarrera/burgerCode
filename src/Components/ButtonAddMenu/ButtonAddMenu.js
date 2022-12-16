@@ -8,14 +8,16 @@ const ButtonAddMenu = () => {
   
   const [addMenu, setAddMenu] = useState()
   const newMenu = async (data) => {
-    await axios.post('https://burguercode-db.onrender.com/addmenu', data)
-    .then((resp) => {
-      setAddMenu(resp.data)
-    })
-        console.log(data)
-        alert('Menu creado exitosamente')
-        window.location.reload()
-      }
+    if (window.confirm('¿Estás seguro que querés crear este menú?')) {
+      await axios.post('https://burguercode-db.onrender.com/addmenu', data)
+      .then((resp) => {
+        setAddMenu(resp.data)
+      })
+          console.log(data)
+          alert('Menu creado exitosamente')
+          window.location.reload()
+        } 
+    }
 
   return (
     <div className="modal-admin">
