@@ -7,7 +7,7 @@ const Admin = () => {
   
   return (
     <>
-    <div className="d-flex">
+    <div className="d-flex imagenes">
           <Link to="/adminusers" className="effect-button col-lg-4 col-md-4 col-xs-12">
       <img src="https://images.pexels.com/photos/3220617/pexels-photo-3220617.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Burguer Fondo" className="effect-img" />
       <div className="responsive-text">
