@@ -159,9 +159,9 @@
     }
     .h1-landing{
         color: white;
-        font-size: 30px;
+        font-size: 37px;
         padding: 0;
-        margin:0px 0px 15px 0px;
+        margin:0px 0px 25px 0px;
     }
     .h3-landing,
     .h3-icon{
@@ -181,7 +181,7 @@
         width: calc(45% - 10px);
         height: calc(45% - 10px);
         border-radius: 24px 0;
-        margin-left: 90px;
+        margin-left: 83px;
     }
     .bordes-img{
         background-image: linear-gradient(var(--dark-red),var(--dark-red)),
