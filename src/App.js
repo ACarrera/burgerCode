@@ -5,6 +5,7 @@ import Landing from "./pages/Landing";
 import Home from "./pages/Home";
 import LoginPage from "./pages/LoginPage";
 import Request from "./pages/Request";
+import Error from "./pages/error";
 // import PrivateRoute from "./routes/PrivateRoute";
 import Admin from "./pages/Admin";
 import AdminRequest from "./pages/AdminRequest";
@@ -26,6 +27,7 @@ function App() {
           <Route path="/adminusers" element={<AdminUsers />} />
           <Route path="/adminmenus" element={<AdminMenu />} />
           <Route path="/adminorders" element={<AdminRequest />} />
+          <Route path="/*" element={<Error />} />
         </Routes>
       </UserProvider>
     </Router>
