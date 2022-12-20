@@ -2,7 +2,6 @@ import React from 'react';
 import './CardHome.css';
 import CardHome from './CardHome';
 import {nuestrosDestacados} from '../../utils/burgersinfo';
-import { TbChartArcs } from 'react-icons/tb';
 
 const CardsHome =() => {
     return(

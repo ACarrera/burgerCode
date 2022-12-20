@@ -3,7 +3,6 @@ import { TbBread, TbCheese } from "react-icons/tb";
 import { BiDrink } from "react-icons/bi";
 import { RiTeamLine, RiHomeSmileLine } from "react-icons/ri"
 import '../Components/CardHome/CardHome.css';
-import {images} from '../constants/images';
 
 export const nuestrosDestacados = [
     {

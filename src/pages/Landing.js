@@ -1,8 +1,13 @@
 import './Landing.css';
 import {FaHamburger} from 'react-icons/fa'
 import Footer from '../Components/Footer/Footer';
+import { Link } from 'react-router-dom';
+import React from 'react';
 
-const LandingPage = () => ( 
+const Landing = () => {
+    localStorage.clear()
+    
+    return (
     <>
     <div className="app-landing" id="landing">
         <div className="app-wrapper-info">
@@ -10,6 +15,9 @@ const LandingPage = () => (
             <h1 className="app-landing-h1 card-text h1-landing">burger</h1>
             <h4 className="card-text h4-landing" >INGREDIENTES ESPECIALES</h4>
             <p className="card-text p-landing">Carne de calidad, verduras frescas y pan casero recién salidos del horno.</p>
+            <Link to="/login" className="loginbutton d-flex justify-content-center">
+                <button className="btn btn-warning border-0 rounded-0 p-3"><b>INGRESÁ</b></button>
+                </Link>
         </div>
         <div className='bordes-img'>
             <div className="app-wrapper-img">
@@ -22,7 +30,7 @@ const LandingPage = () => (
     </div>
         <Footer />
         </>
-);
+    );
+};
 
- 
-export default LandingPage;
+export default Landing;
