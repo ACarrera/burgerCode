@@ -17,7 +17,7 @@ const EditMenuModal = ({ menu, id }) => {
         );
         setEditMenu(data);
       alert(`Menú ${menu.menu} modificado exitosamente`);
-      window.location.href = "/adminmenus";
+      window.location.reload()
     }
   };
 

@@ -8,7 +8,7 @@ const TableUsers = () => {
 		if (window.confirm('¿Estás seguro que deseás eliminar este usuario?')) {
 			await axios.delete(`https://burguercode-db.onrender.com/deleteuser/${_id}`)
 			alert('Usuario eliminado correctamente')
-			window.location.href = "/adminusers"
+			window.location.reload()
 		}
 	}
   
