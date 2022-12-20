@@ -5,6 +5,11 @@ import axios from 'axios';
 import Footer from '../Components/Footer/Footer';
 
 const Request = () => {
+  const localStorageRole = localStorage.getItem('role')
+  if (localStorageRole === 'ADMIN' || !localStorage.getItem('role')) {
+    alert('No tenés autorización para ingresar a esta página')
+   window.location.href  = "/"
+  }
 
   const [menus, setMenus] = useState([]);
 

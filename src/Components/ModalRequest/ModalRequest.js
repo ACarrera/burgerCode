@@ -7,6 +7,11 @@ const ModalRequest = ({menu, id}) => {
   const idMenu = `#menu${id}` 
   const menuIdModal = `menu${id}`
 
+  const nameRequest = () => {
+    document.getElementById('name').localStorage.setItem('name').innerHTML()
+  }
+
+
   const sendRequest = async(data) => {
     try {
       if (window.confirm('¿Estás seguro de realizar este pedido?')) {
@@ -40,6 +45,13 @@ const ModalRequest = ({menu, id}) => {
   <div className="modal-body fs-5">
     Revisá tu pedido antes de enviar:
     <form onSubmit={handleSubmit(sendRequest)}>
+      <label className="form-label m-0 p-0 fs-6">Tus datos personales</label>
+      <div className="d-block">
+      <input type="text" id="nameRequest" className="rounded-0 border-0" value={nameRequest}/>
+      <input type="text" className="rounded-0 border-0" />
+      <input type="text" className="rounded-0 border-0" />
+      <input type="text" className="rounded-0 border-0" />
+      </div>
 <label className="form-label m-0 p-0 fs-6">Menu</label>
 <input type="text" className="form-control p-0 m-0 text-danger fs-5 border-0"  {...register("menu", { required: true })} required aria-describedby="emailHelp" value={menu.menu} />
 <label className="form-label m-0 fs-6">Descripción</label>

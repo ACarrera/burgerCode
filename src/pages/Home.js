@@ -8,6 +8,11 @@ import ButtonToRequest from "../Components/ButtonToRequest/ButtonToRequest";
 
 
 const HomePage = () => {
+  const localStorageRole = localStorage.getItem('role')
+  if (localStorageRole === 'ADMIN' || !localStorage.getItem('role')) {
+    alert('No tenés autorización para ingresar a esta página')
+   window.location.href  = "/"
+  }
     return (  
     <>
       <div className="home-container">

@@ -8,6 +8,12 @@ import TopTableMenus from '../Components/TopTableMenus/TopTableMenus';
 import './AdminMenu.css';
 
 const AdminMenu = () => {
+	const localStorageRole = localStorage.getItem('role')
+  if (localStorageRole === 'USER' || !localStorage.getItem('role')) {
+    alert('No tenés autorización para ingresar a esta página')
+   window.location.href  = "/"
+  }
+
 	const [menus, setMenus] = useState([]);
 
   const getMenus = async () => {

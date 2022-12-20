@@ -1,43 +1,42 @@
-import { useEffect } from "react";
-import { useState } from "react";
-import { useContext } from "react";
-import { FloatingLabel, Form, Button, Alert } from "react-bootstrap";
-import { Link, useNavigate } from "react-router-dom";
-import axiosInstance from "../../config/axiosInstance";
-import { LOGIN_INITIAL_VALUES } from "../../constants";
-import { UserContext } from "../../context/UserContext";
-import { validationLogin } from "../../helpers/validations";
-import useForm from "../../hooks/useForm";
+import { FloatingLabel, Form, Button } from "react-bootstrap";
 import useMediaQuery from "../../hooks/useMediaQuery";
 import RegisterModal from "../RegisterModal/RegisterModal";
 import "./LoginForm.css";
+import { useForm } from "react-hook-form";
 
 const LoginForm = () => {
   const { width } = useMediaQuery();
+  const { register, handleSubmit } = useForm();
 
-  const { login, authenticated } = useContext(UserContext);
-  const navigate = useNavigate();
-  const { values, handleChange, handleSubmit, errors } = useForm(LOGIN_INITIAL_VALUES, login, validationLogin);
 
-  const [users, setUsers] = useState(null);
-  const [show, setShow] = useState(false);
-  const handleShow = () => setShow(true);
+  const handleLogin = async (data) => {
+    const resp = await fetch('https://burguercode-db.onrender.com/login', {
+      method: 'POST',
+      body: JSON.stringify(data),
+      headers: {
+        "Content-Type": "application/json"
+      }
+    })
+    const json = await resp.json();
 
-  const getUsers = async () => {
     try {
-      const response = await axiosInstance.get("/users");
-      console.log(response.data);
-      setUsers(response.data.users);
+      if (json.user.role === 'ADMIN') {
+        localStorage.setItem('access-token', json.token)
+        localStorage.setItem('role', json.user.role)
+      window.location.href = '/admin'
+      } else if (json.user.role === 'USER') {
+        localStorage.setItem('access-token', json.token)
+        localStorage.setItem('role', json.user.role)
+        localStorage.setItem('name', json.user.name)
+        localStorage.setItem('lastname', json.user.lastname)
+        localStorage.setItem('address', json.user.address)
+        localStorage.setItem('phone', json.user.phone)
+      window.location.href = '/home'
+      } 
     } catch (error) {
-      alert("Error al traer los usuarios");
+      alert('El usuario o la contraseña que ingresaste no es correcto')
     }
-  };
-
-  useEffect(() => {
-    if (authenticated) {
-      navigate("/home");
-    }
-  }, [authenticated]);
+  }
 
   return (
     <>
@@ -45,7 +44,7 @@ const LoginForm = () => {
         <div className="container mt-1 login-portada col d-flex justify-content-around align-items-center">
           <div className="login-portada-text col-6">
             <h4 className="mb-4 text-light">INICIÁ SESIÓN O REGISTRATE</h4>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit(handleLogin)}>
               <FloatingLabel
                 controlId="floatingInput"
                 label="Dirección de correo electrónico"
@@ -55,33 +54,28 @@ const LoginForm = () => {
                   type="email"
                   placeholder="nombre@ejemplo.com"
                   className="w-100 rounded-0"
-                  onChange={handleChange}
                   name="email"
                   required
                   minLength='2'
                   maxLength='30'
+                  {...register("email", { require: true })}
                 />
               </FloatingLabel>
               <FloatingLabel controlId="floatingPassword" label="Contraseña">
                 <Form.Control
                   type="password"
                   placeholder="Contraseña"
-                  onChange={handleChange}
                   name="password"
                   required
                   minLength='8'
                   maxLength='30'
                   className="rounded-0"
+                  {...register("password", { require: true })}
                 />
               </FloatingLabel>
               <Button className="mt-2 me-2 btn-warning rounded-0" type="submit">
                 Ingresar
               </Button>
-              {Object.keys(errors).length !== 0
-                ? Object.values(errors).map((error) => (
-                    <Alert variant="danger">{error}</Alert>
-                  ))
-                  : null}
             </form>
                   <RegisterModal />
           </div>

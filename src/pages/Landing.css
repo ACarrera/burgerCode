@@ -5,6 +5,11 @@
     box-sizing: border-box;
 
 }
+
+.loginbutton{
+    text-decoration: none !important
+}
+
 .app-landing{
  background-color: var(--dark-red);
  display: flex;
