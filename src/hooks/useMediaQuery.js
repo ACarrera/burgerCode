@@ -1,7 +1,7 @@
 import { useEffect } from "react"
 import { useState } from "react"
 
-const useMediaQuery = ()=>{
+const useMediaQuery = () => {
   const [size, setSize] = useState({
     width:0,
     height:0

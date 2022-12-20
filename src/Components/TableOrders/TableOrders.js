@@ -23,7 +23,7 @@ const TableOrders = () => {
 			if (window.confirm(`¿Está seguro de la entrega de este pedido?`)) {
 				await axios.delete(`https://burguercode-db.onrender.com/deleterequest/${_id}`)
 				alert('Menú entregado')
-				window.location.href ='/adminorders'	
+				window.location.reload()
 			}
 		}
 

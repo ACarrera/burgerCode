@@ -6,7 +6,7 @@ const Admin = () => {
   const localStorageRole = localStorage.getItem('role')
   if (localStorageRole === 'USER' || !localStorage.getItem('role')) {
     alert('No tenés autorización para ingresar a esta página')
-   window.location.href  = "/"
+   window.location.href  = "/login"
   }
   
   return (

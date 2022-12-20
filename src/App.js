@@ -1,5 +1,4 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import UserProvider from "./context/UserContext";
 import Header from "./Components/Header/Header";
 import Landing from "./pages/Landing";
 import Home from "./pages/Home";
@@ -14,7 +13,6 @@ import AdminUsers from "./pages/AdminUsers";
 function App() {
   return (
     <Router>
-      <UserProvider>
         <Header />
         <Routes>
           <Route path="/" element={<Landing />} />
@@ -27,7 +25,6 @@ function App() {
           <Route path="/orders" element={<AdminRequest />} />
           <Route path="/*" element={<Error />} />
         </Routes>
-      </UserProvider>
     </Router>
   );
 }

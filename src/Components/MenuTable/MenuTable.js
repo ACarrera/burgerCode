@@ -6,7 +6,7 @@ const MenuTable = ({menu, index}) => {
 if (window.confirm(`¿Estás seguro que querés eliminar ${menu.menu}?`)) {
 	await axios.delete(`https://burguercode-db.onrender.com/deletemenu/${_id}`)
 	alert('Menú eliminado')
-	window.location.href ='/adminmenus'
+	window.location.reload()
 }
 	}
  
