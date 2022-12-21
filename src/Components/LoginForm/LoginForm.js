@@ -53,7 +53,7 @@ const LoginForm = () => {
                 <Form.Control
                   type="email"
                   placeholder="nombre@ejemplo.com"
-                  className="w-100 rounded-0"
+                  className="input-login-email w-100 rounded-0"
                   name="email"
                   required
                   minLength='2'

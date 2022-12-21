@@ -4,6 +4,7 @@
 
 .requests{
   font-family: 'Bebas Neue', cursive;
+  word-break: normal;
 }
 
 .card-img-top{
@@ -12,19 +13,17 @@
     font-size: 45px;
 }
 
-@media (min-width: 768px) and (max-width: 991.98px){
-  .card-request{
-    width: 35% !important;
+@media (max-width: 767.98px) {
+  .requests{
+    width: 50%;
+  }
+  .description-card{
+    font-size: 17px;
   }
 }
 
-@media (max-width: 767.98px) {
-  .request{
-    width: 100vh !important;
-  }
-  .request-movile{
-    width: 100vh;
-    display: flex;
-    flex-direction: column-reverse !important;
+@media (min-width: 768px) and (max-width: 1199.98px) {
+  .requests{
+    width: 30%;
   }
 }

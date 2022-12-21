@@ -47,7 +47,7 @@ const TableOrders = () => {
 		 <td className="ps-3"><b>{request.menu}</b></td>
 		 <td className="movile-css-orders">{request.description}</td>
 		 <td className="movile-css-orders text-center">${request.price}</td>
-		 <td><b>{request.specification}</b></td>
+		 <td className="orders-css "><b>{request.specification}</b></td>
      <td>
 			<div className="d-flex justify-content-center">
 			<button className="btn btn-success text-center d-flex justify-content-center p-2 m-1 rounded-0 border-0" onClick={(_id) => deleteRequest(request._id)} type="button" key={request._id}>
