@@ -2,13 +2,17 @@
   height: auto;
 }
 
-
-@media (min-width: 768px) and (max-width: 991.98px){
-}
-
 @media (max-width: 767.98px) {
   .movile-users-css{
     display: none !important;
   }
-  
+  .h3-landing{
+    font-size: 5vh !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px){
+  .viewunique{
+    font-size: 18px !important;
+  }
 }

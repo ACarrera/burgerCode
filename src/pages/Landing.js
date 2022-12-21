@@ -9,7 +9,7 @@ const Landing = () => {
     
     return (
     <>
-    <div className="app-landing" id="landing">
+    <div className="app-landing h-100 w-100" id="landing">
         <div className="app-wrapper-info">
             <h3 className="h3-landing card-text">la mejor <FaHamburger className="h3-icon"/></h3>
             <h1 className="app-landing-h1 card-text h1-landing">burger</h1>

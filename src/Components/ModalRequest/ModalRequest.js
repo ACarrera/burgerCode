@@ -37,7 +37,7 @@ const ModalRequest = ({menu, id}) => {
 
   return (
 <>
-<button type="button" className="boton-agregarproducto-carrito btn btn-warning rounded-0 rounded-0" data-bs-toggle="modal" data-bs-target={idMenu}>✓</button>
+<button type="button" className="button-request btn btn-warning rounded-0 rounded-0" data-bs-toggle="modal" data-bs-target={idMenu}>✓</button>
 
 <div className="modal fade" id={menuIdModal} aria-labelledby="exampleModalLabel" aria-hidden="true">
 <div className="modal-dialog">
