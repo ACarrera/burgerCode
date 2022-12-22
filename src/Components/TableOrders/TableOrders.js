@@ -33,10 +33,12 @@ const TableOrders = () => {
     <table className="demo">
 	<thead>
 	<tr>
-		<th className="ps-3">NOMBRE</th>
-		<th className="movile-css-orders">DESCRIPCIÓN</th>
-		<th className="movile-css-orders text-center">PRECIO</th>
-		<th>ESPECIFICACIONES</th>
+		<th className="text-tableorders width-table ps-3">PARA</th>
+		<th className="text-tableorders movile-css-orders">HACIA</th>
+		<th className="text-tableorders">MENÚ</th>
+		<th className="text-tableorders width-table movile-css-orders">DETALLES</th>
+		<th className="text-tableorders movile-css-orders text-center">PRECIO</th>
+		<th className="text-tableorders text-center">CONTACTO</th>
 		<th></th>
 
 	</tr>
@@ -44,10 +46,12 @@ const TableOrders = () => {
 	<tbody>
 	{request.map(request=>
 	<tr className="viewunique border-0">
-		 <td className="orders-css ps-3"><b>{request.menu}</b></td>
-		 <td className="movile-css-orders">{request.description}</td>
-		 <td className="movile-css-orders text-center">${request.price}</td>
-		 <td className="orders-css "><b>{request.specification}</b></td>
+		 <td className="text-tableorders width-table ps-3"><b>{request.name}</b></td>
+		 <td className="text-tableorders movile-css-orders">{request.address}</td>
+		 <td className="text-tableorders"><b>{request.menu}</b></td>
+		 <td className="text-tableorders width-table movile-css-orders">{request.specification}</td>
+		 <td className="text-tableorders movile-css-orders text-center">${request.price}</td>
+		 <td className="text-tableorders text-center">{request.phone}</td>
      <td>
 			<div className="d-flex justify-content-center">
 			<button className="btn btn-success text-center d-flex justify-content-center p-2 m-1 rounded-0 border-0" onClick={(_id) => deleteRequest(request._id)} type="button" key={request._id}>

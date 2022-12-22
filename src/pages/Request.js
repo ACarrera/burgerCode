@@ -3,6 +3,7 @@ import './Request.css';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import Footer from '../Components/Footer/Footer';
+import ButtonBackUser from '../Components/ButtonBackUser/ButtonBackUser';
 
 const Request = () => {
   const localStorageRole = localStorage.getItem('role')
@@ -27,6 +28,7 @@ const Request = () => {
 
   return (
     <div className="background-request">
+      <ButtonBackUser/>
     <div className="request-movile d-flex flex-wrap justify-content-around">
       {
       menus.map((menu, index) => (

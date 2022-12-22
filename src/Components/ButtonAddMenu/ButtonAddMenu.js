@@ -20,7 +20,7 @@ const ButtonAddMenu = () => {
     }
 
   return (
-    <div className="modal-admin">
+    <div className="modal-admin mb-2">
     <div className="d-flex justify-content-center align-items-center title-tableadmin">
     <button
       type="button"

@@ -38,9 +38,9 @@ await axios.post('https://burguercode-db.onrender.com/adduser', data)
 </div>
 <div className="mb-3">
   <input type="text" className="form-control rounded-0" placeholder="Nombre"
-   {...register("name", { required: true, maxLength: 35, minLength: 1})}
+   {...register("name", { required: true, maxLength: 20, minLength: 1})}
    required
-   maxLenght="35"
+   maxLenght="20"
    minLenght="3"
     />
 </div>

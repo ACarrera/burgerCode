@@ -1,5 +1,6 @@
 import TableOrders from "../Components/TableOrders/TableOrders"
 import Footer from "../Components/Footer/Footer";
+import ButtonBackAdmin from "../Components/ButtonBackAdmin/ButtonBackAdmin";
 
 const AdminRequest = () => {
   const localStorageRole = localStorage.getItem('role')
@@ -9,6 +10,7 @@ const AdminRequest = () => {
   }
   return (
     <>
+    <ButtonBackAdmin />
     <TableOrders />
     <Footer />
     </>
