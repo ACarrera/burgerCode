@@ -40,9 +40,9 @@ const LoginForm = () => {
 
   return (
     <>
-      <div className="loginpage container pt-3">
+      <div className="loginpage container d-flex align-items-center">
         <div className="container mt-1 login-portada col d-flex justify-content-around align-items-center">
-          <div className="login-portada-text col-6">
+          <div className="login-portada-text w-100">
             <h4 className="mb-4 text-light">INICIÁ SESIÓN O REGISTRATE</h4>
             <form onSubmit={handleSubmit(handleLogin)}>
               <FloatingLabel

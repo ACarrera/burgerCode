@@ -10,3 +10,15 @@
     font-weight: bold;
     font-size: 45px;
 }
+
+ @media (min-width: 768px) and (max-width: 1023.98px){
+    .app-gallery{
+        padding: 30px;
+    }
+}
+  
+@media (max-width: 767.98px){
+    .app-gallery{
+        padding: 10px;
+    }
+  }
