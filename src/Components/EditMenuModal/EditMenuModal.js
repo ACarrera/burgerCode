@@ -11,13 +11,10 @@ const EditMenuModal = ({ menu, id }) => {
 
   const sendEdit = async (data) => {
     if (window.confirm(`¿Estás seguro de la modificación de ${menu.menu}?`)) {
-      await axios.put(
-        "https://burguercode-db.onrender.com/editmenu",
-        data
-        );
-        setEditMenu(data);
+      await axios.put("https://burguercode-db.onrender.com/editmenu", data);
+      setEditMenu(data);
       alert(`Menú ${menu.menu} modificado exitosamente`);
-      window.location.reload()
+      window.location.reload();
     }
   };
 
@@ -53,8 +50,13 @@ const EditMenuModal = ({ menu, id }) => {
               <h3>Editar menú</h3>
               <form onSubmit={handleSubmit(sendEdit)}>
                 <div className="d-flex justify-content-end">
-              <label className="form-label m-0 fs-6 text-dark">ID:</label>
-                <input type="text" value={menu._id} {...register("_id", { required: true })} className="w-50 ps-2 text-start bg-success border-0 rounded-0 fs-6"/>
+                  <label className="form-label m-0 fs-6 text-dark">ID:</label>
+                  <input
+                    type="text"
+                    value={menu._id}
+                    {...register("_id", { required: true })}
+                    className="w-50 ps-2 text-start bg-success border-0 rounded-0 fs-6"
+                  />
                 </div>
                 <label className="form-label m-0 fs-6">Menu</label>
                 <input

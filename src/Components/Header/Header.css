@@ -1,14 +1,14 @@
-.header-height{
-    height: 10vh;
-    font-family: 'Bebas Neue', cursive;
+.header-height {
+  height: 10vh;
+  font-family: "Bebas Neue", cursive;
 }
 
-.logo-height{
-    height: 10%
+.logo-height {
+  height: 10%;
 }
 
-@media screen and (min-device-width:360px) and (max-device-width:480px){
-    .logo-toggle{
-        font-size: 23px;
-    }
+@media screen and (min-device-width: 360px) and (max-device-width: 480px) {
+  .logo-toggle {
+    font-size: 23px;
+  }
 }

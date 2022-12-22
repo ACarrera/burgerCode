@@ -1,47 +1,46 @@
-.table{
-	height: auto;
+.table {
+  height: auto;
 }
 
-.title-tableadmin{
-	font-family: 'Bebas Neue', cursive;
+.title-tableadmin {
+  font-family: "Bebas Neue", cursive;
 }
 
-.text-tableorders{
-	font-size: 17px;
+.text-tableorders {
+  font-size: 17px;
 }
 
-.width-table{
-	width: 10vh,
+.width-table {
+  width: 10vh;
 }
 
-.viewunique:hover{
-background-color: #ffe100;
-transition:all .3s ease-in-out
+.viewunique:hover {
+  background-color: #ffe100;
+  transition: all 0.3s ease-in-out;
 }
-	.demo {
-		border-collapse:collapse;
-		padding:5px;
-        width: 100%;
-	}
+.demo {
+  border-collapse: collapse;
+  padding: 5px;
+  width: 100%;
+}
 
-	.demo th {
-		padding:5px;
-		background:#f00000;
-		color:white;
-	}
-	.demo td {
-		padding:2px;
-	}
-    .btn {
-        display: flex;
-    }
+.demo th {
+  padding: 5px;
+  background: #f00000;
+  color: white;
+}
+.demo td {
+  padding: 2px;
+}
+.btn {
+  display: flex;
+}
 
-		@media (max-width: 767.98px) {
-			.movile-css-orders{
-				display: none !important;
-			}
-			.text-tableorders{
-				font-size: 15px;
-			}
-		}
-	
+@media (max-width: 767.98px) {
+  .movile-css-orders {
+    display: none !important;
+  }
+  .text-tableorders {
+    font-size: 15px;
+  }
+}
