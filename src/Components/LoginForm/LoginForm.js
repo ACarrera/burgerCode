@@ -27,10 +27,7 @@ const LoginForm = () => {
       } else if (json.user.role === 'USER') {
         localStorage.setItem('access-token', json.token)
         localStorage.setItem('role', json.user.role)
-        localStorage.setItem('name', json.user.name)
-        localStorage.setItem('lastname', json.user.lastname)
-        localStorage.setItem('address', json.user.address)
-        localStorage.setItem('phone', json.user.phone)
+        localStorage.setItem('user', JSON.stringify(json.user))
       window.location.href = '/home'
       } 
     } catch (error) {

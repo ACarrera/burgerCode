@@ -17,6 +17,9 @@
   .requests{
     width: 50%;
   }
+  .card-request{
+    width: 90%;
+  }
   .description-card{
     font-size: 17px;
   }
@@ -25,5 +28,8 @@
 @media (min-width: 768px) and (max-width: 1023.98px) {
   .requests{
     width: 30%;
+  }
+  .card-request{
+    width: 90%;
   }
 }

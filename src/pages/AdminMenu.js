@@ -6,6 +6,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import TopTableMenus from '../Components/TopTableMenus/TopTableMenus';
 import './AdminMenu.css';
+import ButtonBackAdmin from '../Components/ButtonBackAdmin/ButtonBackAdmin';
 
 const AdminMenu = () => {
 	const localStorageRole = localStorage.getItem('role')
@@ -47,6 +48,7 @@ const AdminMenu = () => {
 
 	return (
 		<div className="table-menu-height">
+			<ButtonBackAdmin />
 			<h2 className="text-center mt-2 mb-0 title-tableadmin">Menús</h2>
 			<ButtonAddMenu />
       <div>

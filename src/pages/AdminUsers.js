@@ -1,4 +1,5 @@
 import React from 'react';
+import ButtonBackAdmin from '../Components/ButtonBackAdmin/ButtonBackAdmin';
 import Footer from "../Components/Footer/Footer";
 import TableUsers from '../Components/TableUsers/TableUsers';
 
@@ -10,6 +11,7 @@ const AdminUsers = () => {
   }
   return (
     <>
+    <ButtonBackAdmin />
     <TableUsers />
      <Footer /> 
     </>

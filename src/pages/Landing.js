@@ -10,13 +10,13 @@ const Landing = () => {
     return (
     <>
     <div className="app-landing h-100 w-100 p-5" id="landing">
-        <div className="app-wrapper-info">
+        <div className="app-wrapper-info p-0">
             <h3 className="h3-landing card-text d-flex align-items-center">la mejor <FaHamburger className="h3-icon"/></h3>
             <h1 className="app-landing-h1 card-text h1-landing">burger</h1>
             <h4 className="card-text h4-landing" >INGREDIENTES ESPECIALES</h4>
             <p className="card-text p-landing">Carne de calidad, verduras frescas y pan casero recién salidos del horno.</p>
             <Link to="/login" className="loginbutton d-flex justify-content-center mb-4">
-                <button className="btn btn-warning border-0 rounded-0 p-3"><b>INGRESÁ</b></button>
+                <button className="btn btn-warning border-0 rounded-0 px-5 fs-4">INGRESÁ</button>
                 </Link>
         </div>
         <div className='bordes-img'>

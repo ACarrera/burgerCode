@@ -1,13 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Combo&family=Oswald:wght@200;400&family=Paytone+One&family=Permanent+Marker&family=Rampart+One&family=Source+Sans+Pro:wght@200&display=swap');
+
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-
 }
 
 .loginbutton{
-    text-decoration: none !important
+    text-decoration: none !important;
+    font-family: 'Bebas Neue', cursive !important
 }
 
 .app-landing{
@@ -28,7 +29,7 @@
     text-transform: uppercase;
     font-size: 140px;
     line-height: 60%;
-    font-family: 'Rampart One';
+    font-family: 'Bebas Neue', cursive !important;
     text-decoration: underline;
     font-weight: bold;
     padding-bottom: 70px;
@@ -41,9 +42,10 @@
     padding-top: 0;
     font-weight: bold;
     padding-bottom: 4px;
+    font-family: 'Bebas Neue', cursive !important
 }
 .h3-icon{
-    font-size: 75px;
+    font-size: 90px;
     line-height: 80%;
     
 }
@@ -86,13 +88,10 @@
  background-size: cover;
     }
     .app-landing-h1{
-        font-size: 10vh!important;
-    }
-    .h3-landing{
-        font-size: 5vh!important; 
+        font-size: 15vh!important;
     }
     .h3-icon{
-        height: 7vh!important;
+        height: 8vh!important;
     }
     .h4-landing,.p-landing{
         display: none !important;
