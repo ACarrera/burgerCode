@@ -8,12 +8,12 @@ const Footer = () => {
       <div className="app-footer-links">
         <div className="footer-links-logo">
           <h1 className="logo-text">
-            <GiHamburger className="bg-yellow text-darkred" /> BURGERCODE
+            <GiHamburger className="bg-warning text-darkred" /> BURGERCODE
           </h1>
-          <p className="card-text">
+          <h5 className="card-text fs-6 px-1">
             "La mejor forma de encontrarte es perdiendote en el servicio de
             otros."
-          </p>
+          </h5>
         </div>
         <div className="footer-links-social">
           <FiFacebook href="https://www.facebook.com" />
@@ -22,15 +22,15 @@ const Footer = () => {
         </div>
         <div className="footer-links-contactanos">
           <h1>Contáctanos</h1>
-          <p className="card-text">
-            Gral. Paz 576,San Miguel de Tucumán, Tucumán, Argentina.
-          </p>
-          <p className="card-text">Lunes a Viernes 08-19 hs.</p>
-          <p className="card-text">+54 381 578-3030</p>
+          <h5 className="fs-6 card-text">
+            Gral. Paz 576, San Miguel de Tucumán, Tucumán, Argentina
+          </h5>
+          <h5 className="fs-6 card-text">Lunes a Viernes 08-19 hs</h5>
+          <h5 className="fs-6 card-text">+54 381 578-3030</h5>
         </div>
       </div>
       <div>
-        <p className="footer-copyright">
+        <p className="footer-copyright pb-4">
           2022 BurgerCode. Todos los derechos reservados.
         </p>
       </div>
