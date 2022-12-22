@@ -1,18 +1,18 @@
-.table-height{
+.table-height {
   height: auto;
 }
 
 @media (max-width: 767.98px) {
-  .movile-users-css{
+  .movile-users-css {
     display: none !important;
   }
-  .h3-landing{
+  .h3-landing {
     font-size: 5vh !important;
   }
 }
 
-@media (min-width: 768px) and (max-width: 991.98px){
-  .viewunique{
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .viewunique {
     font-size: 18px !important;
   }
 }

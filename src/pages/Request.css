@@ -1,35 +1,35 @@
-.background-request{
-  background-color: #8C0000;
+.background-request {
+  background-color: #8c0000;
 }
 
-.requests{
-  font-family: 'Bebas Neue', cursive;
+.requests {
+  font-family: "Bebas Neue", cursive;
   word-break: normal;
 }
 
-.card-img-top{
+.card-img-top {
   text-decoration: underline;
-    font-weight: bold;
-    font-size: 45px;
+  font-weight: bold;
+  font-size: 45px;
 }
 
 @media (max-width: 767.98px) {
-  .requests{
+  .requests {
     width: 50%;
   }
-  .card-request{
+  .card-request {
     width: 90%;
   }
-  .description-card{
+  .description-card {
     font-size: 17px;
   }
 }
 
 @media (min-width: 768px) and (max-width: 1023.98px) {
-  .requests{
+  .requests {
     width: 30%;
   }
-  .card-request{
+  .card-request {
     width: 90%;
   }
 }

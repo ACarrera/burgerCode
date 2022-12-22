@@ -8,32 +8,31 @@ const LoginForm = () => {
   const { width } = useMediaQuery();
   const { register, handleSubmit } = useForm();
 
-
   const handleLogin = async (data) => {
-    const resp = await fetch('https://burguercode-db.onrender.com/login', {
-      method: 'POST',
+    const resp = await fetch("https://burguercode-db.onrender.com/login", {
+      method: "POST",
       body: JSON.stringify(data),
       headers: {
-        "Content-Type": "application/json"
-      }
-    })
+        "Content-Type": "application/json",
+      },
+    });
     const json = await resp.json();
 
     try {
-      if (json.user.role === 'ADMIN') {
-        localStorage.setItem('access-token', json.token)
-        localStorage.setItem('role', json.user.role)
-      window.location.href = '/admin'
-      } else if (json.user.role === 'USER') {
-        localStorage.setItem('access-token', json.token)
-        localStorage.setItem('role', json.user.role)
-        localStorage.setItem('user', JSON.stringify(json.user))
-      window.location.href = '/home'
-      } 
+      if (json.user.role === "ADMIN") {
+        localStorage.setItem("access-token", json.token);
+        localStorage.setItem("role", json.user.role);
+        window.location.href = "/admin";
+      } else if (json.user.role === "USER") {
+        localStorage.setItem("access-token", json.token);
+        localStorage.setItem("role", json.user.role);
+        localStorage.setItem("user", JSON.stringify(json.user));
+        window.location.href = "/home";
+      }
     } catch (error) {
-      alert('El usuario o la contraseña que ingresaste no es correcto')
+      alert("El usuario o la contraseña que ingresaste no es correcto");
     }
-  }
+  };
 
   return (
     <>
@@ -53,8 +52,8 @@ const LoginForm = () => {
                   className="input-login-email w-100 rounded-0"
                   name="email"
                   required
-                  minLength='2'
-                  maxLength='30'
+                  minLength="2"
+                  maxLength="30"
                   {...register("email", { require: true })}
                 />
               </FloatingLabel>
@@ -64,8 +63,8 @@ const LoginForm = () => {
                   placeholder="Contraseña"
                   name="password"
                   required
-                  minLength='8'
-                  maxLength='30'
+                  minLength="8"
+                  maxLength="30"
                   className="rounded-0"
                   {...register("password", { require: true })}
                 />
@@ -74,7 +73,7 @@ const LoginForm = () => {
                 Ingresar
               </Button>
             </form>
-                  <RegisterModal />
+            <RegisterModal />
           </div>
           {width > 992 ? (
             <div className="container col-6 d-flex justify-content-end">
@@ -86,7 +85,7 @@ const LoginForm = () => {
             </div>
           ) : (
             <div></div>
-            )}
+          )}
         </div>
       </div>
     </>

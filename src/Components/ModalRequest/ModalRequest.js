@@ -8,9 +8,12 @@ const ModalRequest = ({ menu, id }) => {
   const menuIdModal = `menu${id}`;
 
   const user = JSON.parse(localStorage.getItem("user"));
-  const userRequest = JSON.stringify(`${user.name} ${user.lastname}`).replace(/['"]+/g, '')
-  const userAddress = JSON.stringify(`${user.address}`).replace(/['"]+/g, '')
-  const userPhone = JSON.stringify(`${user.phone}`).replace(/['"]+/g, '')
+  const userRequest = JSON.stringify(`${user.name} ${user.lastname}`).replace(
+    /['"]+/g,
+    ""
+  );
+  const userAddress = JSON.stringify(`${user.address}`).replace(/['"]+/g, "");
+  const userPhone = JSON.stringify(`${user.phone}`).replace(/['"]+/g, "");
 
   const sendRequest = async (data) => {
     try {

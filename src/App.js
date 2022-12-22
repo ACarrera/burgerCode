@@ -13,18 +13,18 @@ import AdminUsers from "./pages/AdminUsers";
 function App() {
   return (
     <Router>
-        <Header />
-        <Routes>
-          <Route path="/" element={<Landing />} />
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/home" element={<Home />} />
-          <Route path="/request" element={<Request />} />
-           <Route path="/admin" element={<Admin />} />
-          <Route path="/users" element={<AdminUsers />} />
-          <Route path="/menus" element={<AdminMenu />} />
-          <Route path="/orders" element={<AdminRequest />} />
-          <Route path="/*" element={<Error />} />
-        </Routes>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Landing />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/request" element={<Request />} />
+        <Route path="/admin" element={<Admin />} />
+        <Route path="/users" element={<AdminUsers />} />
+        <Route path="/menus" element={<AdminMenu />} />
+        <Route path="/orders" element={<AdminRequest />} />
+        <Route path="/*" element={<Error />} />
+      </Routes>
     </Router>
   );
 }
