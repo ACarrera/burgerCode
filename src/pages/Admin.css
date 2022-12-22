@@ -26,17 +26,23 @@
     font-family: 'Bebas Neue', cursive;
 }
 
-@media (min-width: 768px) and (max-width: 991.98px){
+@media (min-width: 768px) and (max-width: 1023.98px){
   .links{
     flex-wrap: wrap !important;
   }
   .effect-img{
     width: 100vh !important;
   }
+  .title-card{
+    font-size: 7vh;
+  }
 }
 
 @media (max-width: 767.98px){
   .links{
     flex-wrap: wrap !important;
+  }
+  .title-card{
+    font-size: 5vh;
   }
 }

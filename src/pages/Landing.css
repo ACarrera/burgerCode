@@ -17,7 +17,6 @@
  align-items: center;
  color: white;
  height: 44vw;
- 
 }
 .app-wrapper-info{
     padding-right: 40px;
@@ -75,124 +74,40 @@
     background-position: left bottom, left bottom, right top, right top, 4px 4px;
 }
 
-/* For Desktop View */
-@media screen and (min-device-width:768px) and (max-device-width:1024px){
+@media (max-width: 767.98px) {
+    .bordes-img{
+        display: none !important;
+    }
     .app-landing{
-        padding: 4rem;
+        height: 85vh !important;
+        background-image: url(./assets/images/background-moviles.jpg);
+ background-position: center;
+ background-repeat: no-repeat;
+ background-size: cover;
     }
-    .h1-landing{
-        font-size: 90px;
+    .app-landing-h1{
+        font-size: 10vh!important;
     }
-    .h3-landing,
+    .h3-landing{
+        font-size: 5vh!important; 
+    }
     .h3-icon{
-        font-size: 58px;
+        height: 7vh!important;
     }
-    .h4-landing{
-        font-size: 20px;
-        padding-bottom: 0px;
+    .h4-landing,.p-landing{
+        display: none !important;
     }
-    .p-landing
-    {
-        font-size: 17px;
-    }
-    .app-wrapper-img img{
-        width: calc(85% - 10px);
-        height: calc(85% - 10px);
-        margin: 7px;
-        border-radius: 24px 0;
-        padding: 0;
-    }
+  }
+  
+  @media (min-width: 768px) and (max-width: 1023.98px) {
     .bordes-img{
-        background-image: linear-gradient(var(--dark-red),var(--dark-red)),
-                    linear-gradient(var(--dark-red),var(--dark-red)),
-                    linear-gradient(var(--dark-red),var(--dark-red)),
-                    linear-gradient(var(--dark-red),var(--dark-red));
-        
+        display: none !important;
     }
-
-}
-@media screen and (min-device-width:480px) and (max-device-width:768px){
-    .app-wrapper-info{
-        padding: 20px;
-        padding-left: 100px;
-        margin: 0;
-        padding-bottom: 0;
-    }
-    .h1-landing{
-        font-size: 60px;
-        padding-bottom: 20px;
-    }
-    .h3-landing,
-    .h3-icon{
-        font-size: 38px;
-    }
-    .h4-landing{
-        font-size: 14px;
-        padding: 0;
-        margin: 0;
-    }
-    .p-landing
-    {
-        font-size: 11px;
-        margin: 0;
-    }
-    .app-wrapper-img img{
-        width: calc(75% - 10px);
-        height: calc(75% - 10px);
-        margin: 7px;
-        border-radius: 24px 0;
-        padding-left: 30px;
-    }
-    .bordes-img{
-        background-image: linear-gradient(var(--dark-red),var(--dark-red)),
-                    linear-gradient(var(--dark-red),var(--dark-red)),
-                    linear-gradient(var(--dark-red),var(--dark-red)),
-                    linear-gradient(var(--dark-red),var(--dark-red));
-        
-    }
-}
-@media screen and (min-device-width:360px) and (max-device-width:480px){
     .app-landing{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        height: 78vw;
+        height: 85vh !important;
+        background-image: url(./assets/images/background-moviles.jpg);
+ background-position: center;
+ background-repeat: no-repeat;
+ background-size: cover;
     }
-    .app-wrapper-info{
-        padding-top: 0px;
-    }
-    .h1-landing{
-        color: white;
-        font-size: 37px;
-        padding: 0;
-        margin:0px 0px 25px 0px;
-    }
-    .h3-landing,
-    .h3-icon{
-        color: white;
-        font-size: 24px;
-    }
-    .h4-landing{
-        color: white;
-        font-size: 12px;
-    }
-    .p-landing
-    {
-        color: white;
-        font-size: 10px;
-    }
-    .app-wrapper-img img{
-        width: calc(45% - 10px);
-        height: calc(45% - 10px);
-        border-radius: 24px 0;
-        margin-left: 83px;
-    }
-    .bordes-img{
-        background-image: linear-gradient(var(--dark-red),var(--dark-red)),
-                    linear-gradient(var(--dark-red),var(--dark-red)),
-                    linear-gradient(var(--dark-red),var(--dark-red)),
-                    linear-gradient(var(--dark-red),var(--dark-red));
-        
-    }
-}
+  }

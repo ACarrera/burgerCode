@@ -44,7 +44,7 @@ const TableOrders = () => {
 	<tbody>
 	{request.map(request=>
 	<tr className="viewunique border-0">
-		 <td className="ps-3"><b>{request.menu}</b></td>
+		 <td className="orders-css ps-3"><b>{request.menu}</b></td>
 		 <td className="movile-css-orders">{request.description}</td>
 		 <td className="movile-css-orders text-center">${request.price}</td>
 		 <td className="orders-css "><b>{request.specification}</b></td>
