@@ -12,6 +12,7 @@ const TableOrders = () => {
       );
       setRequest(info.data);
     } catch (error) {
+      alert('No se pudieron cargar los pedidos; intentá nuevamente')
     }
   };
   useEffect(() => {

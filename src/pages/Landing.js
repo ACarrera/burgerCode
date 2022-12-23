@@ -3,12 +3,14 @@ import { FaHamburger } from "react-icons/fa";
 import Footer from "../Components/Footer/Footer";
 import { Link } from "react-router-dom";
 import React from "react";
+import ButtonWhatsapp from "../Components/ButtonWhatsapp/ButtonWhatsapp";
 
 const Landing = () => {
   localStorage.clear();
 
   return (
     <>
+    <ButtonWhatsapp />
       <div className="app-landing h-100 w-100 p-5" id="landing">
         <div className="app-wrapper-info p-0">
           <h3 className="h3-landing card-text d-flex align-items-center">

@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import Footer from "../Components/Footer/Footer";
 import ButtonBackUser from "../Components/ButtonBackUser/ButtonBackUser";
+import ButtonWhatsapp from "../Components/ButtonWhatsapp/ButtonWhatsapp";
 
 const Request = () => {
   const localStorageRole = localStorage.getItem("role");
@@ -21,6 +22,7 @@ const Request = () => {
       );
       setMenus(info.data);
     } catch (error) {
+      alert('No se pudieron cargar los menús; intentá nuevamente')
     }
   };
   useEffect(() => {
@@ -28,6 +30,8 @@ const Request = () => {
   }, []);
 
   return (
+    <>
+    <ButtonWhatsapp />
     <div className="background-request">
       <ButtonBackUser />
       <div className="request-movile d-flex flex-wrap justify-content-around">
@@ -37,6 +41,7 @@ const Request = () => {
       </div>
       <Footer />
     </div>
+    </>
   );
 };
 

@@ -22,6 +22,7 @@ const TableUsers = () => {
       );
       setUser(info.data);
     } catch (error) {
+      alert('No se pudieron cargar los usuarios; intentá nuevamente')
     }
   };
   useEffect(() => {
