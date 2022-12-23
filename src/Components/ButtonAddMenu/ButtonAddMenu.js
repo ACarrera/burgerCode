@@ -14,7 +14,6 @@ const ButtonAddMenu = () => {
         .then((resp) => {
           setAddMenu(resp.data);
         });
-      console.log(data);
       alert("Menu creado exitosamente");
       window.location.reload();
     }

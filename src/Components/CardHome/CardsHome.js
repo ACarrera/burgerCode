@@ -7,7 +7,6 @@ const CardsHome = () => {
   return (
     <div className="contenedor-cartasHome">
       {nuestrosDestacados.map((element) => {
-        console.log(element);
         return (
           <CardHome
             icon={element.icon}

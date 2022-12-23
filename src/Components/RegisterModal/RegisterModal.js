@@ -15,7 +15,6 @@ const RegisterModal = () => {
       .then((resp) => {
         setAddUser(resp.data);
       });
-    console.log(data);
     alert("El usuario ha sido creado exitosamente");
     window.location.reload();
   };

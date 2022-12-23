@@ -22,7 +22,6 @@ const TableUsers = () => {
       );
       setUser(info.data);
     } catch (error) {
-      console.log(error);
     }
   };
   useEffect(() => {

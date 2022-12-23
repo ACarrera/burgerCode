@@ -12,7 +12,6 @@ const TableOrders = () => {
       );
       setRequest(info.data);
     } catch (error) {
-      console.log(error);
     }
   };
   useEffect(() => {

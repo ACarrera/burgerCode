@@ -24,7 +24,6 @@ const AdminMenu = () => {
       );
       setMenus(info.data);
     } catch (error) {
-      console.log(error);
     }
   };
   useEffect(() => {
