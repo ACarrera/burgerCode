@@ -30,7 +30,7 @@ const Footer = () => {
         </div>
       </div>
       <div>
-        <p className="footer-copyright pb-4">
+        <p className="footer-copyright px-1 pb-4 text-center">
           2022 BurgerCode. Todos los derechos reservados.
         </p>
       </div>

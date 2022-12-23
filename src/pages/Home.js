@@ -4,6 +4,7 @@ import "./Home.css";
 import CardsHome from "../Components/CardHome/CardsHome";
 import Footer from "../Components/Footer/Footer";
 import ButtonToRequest from "../Components/ButtonToRequest/ButtonToRequest";
+import ButtonWhatsapp from "../Components/ButtonWhatsapp/ButtonWhatsapp";
 
 const HomePage = () => {
   const localStorageRole = localStorage.getItem("role");
@@ -13,6 +14,7 @@ const HomePage = () => {
   }
   return (
     <>
+    <ButtonWhatsapp />
       <div className="home-container">
         <CustomCarousel />
         <div className="mt-0 text-center pagina-text">

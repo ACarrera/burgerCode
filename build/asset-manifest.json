@@ -1,17 +1,18 @@
 {
   "files": {
-    "main.css": "/static/css/main.e53641b5.css",
-    "main.js": "/static/js/main.14b01841.js",
+    "main.css": "/static/css/main.9de5995e.css",
+    "main.js": "/static/js/main.beea7e5f.js",
     "static/media/background-moviles.jpg": "/static/media/background-moviles.a0fb48c0a9837a86987e.jpg",
+    "static/media/whatsapp-png.png": "/static/media/whatsapp-png.d1038eb1bce26b4dab85.png",
     "static/media/burger3.jpg": "/static/media/burger3.6c2870f17dba2aed7c2d.jpg",
     "static/media/burger1.jpg": "/static/media/burger1.94817e58d67ee9dcd24b.jpg",
     "static/media/burger2.jpg": "/static/media/burger2.630a567a79139de105ff.jpg",
     "index.html": "/index.html",
-    "main.e53641b5.css.map": "/static/css/main.e53641b5.css.map",
-    "main.14b01841.js.map": "/static/js/main.14b01841.js.map"
+    "main.9de5995e.css.map": "/static/css/main.9de5995e.css.map",
+    "main.beea7e5f.js.map": "/static/js/main.beea7e5f.js.map"
   },
   "entrypoints": [
-    "static/css/main.e53641b5.css",
-    "static/js/main.14b01841.js"
+    "static/css/main.9de5995e.css",
+    "static/js/main.beea7e5f.js"
   ]
 }
