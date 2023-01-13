@@ -21,6 +21,11 @@ La instalación de este proyecto se realiza desde la carpeta raíz (burguerCode)
 Este repositorio está deployado en
 [NETLIFY](https://burgercode.netlify.app/)
 
+## Repositorio de la Database 💻
+
+El repositorio del backend, su descripción y link del deploy se encuentra en
+[GITHUB](https://github.com/nahueldelavega/burgerCode-DB)
+
 ## ¿Cómo utilizo la página? 🤔
 
 Si querés utilizar la interfaz para **USUARIOS**, primero debés _registrarte_ y luego usar la misma cuenta para _loguearte_. Esto permitirá que puedas acceder a la plataforma para realizar los pedidos. Por otro lado, si querés acceder a la interfaz del **ADMINISTRADOR**, utilizá los siguientes datos para loguearte:
